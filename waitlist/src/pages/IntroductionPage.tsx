@@ -104,6 +104,37 @@ const IntroductionPage = () => {
         </div>
       </div>
 
+      <div className="min-h-screen bg-black text-white flex items-center">
+        <div className="w-full px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05]">
+              fun like a game.{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                effective like a work.
+              </span>
+            </h2>
+
+            <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 sm:px-6 sm:py-8">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
+                  when effectiveness meets fun
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 sm:px-6 sm:py-8">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
+                  when complexity become intuitivity
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 sm:px-6 sm:py-8">
+                <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
+                  when degrees lose to capability
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="min-h-screen bg-black text-white flex flex-col">
         <div className="flex-1 p-4">
           <div className="max-w-7xl mx-auto">
