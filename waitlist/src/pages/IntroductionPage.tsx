@@ -88,9 +88,9 @@ const IntroductionPage = () => {
 
             <div className="animate-fade-in [animation-delay:0.5s] opacity-0">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/90 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-2 sm:px-4">
-                first all in one learning environment
+                first problem-based learning environment
                 <br className="block sm:hidden" />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-300 bg-clip-text text-transparent"> with AI thinking tracker</span>
+                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-300 bg-clip-text text-transparent"> with world simulations and superhuman mentor</span>
               </p>
             </div>
 
@@ -119,13 +119,13 @@ const IntroductionPage = () => {
                   </span>
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
-                  Experience the future of learning where AI adapts to your thinking patterns and accelerates your problem-solving abilities
+                  Experience learning from a dynamic world simulation with adaptive AI.
                 </p>
                 <Link
                   to="/login"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto inline-block text-center"
                 >
-                  Begin Your Journey
+                  Join Waitlist
                 </Link>
               </div>
 
@@ -214,7 +214,7 @@ const IntroductionPage = () => {
                 data-scroll="fade-up"
               >
                 <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
-                  Ready to <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Join Waitlist</span> Your Team?
+                  Ready to <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Join Waitlist</span>?
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
                   Join thousands of students who can be your collaboration and discussion team
