@@ -94,20 +94,6 @@ const IntroductionPage = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:0.8s] opacity-0">
-              <div className="max-w-3xl mx-auto rounded-2xl border border-white/20 bg-black/35 backdrop-blur-md p-4 sm:p-6 text-left">
-                <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gray-300 mb-3">NovaX Arena Waitlist Brief</p>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-black leading-tight mb-3">
-                  <span className="text-white">NovaX</span>{" "}
-                  <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Arena Waitlist</span>
-                </h2>
-                <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                  Real-world experiential learning <span className="bg-gradient-to-r from-white to-yellow-300 bg-clip-text text-transparent font-semibold">in your hands</span>.
-                  Growth engine environment with adaptive personalization, XP difficulty pressure, and scar badges that prove conflict survived.
-                </p>
-              </div>
-            </div>
-
             <div className="animate-fade-in [animation-delay:1s] opacity-0">
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-cosmic-glow to-transparent mx-auto" />
             </div>
