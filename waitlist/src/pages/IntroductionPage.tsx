@@ -28,7 +28,7 @@ const IntroductionPage = () => {
           <path d="M16 4C18.2 4 20 5.8 20 8C20 10.2 18.2 12 16 12C13.8 12 12 10.2 12 8C12 5.8 13.8 4 16 4ZM16 6C14.9 6 14 6.9 14 8C14 9.1 14.9 10 16 10C17.1 10 18 9.1 18 8C18 6.9 17.1 6 16 6ZM4 8C5.1 8 6 8.9 6 10C6 11.1 5.1 12 4 12C2.9 12 2 11.1 2 10C2 8.9 2.9 8 4 8ZM4 10C4 10 4 10 4 10ZM16 14C19.3 14 22 16.7 22 20V22H10V20C10 16.7 12.7 14 16 14ZM8 18C8 18 8 18 8 18H8V20H8V18ZM4 14C6.2 14 8 15.8 8 18V20H2V18C2 15.8 3.8 14 4 14Z" />
         </svg>
       ),
-      text: "Join",
+      text: "Waitlist",
     },
   ];
 
@@ -90,8 +90,22 @@ const IntroductionPage = () => {
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/90 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-2 sm:px-4">
                 first all in one learning environment
                 <br className="block sm:hidden" />
-                <span className="text-cosmic-aurora"> with AI thinking tracker</span>
+                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-300 bg-clip-text text-transparent"> with AI thinking tracker</span>
               </p>
+            </div>
+
+            <div className="animate-fade-in [animation-delay:0.8s] opacity-0">
+              <div className="max-w-3xl mx-auto rounded-2xl border border-white/20 bg-black/35 backdrop-blur-md p-4 sm:p-6 text-left">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gray-300 mb-3">NovaX Arena Waitlist Brief</p>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-black leading-tight mb-3">
+                  <span className="text-white">NovaX</span>{" "}
+                  <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Arena Waitlist</span>
+                </h2>
+                <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                  Real-world experiential learning <span className="bg-gradient-to-r from-white to-yellow-300 bg-clip-text text-transparent font-semibold">in your hands</span>.
+                  Growth engine environment with adaptive personalization, XP difficulty pressure, and scar badges that prove conflict survived.
+                </p>
+              </div>
             </div>
 
             <div className="animate-fade-in [animation-delay:1s] opacity-0">
@@ -214,7 +228,7 @@ const IntroductionPage = () => {
                 data-scroll="fade-up"
               >
                 <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
-                  Ready to <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Unlock</span> Your Team?
+                  Ready to <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Join Waitlist</span> Your Team?
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
                   Join thousands of students who can be your collaboration and discussion team
@@ -224,7 +238,7 @@ const IntroductionPage = () => {
                     className="border border-gray-600 text-gray-300 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 w-full sm:w-auto"
                     onClick={scrollToVideoDemo}
                   >
-                    Watch Demo
+                    View Waitlist Demo
                   </button>
                 </div>
               </div>
@@ -647,10 +661,10 @@ const IntroductionPage = () => {
                 >
                   <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-                      Join the <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Revolution</span>
+                      Join the <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Waitlist</span>
                     </h2>
                     <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-                      Be part of the next generation of orchestrators. Start your journey today.
+                      Be part of the next generation of orchestrators. Secure your waitlist spot today.
                     </p>
                   </div>
 
@@ -659,7 +673,7 @@ const IntroductionPage = () => {
                       to="/login"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
-                      Get Started Now
+                      Join Waitlist Now
                     </Link>
                     <Link
                       to="/pricing"
@@ -683,10 +697,10 @@ const IntroductionPage = () => {
                 >
                   <div className="text-center mb-8">
                     <h2 className="text-2xl font-bold mb-4">
-                      Join the <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Revolution</span>
+                      Join the <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Waitlist</span>
                     </h2>
                     <p className="text-base text-gray-300 max-w-2xl mx-auto">
-                      Be part of the next generation of orchestrators. Start your journey today.
+                      Be part of the next generation of orchestrators. Secure your waitlist spot today.
                     </p>
                   </div>
 
@@ -695,7 +709,7 @@ const IntroductionPage = () => {
                       to="/login"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-2xl text-base font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full text-center"
                     >
-                      Get Started Now
+                      Join Waitlist Now
                     </Link>
                     <Link
                       to="/pricing"
