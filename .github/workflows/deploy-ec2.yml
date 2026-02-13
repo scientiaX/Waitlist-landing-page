@@ -29,6 +29,26 @@ jobs:
           script: |
             set -euo pipefail
 
+            if ! command -v docker >/dev/null 2>&1; then
+              if command -v apt-get >/dev/null 2>&1; then
+                sudo apt-get update
+                sudo apt-get install -y docker.io
+              elif command -v dnf >/dev/null 2>&1; then
+                sudo dnf install -y docker
+              elif command -v yum >/dev/null 2>&1; then
+                sudo yum install -y docker
+              else
+                echo "Docker belum terinstall dan OS package manager tidak dikenali." >&2
+                exit 1
+              fi
+
+              if command -v systemctl >/dev/null 2>&1; then
+                sudo systemctl enable --now docker
+              else
+                sudo service docker start || true
+              fi
+            fi
+
             if [ -n "${EC2_APP_DIR:-}" ] && [ -f "$EC2_APP_DIR/waitlist/Dockerfile" ]; then
               ROOT_DIR="$EC2_APP_DIR"
             else
