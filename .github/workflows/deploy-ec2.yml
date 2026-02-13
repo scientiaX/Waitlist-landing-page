@@ -79,21 +79,34 @@ jobs:
 
             cd waitlist
 
-            PORT="${EC2_HTTP_PORT:-80}"
-            if sudo ss -ltnp "( sport = :$PORT )" 2>/dev/null | grep -q ":$PORT"; then
-              CONTAINERS="$(sudo docker ps --filter "publish=$PORT" --format '{{.ID}}' || true)"
-              if [ -n "$CONTAINERS" ]; then
-                sudo docker stop $CONTAINERS || true
-                sudo docker rm $CONTAINERS || true
-              fi
-            fi
-
             sudo docker build --target prod -t waitlist:latest .
             sudo docker stop waitlist || true
             sudo docker rm waitlist || true
+
+            pick_port() {
+              if [ -n "${EC2_HTTP_PORT:-}" ]; then
+                echo "${EC2_HTTP_PORT}"
+                return 0
+              fi
+              if sudo ss -ltnp "( sport = :80 )" 2>/dev/null | grep -q ":80"; then
+                echo "8080"
+              else
+                echo "80"
+              fi
+            }
+
+            PORT="$(pick_port)"
+
+            CONTAINERS="$(sudo docker ps --filter "publish=$PORT" --format '{{.ID}}' || true)"
+            if [ -n "$CONTAINERS" ]; then
+              sudo docker stop $CONTAINERS || true
+              sudo docker rm $CONTAINERS || true
+            fi
+
             if sudo ss -ltnp "( sport = :$PORT )" 2>/dev/null | grep -q ":$PORT"; then
-              echo "Port $PORT masih dipakai. Hentikan service yang pakai port itu atau set secret EC2_HTTP_PORT (mis. 8080)." >&2
+              echo "Port $PORT masih dipakai oleh service host. Set secret EC2_HTTP_PORT ke port lain (mis. 8080/3000) atau matikan service yang pakai port itu." >&2
               exit 1
             fi
 
             sudo docker run -d --restart unless-stopped --name waitlist -p "$PORT:80" waitlist:latest
+            echo "Deployed: http://$(hostname -I 2>/dev/null | awk '{print $1}' || echo 'EC2_IP'):$PORT/"
