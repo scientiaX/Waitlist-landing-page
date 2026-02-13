@@ -8,9 +8,14 @@ const IntroductionPage = () => {
   useScrollAnimation();
 
   const videoDemoRef = useRef<HTMLDivElement>(null);
+  const WAITLIST_FORM_URL = "https://tally.so/r/zxDAyZ";
 
   const scrollToVideoDemo = () => {
     videoDemoRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const openWaitlistForm = () => {
+    window.open(WAITLIST_FORM_URL, "_blank", "noopener,noreferrer");
   };
 
   const navItems = [
@@ -21,6 +26,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "Profil",
+      onClick: () => navigate("/login"),
     },
     {
       icon: (
@@ -29,6 +35,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "Waitlist",
+      onClick: openWaitlistForm,
     },
   ];
 
@@ -54,7 +61,7 @@ const IntroductionPage = () => {
               className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
                         text-white/90 hover:text-white hover:bg-white/10
                         transition-colors"
-              onClick={() => navigate("/login")}
+              onClick={item.onClick}
             >
               <span className="w-4 h-4">{item.icon}</span>
               <span className="hidden sm:inline text-sm font-normal">
@@ -151,12 +158,14 @@ const IntroductionPage = () => {
                 <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl text-left">
                   Experience learning from a dynamic world simulation with adaptive AI.
                 </p>
-                <Link
-                  to="/login"
+                <a
+                  href={WAITLIST_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto inline-block text-center"
                 >
                   Join Waitlist
-                </Link>
+                </a>
               </div>
 
               <div className="mb-6 sm:mb-8 md:mb-24 px-3 sm:px-4">
@@ -750,12 +759,14 @@ const IntroductionPage = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Link
-                      to="/login"
+                    <a
+                      href={WAITLIST_FORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                       Join Waitlist Now
-                    </Link>
+                    </a>
                     <Link
                       to="/pricing"
                       className="border border-gray-600 text-gray-300 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300"
@@ -786,12 +797,14 @@ const IntroductionPage = () => {
                   </div>
 
                   <div className="flex flex-col gap-3 justify-center items-center">
-                    <Link
-                      to="/login"
+                    <a
+                      href={WAITLIST_FORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-2xl text-base font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full text-center"
                     >
                       Join Waitlist Now
-                    </Link>
+                    </a>
                     <Link
                       to="/pricing"
                       className="border border-gray-600 text-gray-300 px-6 py-3 rounded-2xl text-base font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 w-full text-center"
