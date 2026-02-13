@@ -65,16 +65,15 @@ const IntroductionPage = () => {
         </nav>
       </header>
 
-      <div className="min-h-screen relative overflow-hidden bg-background">
+      <div className="min-h-screen relative overflow-hidden bg-black">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url(/assets/cosmic-planet-background.jpg)" }}
         />
 
-        <div className="absolute inset-0 bg-cosmic-gradient opacity-80" />
-        <div className="absolute inset-0 bg-planet-glow opacity-60" />
-
-        <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-cosmic-glow rounded-full blur-3xl animate-cosmic-glow opacity-30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55vh] bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_35%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,1)_100%)]" />
 
         <div className="relative z-10 min-h-screen flex items-center justify-center px-3 sm:px-4 md:px-6">
           <div className="text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto">
@@ -99,8 +98,8 @@ const IntroductionPage = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-10 right-10 w-32 h-32 bg-cosmic-aurora/20 rounded-full blur-2xl animate-cosmic-glow [animation-delay:2s]" />
-          <div className="absolute top-20 right-1/4 w-16 h-16 bg-cosmic-sunrise/30 rounded-full blur-xl animate-float [animation-delay:3s]" />
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-cosmic-aurora/10 rounded-full blur-2xl animate-cosmic-glow [animation-delay:2s]" />
+          <div className="absolute top-20 right-1/4 w-16 h-16 bg-cosmic-sunrise/15 rounded-full blur-xl animate-float [animation-delay:3s]" />
         </div>
       </div>
 
@@ -110,7 +109,7 @@ const IntroductionPage = () => {
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05]">
               fun like a game.{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                effective like a work.
+                light like Duolingo. effective like work.
               </span>
             </h2>
 
@@ -149,7 +148,7 @@ const IntroductionPage = () => {
                     In 10 Minutes
                   </span>
                 </h1>
-                <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl text-left">
                   Experience learning from a dynamic world simulation with adaptive AI.
                 </p>
                 <Link
@@ -160,47 +159,112 @@ const IntroductionPage = () => {
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-24 px-3 sm:px-4">
-                <div
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                  data-scroll="fade-up"
-                  style={{ animationDelay: "0.2s" }}
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-2 md:mb-3 text-white">Lightning Fast Learning</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">AI-powered adaptation that matches your pace and accelerates your understanding</p>
-                </div>
+              <div className="mb-6 sm:mb-8 md:mb-24 px-3 sm:px-4">
+                <div className="space-y-10 sm:space-y-12">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+                    <div
+                      className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.2s" }}
+                    >
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
+                        Adaptive Dynamic Simulation
+                      </h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed mt-2 max-w-xl">
+                        Dynamic simulation flow personalized for you-realtime.
+                      </p>
+                    </div>
 
-                <div
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                  data-scroll="fade-up"
-                  style={{ animationDelay: "0.4s" }}
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
+                    <div
+                      className="relative w-full aspect-video overflow-hidden rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.3s" }}
+                    >
+                      <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/assets/cosmic-planet-background.jpg"
+                      >
+                        <source src="/assets/feature-lightning.mp4" type="video/mp4" />
+                      </video>
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
+                    </div>
                   </div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-2 md:mb-3 text-white">Smart Problem Solving</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">Real-world challenges that build critical thinking and analytical skills</p>
-                </div>
 
-                <div
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                  data-scroll="fade-up"
-                  style={{ animationDelay: "0.6s" }}
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r from-pink-500 to-red-600 rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+                    <div
+                      className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.2s" }}
+                    >
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
+                        Personalized Arena
+                      </h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed mt-2 max-w-xl">
+                        Arena environments and challenges personalized to your capabilities.
+                      </p>
+                    </div>
+
+                    <div
+                      className="relative w-full aspect-video overflow-hidden rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.3s" }}
+                    >
+                      <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/assets/cosmic-planet-background.jpg"
+                      >
+                        <source src="/assets/feature-problem-solving.mp4" type="video/mp4" />
+                      </video>
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
+                    </div>
                   </div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-2 md:mb-3 text-white">Progress Tracking</h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">Monitor your growth with detailed analytics with thinking process</p>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+                    <div
+                      className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.2s" }}
+                    >
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
+                        Smartest Superhuman
+                      </h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed mt-2 max-w-xl">
+                        AI that analyzes and adapts to your responses, how you act and who you are in real time.
+                      </p>
+                    </div>
+
+                    <div
+                      className="relative w-full aspect-video overflow-hidden rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.3s" }}
+                    >
+                      <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/assets/cosmic-planet-background.jpg"
+                      >
+                        <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
+                      </video>
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
