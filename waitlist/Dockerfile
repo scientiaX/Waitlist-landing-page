@@ -1,19 +1,24 @@
-FROM node:20-alpine AS base
+FROM node:20-alpine AS deps
 
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
 RUN npm ci
 
-COPY . .
+FROM deps AS dev
 
-FROM base AS dev
+COPY . .
 
 EXPOSE 5173
 
 CMD ["npm", "run", "dev"]
 
-FROM base AS build
+FROM deps AS build
+
+COPY index.html postcss.config.js tailwind.config.js vite.config.ts ./
+COPY tsconfig*.json ./
+COPY src ./src
+COPY public ./public
 
 RUN npm run build
 
