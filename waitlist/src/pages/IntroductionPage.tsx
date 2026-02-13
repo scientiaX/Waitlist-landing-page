@@ -14,10 +14,6 @@ const IntroductionPage = () => {
     videoDemoRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const openWaitlistForm = () => {
-    window.open(WAITLIST_FORM_URL, "_blank", "noopener,noreferrer");
-  };
-
   const navItems = [
     {
       icon: (
@@ -35,7 +31,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "Waitlist",
-      onClick: openWaitlistForm,
+      href: WAITLIST_FORM_URL,
     },
   ];
 
@@ -58,15 +54,27 @@ const IntroductionPage = () => {
             <Button
               key={idx}
               variant="ghost"
+              asChild={Boolean("href" in item)}
               className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
                         text-white/90 hover:text-white hover:bg-white/10
                         transition-colors"
-              onClick={item.onClick}
+              onClick={"href" in item ? undefined : item.onClick}
             >
-              <span className="w-4 h-4">{item.icon}</span>
-              <span className="hidden sm:inline text-sm font-normal">
-                {item.text}
-              </span>
+              {"href" in item ? (
+                <a href={item.href}>
+                  <span className="w-4 h-4">{item.icon}</span>
+                  <span className="hidden sm:inline text-sm font-normal">
+                    {item.text}
+                  </span>
+                </a>
+              ) : (
+                <>
+                  <span className="w-4 h-4">{item.icon}</span>
+                  <span className="hidden sm:inline text-sm font-normal">
+                    {item.text}
+                  </span>
+                </>
+              )}
             </Button>
           ))}
         </nav>
@@ -160,8 +168,6 @@ const IntroductionPage = () => {
                 </p>
                 <a
                   href={WAITLIST_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto inline-block text-center"
                 >
                   Join Waitlist
@@ -761,8 +767,6 @@ const IntroductionPage = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a
                       href={WAITLIST_FORM_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                       Join Waitlist Now
@@ -799,8 +803,6 @@ const IntroductionPage = () => {
                   <div className="flex flex-col gap-3 justify-center items-center">
                     <a
                       href={WAITLIST_FORM_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-2xl text-base font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full text-center"
                     >
                       Join Waitlist Now
