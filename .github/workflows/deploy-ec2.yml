@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -16,51 +16,48 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        id: ecr
-        uses: aws-actions/amazon-ecr-login@v2
-
-      - name: Build and push image
-        working-directory: waitlist
-        env:
-          ECR_REGISTRY: ${{ steps.ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          set -euo pipefail
-          IMAGE_URI="$ECR_REGISTRY/$ECR_REPOSITORY"
-          docker build --target prod -t "$IMAGE_URI:$IMAGE_TAG" -t "$IMAGE_URI:latest" .
-          docker push "$IMAGE_URI:$IMAGE_TAG"
-          docker push "$IMAGE_URI:latest"
-
       - name: Deploy on EC2
         uses: appleboy/ssh-action@v1.2.0
         env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          ECR_REGISTRY: ${{ steps.ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+          BRANCH: ${{ github.ref_name }}
+          EC2_APP_DIR: ${{ secrets.EC2_APP_DIR }}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          envs: AWS_REGION,ECR_REGISTRY,ECR_REPOSITORY
+          envs: BRANCH,EC2_APP_DIR
           script: |
             set -euo pipefail
-            IMAGE_URI="$ECR_REGISTRY/$ECR_REPOSITORY:latest"
 
-            aws ecr get-login-password --region "$AWS_REGION" \
-              | sudo docker login --username AWS --password-stdin "$ECR_REGISTRY"
+            if [ -n "${EC2_APP_DIR:-}" ] && [ -f "$EC2_APP_DIR/waitlist/Dockerfile" ]; then
+              ROOT_DIR="$EC2_APP_DIR"
+            else
+              ROOT_DIR=""
+              for d in \
+                "$HOME/Waitlist-landing-page" \
+                "$HOME/waitlist-landing-page" \
+                "/opt/Waitlist-landing-page" \
+                "/srv/Waitlist-landing-page"
+              do
+                if [ -f "$d/waitlist/Dockerfile" ]; then
+                  ROOT_DIR="$d"
+                  break
+                fi
+              done
+            fi
 
-            sudo docker pull "$IMAGE_URI"
+            if [ -z "$ROOT_DIR" ]; then
+              echo "Repo tidak ketemu di EC2. Set secret EC2_APP_DIR ke folder root repo." >&2
+              exit 1
+            fi
 
+            cd "$ROOT_DIR"
+            git fetch --all --prune
+            git checkout -B "$BRANCH" "origin/$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            cd waitlist
+            sudo docker build --target prod -t waitlist:latest .
             sudo docker stop waitlist || true
             sudo docker rm waitlist || true
-
-            sudo docker run -d --restart unless-stopped --name waitlist -p 80:80 "$IMAGE_URI"
+            sudo docker run -d --restart unless-stopped --name waitlist -p 80:80 waitlist:latest
