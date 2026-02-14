@@ -286,7 +286,7 @@ const IntroductionPage = () => {
                         preload="auto"
                         poster="/assets/cosmic-planet-background.jpg"
                       >
-                        <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
+                        <source src="/assets/scene/ai%20analyze%20behavior.mp4" type="video/mp4" />
                       </video>
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
