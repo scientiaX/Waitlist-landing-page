@@ -364,11 +364,11 @@ const IntroductionPage = () => {
             >
               <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4">
                 <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
-                  online thinking lab<br />
-                  with transcendent AI
+                  Track real progress<br />
+                  with new credentials that prove what you can solve
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
-                  Online lab + Project portfolio + Deep-learning method + transcendent AI
+                  Thinking patterns + Project portfolio + Decision tree + Capability artifacts
                 </p>
               </div>
 
@@ -376,29 +376,36 @@ const IntroductionPage = () => {
                 <div className="p-0 relative z-10">
                   <div className="flex overflow-x-auto gap-3 sm:gap-4 pb-4 md:flex-col md:space-y-6 lg:space-y-8 md:overflow-x-visible snap-x snap-mandatory px-3 sm:px-4 md:px-0">
                     <div
-                      className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-sm min-w-[260px] sm:min-w-[280px] md:min-w-0 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.2s" }}
-                    >
-                      <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
-                        DEEP-LEARNING METHOD
-                      </h2>
-                      <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed">
-                        Spaced repetition, active retrieval, meta cognition reflection, problem based and project based learning
-                      </p>
-                    </div>
-
-                    <div
-                      className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-sm min-w-[260px] sm:min-w-[280px] md:min-w-0 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      className="w-full min-w-[260px] sm:min-w-[280px] md:min-w-0 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
                       data-scroll="fade-up"
                       style={{ animationDelay: "0.4s" }}
                     >
-                      <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
-                        AI TRANSCENDENT
-                      </h2>
-                      <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed">
-                        AI that assesses thinking skills in all conditions while learning, arguing, experimenting, working on projects and collaborating
-                      </p>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+                        <div className="text-left">
+                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
+                            AI TRANSCENDENT
+                          </h2>
+                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
+                            AI that assesses thinking skills in all conditions while learning, arguing, experimenting, working on projects and collaborating
+                          </p>
+                        </div>
+
+                        <div className="relative w-full aspect-video overflow-hidden rounded-3xl">
+                          <video
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            poster="/assets/cosmic-planet-background.jpg"
+                          >
+                            <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
+                          </video>
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-gray-100/60 via-transparent to-gray-100/60" />
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-100/50 via-transparent to-gray-100/50" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1001,7 +1008,7 @@ const IntroductionPage = () => {
           >
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                © 2024 novaX. All rights reserved.
+                © 2025 novaX. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy</a>
