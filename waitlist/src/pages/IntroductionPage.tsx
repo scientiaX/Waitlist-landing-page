@@ -128,22 +128,34 @@ const IntroductionPage = () => {
               </span>
             </h2>
 
-            <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 sm:px-6 sm:py-8">
-                <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
-                  when effectiveness meets fun
-                </p>
+            <div className="mt-10 sm:mt-12">
+              <div className="relative w-full max-w-5xl mx-auto aspect-video overflow-hidden rounded-3xl">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/assets/cosmic-planet-background.jpg"
+                >
+                  <source src="/assets/feature-lightning.mp4" type="video/mp4" />
+                </video>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40" />
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 sm:px-6 sm:py-8">
-                <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
-                  when complexity become intuitivity
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 sm:px-6 sm:py-8">
-                <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
-                  when degrees lose to capability
-                </p>
-              </div>
+            </div>
+
+            <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
+                when effectiveness meets fun
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
+                when complexity become intuitivity
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
+                when degrees lose to capability
+              </p>
             </div>
           </div>
         </div>
