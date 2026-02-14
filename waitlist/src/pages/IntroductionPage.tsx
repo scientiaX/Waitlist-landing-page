@@ -362,12 +362,12 @@ const IntroductionPage = () => {
               className="max-w-6xl mx-auto pb-8 sm:pb-14 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
               data-scroll="fade-up"
             >
-              <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4">
-                <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
+              <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4 text-center md:text-left">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
                   Track real progress<br />
                   with new credentials that prove what you can solve
                 </h1>
-                <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto md:mx-0">
                   Thinking patterns + Project portfolio + Decision tree + Capability artifacts
                 </p>
               </div>
@@ -402,8 +402,6 @@ const IntroductionPage = () => {
                           >
                             <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
                           </video>
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-gray-100/60 via-transparent to-gray-100/60" />
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-100/50 via-transparent to-gray-100/50" />
                         </div>
                       </div>
                     </div>
