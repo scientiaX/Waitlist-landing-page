@@ -368,7 +368,7 @@ const IntroductionPage = () => {
                   with new credentials that prove what you can solve
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto md:mx-0">
-                  Thinking patterns + Project portfolio + Decision tree + Capability artifacts
+                  Thinking patterns + Project portfolio + Decision trees + Capability artifacts
                 </p>
               </div>
 
@@ -386,7 +386,7 @@ const IntroductionPage = () => {
                             AI TRANSCENDENT
                           </h2>
                           <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
-                            AI that assesses thinking skills in all conditions while learning, arguing, experimenting, working on projects and collaborating
+                            AI that accesses and analyzes thinking patterns, behavior patterns, decision trees and capability levels.
                           </p>
                         </div>
 
