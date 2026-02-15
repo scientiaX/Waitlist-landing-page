@@ -46,7 +46,7 @@ const IntroductionPage = () => {
         style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
       >
         <div className="font-bold text-white text-lg sm:text-xl tracking-wide select-none">
-          novaX
+          NovaX
         </div>
 
         <nav className="flex items-center space-x-1 sm:space-x-1.5">
@@ -95,7 +95,7 @@ const IntroductionPage = () => {
             <div className="space-y-3 sm:space-y-4 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider">
                 <span className="bg-gradient-to-r from-cosmic-glow via-cosmic-aurora to-cosmic-sunrise bg-clip-text text-transparent animate-float">
-                  novaX
+                  NovaX
                 </span>
               </h1>
             </div>
@@ -141,8 +141,6 @@ const IntroductionPage = () => {
                 >
                   <source src="/assets/feature-lightning.mp4" type="video/mp4" />
                 </video>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40" />
               </div>
             </div>
 
@@ -151,7 +149,7 @@ const IntroductionPage = () => {
                 when effectiveness meets fun
               </p>
               <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
-                when complexity become intuitivity
+                when complexity becomes intuitive
               </p>
               <p className="text-base sm:text-lg md:text-xl text-white/90 font-semibold">
                 when degrees lose to capability
@@ -218,8 +216,6 @@ const IntroductionPage = () => {
                       >
                         <source src="/assets/feature-lightning.mp4" type="video/mp4" />
                       </video>
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
                     </div>
                   </div>
 
@@ -253,8 +249,6 @@ const IntroductionPage = () => {
                       >
                         <source src="/assets/feature-problem-solving.mp4" type="video/mp4" />
                       </video>
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
                     </div>
                   </div>
 
@@ -288,8 +282,6 @@ const IntroductionPage = () => {
                       >
                         <source src="/assets/scene/ai%20analyze%20behavior.mp4" type="video/mp4" />
                       </video>
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
                     </div>
                   </div>
                 </div>
@@ -364,8 +356,8 @@ const IntroductionPage = () => {
             >
               <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4 text-center md:text-left">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
-                  Track real progress<br />
-                  with new credentials that prove what you can solve
+                  Track real progress with new credentials <br />
+                  that prove what you can solve
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto md:mx-0">
                   Thinking patterns + Project portfolio + Decision trees + Capability artifacts
@@ -383,10 +375,10 @@ const IntroductionPage = () => {
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                         <div className="text-left">
                           <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
-                            AI TRANSCENDENT
+                            GET REAL PROOF OF YOUR CAPABILITIES
                           </h2>
                           <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
-                            AI that accesses and analyzes thinking patterns, behavior patterns, decision trees and capability levels.
+                            Credentials that show what problems you solve, how you solve them, and every decision you make — not paper exam degrees.
                           </p>
                         </div>
 
@@ -933,7 +925,7 @@ const IntroductionPage = () => {
               style={{ animationDelay: "0.2s" }}
             >
               <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-4">novaX</h3>
+                <h3 className="text-2xl font-bold mb-4">NovaX</h3>
                 <p className="text-gray-300 mb-6 max-w-md">
                   Empowering the next generation of problem solvers and truth seekers with AI-powered learning experiences that adapt to your unique thought.
                 </p>
@@ -1006,7 +998,7 @@ const IntroductionPage = () => {
           >
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                © 2025 novaX. All rights reserved.
+                © 2025 NovaX. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy</a>
