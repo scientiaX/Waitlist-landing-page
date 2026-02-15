@@ -169,7 +169,7 @@ const IntroductionPage = () => {
               <div className="mb-6 sm:mb-8 md:mb-16 pt-6 sm:pt-8 md:pt-24 px-3 sm:px-4">
                 <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
                   Transform Your Mind<br />
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-red-500 via-blue-500 to-[#877D2D] bg-clip-text text-transparent">
                     In 10 Minutes
                   </span>
                 </h1>
@@ -178,9 +178,11 @@ const IntroductionPage = () => {
                 </p>
                 <a
                   href={WAITLIST_FORM_URL}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto inline-block text-center"
+                  className="bg-white/10 backdrop-blur-xl border border-white/20 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-2xl text-sm sm:text-base md:text-lg font-semibold hover:bg-white/15 hover:border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-black/20 w-full sm:w-auto inline-block text-center"
                 >
-                  Join Waitlist
+                  <span className="bg-gradient-to-r from-[#877D2D] to-[#EFDADA] bg-clip-text text-transparent">
+                    Join Waitlist
+                  </span>
                 </a>
               </div>
 
