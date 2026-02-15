@@ -248,7 +248,7 @@ const IntroductionPage = () => {
                         preload="auto"
                         poster="/assets/cosmic-planet-background.jpg"
                       >
-                        <source src="/assets/feature-problem-solving.mp4" type="video/mp4" />
+                        <source src="/assets/scene/arena%20gen.mp4" type="video/mp4" />
                       </video>
                     </div>
                   </div>
