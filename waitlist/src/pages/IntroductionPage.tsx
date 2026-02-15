@@ -29,8 +29,8 @@ const IntroductionPage = () => {
           <path d="M16 4C18.2 4 20 5.8 20 8C20 10.2 18.2 12 16 12C13.8 12 12 10.2 12 8C12 5.8 13.8 4 16 4ZM16 6C14.9 6 14 6.9 14 8C14 9.1 14.9 10 16 10C17.1 10 18 9.1 18 8C18 6.9 17.1 6 16 6ZM4 8C5.1 8 6 8.9 6 10C6 11.1 5.1 12 4 12C2.9 12 2 11.1 2 10C2 8.9 2.9 8 4 8ZM4 10C4 10 4 10 4 10ZM16 14C19.3 14 22 16.7 22 20V22H10V20C10 16.7 12.7 14 16 14ZM8 18C8 18 8 18 8 18H8V20H8V18ZM4 14C6.2 14 8 15.8 8 18V20H2V18C2 15.8 3.8 14 4 14Z" />
         </svg>
       ),
-      text: "Waitlist",
-      href: WAITLIST_FORM_URL,
+      text: "About Us",
+      href: "#about-us",
     },
   ];
 
@@ -761,6 +761,7 @@ const IntroductionPage = () => {
       </div>
 
       <footer
+        id="about-us"
         className="bg-gray-900 text-white py-16 sm:py-20 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
         data-scroll="fade-up"
       >
