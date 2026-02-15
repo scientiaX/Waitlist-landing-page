@@ -1,10 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useRef } from "react";
 
 const IntroductionPage = () => {
-  const navigate = useNavigate();
   useScrollAnimation();
 
   const videoDemoRef = useRef<HTMLDivElement>(null);
@@ -21,8 +20,8 @@ const IntroductionPage = () => {
           <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 14.1 11 13 11V22H11V16H9V22H7V11C5.9 11 5 10.1 5 9V7L3 7V9H1V7C1 5.9 1.9 5 3 5H21C22.1 5 23 5.9 23 7V9H21Z" />
         </svg>
       ),
-      text: "Profil",
-      onClick: () => navigate("/login"),
+      text: "How It Works",
+      onClick: scrollToVideoDemo,
     },
     {
       icon: (
