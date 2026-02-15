@@ -215,7 +215,7 @@ const IntroductionPage = () => {
                         preload="auto"
                         poster="/assets/cosmic-planet-background.jpg"
                       >
-                        <source src="/assets/feature-lightning.mp4" type="video/mp4" />
+                        <source src="/assets/scene/dynamic%20arena.mp4" type="video/mp4" />
                       </video>
                     </div>
                   </div>
@@ -539,100 +539,6 @@ const IntroductionPage = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="bg-black text-white py-12 sm:py-32 mt-16 sm:mt-24 rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-              data-scroll="fade-up"
-            >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <div
-                  className="mb-12 sm:mb-32 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                  data-scroll="fade-up"
-                >
-                  <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                      The Future of Learning
-                    </h2>
-                    <p className="text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                      Experience education reimagined with AI-powered problem solving that matches Human learning styles
-                    </p>
-                  </div>
-
-                  <div className="flex overflow-x-auto gap-3 mt-8 sm:mt-16 pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-x-visible snap-x snap-mandatory px-2 md:px-0">
-                    <div
-                      className="text-center p-3 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 min-w-[220px] md:min-w-0 md:p-6 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.2s" }}
-                    >
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                        <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Adaptive Intelligence</h3>
-                      <p className="text-sm md:text-base text-gray-400">Our AI learns your patterns and adapts challenges or reflection to your skill level</p>
-                    </div>
-
-                    <div
-                      className="text-center p-3 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 min-w-[220px] md:min-w-0 md:p-6 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.4s" }}
-                    >
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                        <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Lightning Fast and Immersive</h3>
-                      <p className="text-sm md:text-base text-gray-400">Makes it easy to learn comprehensive learning quickly and effectively</p>
-                    </div>
-
-                    <div
-                      className="text-center p-3 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 min-w-[220px] md:min-w-0 md:p-6 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.6s" }}
-                    >
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-pink-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                        <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Secure & Private</h3>
-                      <p className="text-sm md:text-base text-gray-400">Your learning data is protected from AI training with embedding technology</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="hidden sm:block opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                  data-scroll="fade-down"
-                >
-                  <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-                      Join the <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Waitlist</span>
-                    </h2>
-                    <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-                      Be part of the next generation of orchestrators. Secure your waitlist spot today.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a
-                      href={WAITLIST_FORM_URL}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                    >
-                      Join Waitlist Now
-                    </a>
-                    <Link
-                      to="/pricing"
-                      className="border border-gray-600 text-gray-300 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300"
-                    >
-                      Pricing
-                    </Link>
                   </div>
                 </div>
               </div>
