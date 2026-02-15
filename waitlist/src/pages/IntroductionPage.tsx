@@ -817,8 +817,6 @@ const IntroductionPage = () => {
               <ul className="space-y-3">
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -830,11 +828,8 @@ const IntroductionPage = () => {
             >
               <h4 className="text-lg font-semibold mb-4">Support</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Cookie Policy</a></li>
               </ul>
             </div>
           </div>
@@ -849,9 +844,8 @@ const IntroductionPage = () => {
                 © 2025 NovaX. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>
