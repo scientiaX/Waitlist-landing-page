@@ -8,6 +8,7 @@ const IntroductionPage = () => {
 
   const videoDemoRef = useRef<HTMLDivElement>(null);
   const WAITLIST_FORM_URL = "https://tally.so/r/zxDAyZ";
+  const YOUTUBE_DEMO_VIDEO_ID = "YOUR_VIDEO_ID";
 
   const scrollToVideoDemo = () => {
     videoDemoRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -164,7 +165,7 @@ const IntroductionPage = () => {
                     when effectiveness meets fun
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    Belajar dibuat ringan, cepat, dan bikin ketagihan. Kamu tetap fokus karena tiap langkah terasa seperti game—tapi hasilnya tetap nyata dan terukur.
+                    PBL has proven to be effective, but tedious. We make it short, fast, and addictive by cutting it down to many steps, but it's still effective by making you reflect on the experience — like a game.
                   </p>
                 </div>
               </div>
@@ -177,7 +178,7 @@ const IntroductionPage = () => {
                     when complexity becomes intuitive
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    Konsep rumit dipotong jadi micro-steps yang jelas. Kamu diseret dari bingung ke paham lewat contoh, umpan balik instan, dan latihan yang terasa natural.
+                    Complex concepts are broken down into clear micro-steps. You're guided from confusion to understanding through examples, instant feedback, decision impacts, and exercises that feel natural — one screen, one simple step.
                   </p>
                 </div>
 
@@ -218,7 +219,7 @@ const IntroductionPage = () => {
                     when degrees lose to capability
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    Yang dihitung bukan gelar, tapi kemampuan nyata. Kamu kumpulkan bukti kerja: proyek, keputusan, dan skill artifacts yang bisa ditunjukkan kapan pun.
+                    NovaX measures your problem-solving abilities — regardless of your unique approach. We accurately record every experience you have. No empty claims.
                   </p>
                 </div>
               </div>
@@ -436,9 +437,9 @@ const IntroductionPage = () => {
 
               <div className="relative">
                 <div className="p-0 relative z-10">
-                  <div className="flex overflow-x-auto gap-3 sm:gap-4 pb-4 md:flex-col md:space-y-6 lg:space-y-8 md:overflow-x-visible snap-x snap-mandatory px-3 sm:px-4 md:px-0">
+                  <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10 px-3 sm:px-4 md:px-0">
                     <div
-                      className="w-full min-w-[260px] sm:min-w-[280px] md:min-w-0 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      className="w-full opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
                       data-scroll="fade-up"
                       style={{ animationDelay: "0.4s" }}
                     >
@@ -469,7 +470,7 @@ const IntroductionPage = () => {
                     </div>
 
                     <div
-                      className="w-full min-w-[260px] sm:min-w-[280px] md:min-w-0 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      className="w-full opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
                       data-scroll="fade-up"
                       style={{ animationDelay: "0.55s" }}
                     >
@@ -655,79 +656,19 @@ const IntroductionPage = () => {
               data-scroll="fade-up"
             >
               <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-                  <div
-                    className="relative order-1 lg:order-2 w-full lg:w-1/2 mb-8 lg:mb-0 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                    data-scroll="fade-up"
-                    style={{ animationDelay: "0.2s" }}
-                  >
-                    <div className="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl aspect-video">
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                        <div className="text-center">
-                          <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-red-700 transition-colors cursor-pointer">
-                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                          <p className="text-gray-300 text-lg font-medium">Video Demo</p>
-                          <p className="text-gray-400 text-sm">YouTube link will be added here</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-gray-200">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-gray-900">2:45 min</p>
-                          <p className="text-xs text-gray-500">Demo video</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg order-2 lg:order-1 w-full lg:w-1/2 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                    data-scroll="fade-up"
-                    style={{ animationDelay: "0.4s" }}
-                  >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
-                      See How It Works
-                    </h2>
-                    <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed">
-                      Watch our interactive demonstration to see how AI-powered problem solving transforms your learning experience in just 10 minutes a day.
-                    </p>
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="flex items-start space-x-2 sm:space-x-3">
-                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-sm sm:text-base text-gray-700">Real-time AI adaptation to your thinking level</p>
-                      </div>
-                      <div className="flex items-start space-x-2 sm:space-x-3">
-                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-sm sm:text-base text-gray-700">Interactive problem-solving scenarios</p>
-                      </div>
-                      <div className="flex items-start space-x-2 sm:space-x-3">
-                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                          <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <p className="text-sm sm:text-base text-gray-700">Instant feedback and progress tracking by procces not result</p>
-                      </div>
-                    </div>
-                  </div>
+                <div
+                  className="relative w-full max-w-5xl mx-auto aspect-video overflow-hidden rounded-3xl shadow-2xl bg-black opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                  data-scroll="fade-up"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  <iframe
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${YOUTUBE_DEMO_VIDEO_ID}?rel=0&modestbranding=1`}
+                    title="NovaX Demo Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
                 </div>
               </div>
             </div>
