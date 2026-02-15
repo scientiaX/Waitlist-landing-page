@@ -22,7 +22,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "How It Works",
-      onClick: scrollToVideoDemo,
+      to: "/how-it-works",
     },
     {
       icon: (
@@ -31,7 +31,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "About Us",
-      href: "#about-us",
+      to: "/about-us",
     },
   ];
 
@@ -54,19 +54,19 @@ const IntroductionPage = () => {
             <Button
               key={idx}
               variant="ghost"
-              asChild={Boolean("href" in item)}
+              asChild={Boolean("to" in item)}
               className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
                         text-white/90 hover:text-white hover:bg-white/10
                         transition-colors"
-              onClick={"href" in item ? undefined : item.onClick}
+              onClick={"to" in item ? undefined : item.onClick}
             >
-              {"href" in item ? (
-                <a href={item.href}>
+              {"to" in item ? (
+                <Link to={item.to}>
                   <span className="w-4 h-4">{item.icon}</span>
                   <span className="hidden sm:inline text-sm font-normal">
                     {item.text}
                   </span>
-                </a>
+                </Link>
               ) : (
                 <>
                   <span className="w-4 h-4">{item.icon}</span>
@@ -731,9 +731,9 @@ const IntroductionPage = () => {
             >
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                <li><Link to="/about-us" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+                <li><Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</Link></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
 
@@ -744,8 +744,8 @@ const IntroductionPage = () => {
             >
               <h4 className="text-lg font-semibold mb-4">Support</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
+                <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
