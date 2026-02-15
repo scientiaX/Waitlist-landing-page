@@ -8,7 +8,7 @@ const IntroductionPage = () => {
 
   const videoDemoRef = useRef<HTMLDivElement>(null);
   const WAITLIST_FORM_URL = "https://tally.so/r/zxDAyZ";
-  const YOUTUBE_DEMO_VIDEO_ID = "YOUR_VIDEO_ID";
+  const YOUTUBE_DEMO_VIDEO_ID = "sga8QDniKls";
 
   const scrollToVideoDemo = () => {
     videoDemoRef.current?.scrollIntoView({ behavior: "smooth" });
