@@ -417,8 +417,7 @@ const IntroductionPage = () => {
             >
               <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4 text-center md:text-left">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
-                  Track real progress with new credentials <br />
-                  that prove what you can solve
+                  Track real progress with new credentials that prove what you can solve
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto md:mx-0">
                   Thinking patterns + Project portfolio + Decision trees + Capability artifacts
