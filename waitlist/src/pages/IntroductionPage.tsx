@@ -375,6 +375,37 @@ const IntroductionPage = () => {
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                         <div className="text-left">
                           <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
+                            AI TRANSCENDENT
+                          </h2>
+                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
+                            AI that accesses and analyzes thinking patterns, behavior patterns, decision trees and capability levels.
+                          </p>
+                        </div>
+
+                        <div className="relative w-full aspect-video overflow-hidden rounded-3xl">
+                          <video
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            poster="/assets/cosmic-planet-background.jpg"
+                          >
+                            <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
+                          </video>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className="w-full min-w-[260px] sm:min-w-[280px] md:min-w-0 snap-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                      data-scroll="fade-up"
+                      style={{ animationDelay: "0.55s" }}
+                    >
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+                        <div className="text-left">
+                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
                             GET REAL PROOF OF YOUR CAPABILITIES
                           </h2>
                           <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
