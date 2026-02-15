@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useRef } from "react";
+import { type ReactElement, useRef } from "react";
 
 const IntroductionPage = () => {
   useScrollAnimation();
@@ -33,7 +33,7 @@ const IntroductionPage = () => {
       text: "About Us",
       to: "/about-us",
     },
-  ];
+  ] satisfies Array<{ icon: ReactElement; text: string; to: string }>;
 
   return (
     <div>
@@ -54,27 +54,17 @@ const IntroductionPage = () => {
             <Button
               key={idx}
               variant="ghost"
-              asChild={Boolean("to" in item)}
+              asChild
               className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
                         text-white/90 hover:text-white hover:bg-white/10
                         transition-colors"
-              onClick={"to" in item ? undefined : item.onClick}
             >
-              {"to" in item ? (
-                <Link to={item.to}>
-                  <span className="w-4 h-4">{item.icon}</span>
-                  <span className="hidden sm:inline text-sm font-normal">
-                    {item.text}
-                  </span>
-                </Link>
-              ) : (
-                <>
-                  <span className="w-4 h-4">{item.icon}</span>
-                  <span className="hidden sm:inline text-sm font-normal">
-                    {item.text}
-                  </span>
-                </>
-              )}
+              <Link to={item.to}>
+                <span className="w-4 h-4">{item.icon}</span>
+                <span className="hidden sm:inline text-sm font-normal">
+                  {item.text}
+                </span>
+              </Link>
             </Button>
           ))}
         </nav>
@@ -760,8 +750,8 @@ const IntroductionPage = () => {
                 © 2025 NovaX. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+                <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
               </div>
             </div>
           </div>
