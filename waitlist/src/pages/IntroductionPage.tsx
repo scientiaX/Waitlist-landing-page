@@ -137,16 +137,13 @@ const IntroductionPage = () => {
             <div className="mt-10 sm:mt-12 bg-white rounded-3xl overflow-hidden border border-black/10 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
                 <div className="p-6 sm:p-10">
-                  <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-emerald-100 via-lime-50 to-sky-100 border border-emerald-200/60 relative overflow-hidden">
-                    <div className="absolute -top-8 -left-8 w-40 h-40 rounded-full bg-emerald-300/35 blur-2xl" />
-                    <div className="absolute -bottom-10 -right-10 w-56 h-56 rounded-full bg-sky-300/35 blur-2xl" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 rounded-3xl bg-white/75 backdrop-blur border border-white shadow-lg flex items-center justify-center">
-                        <svg className="w-10 h-10 text-[#58CC02]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
+                  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
+                    <img
+                      src="/assets/fun.png"
+                      alt="When effectiveness meets fun"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
 
@@ -173,16 +170,13 @@ const IntroductionPage = () => {
                 </div>
 
                 <div className="p-6 sm:p-10 md:order-2">
-                  <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-sky-100 via-violet-50 to-rose-100 border border-sky-200/60 relative overflow-hidden">
-                    <div className="absolute -top-10 -right-10 w-56 h-56 rounded-full bg-violet-300/30 blur-2xl" />
-                    <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-rose-300/30 blur-2xl" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 rounded-3xl bg-white/75 backdrop-blur border border-white shadow-lg flex items-center justify-center">
-                        <svg className="w-10 h-10 text-[#58CC02]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                    </div>
+                  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
+                    <img
+                      src="/assets/complex.png"
+                      alt="When complexity becomes intuitive"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -191,16 +185,13 @@ const IntroductionPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
                 <div className="p-6 sm:p-10">
-                  <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-amber-100 via-lime-50 to-emerald-100 border border-amber-200/60 relative overflow-hidden">
-                    <div className="absolute -top-10 -left-10 w-56 h-56 rounded-full bg-amber-300/30 blur-2xl" />
-                    <div className="absolute -bottom-10 -right-10 w-56 h-56 rounded-full bg-emerald-300/30 blur-2xl" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 rounded-3xl bg-white/75 backdrop-blur border border-white shadow-lg flex items-center justify-center">
-                        <svg className="w-10 h-10 text-[#58CC02]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2v4c0 1.105 1.343 2 3 2s3-.895 3-2v-4c0-1.105-1.343-2-3-2zM7 10c0-2.761 2.239-5 5-5s5 2.239 5 5v6a7 7 0 11-10 0v-6z" />
-                        </svg>
-                      </div>
-                    </div>
+                  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
+                    <img
+                      src="/assets/degrees.png"
+                      alt="When degrees lose to capability"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
 
