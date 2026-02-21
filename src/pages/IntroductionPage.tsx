@@ -169,7 +169,7 @@ const IntroductionPage = () => {
                   </p>
                 </div>
 
-                <div className="p-6 sm:p-10 md:order-2">
+                <div className="p-6 sm:p-10 order-first md:order-2">
                   <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
                     <img
                       src="/assets/complex.png"
