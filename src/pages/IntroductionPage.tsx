@@ -486,41 +486,7 @@ const IntroductionPage = () => {
 
 
 
-            <div
-              className="sm:hidden bg-black text-white py-12 mt-8 rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-              data-scroll="fade-up"
-            >
-              <div className="max-w-6xl mx-auto px-4">
-                <div
-                  className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                  data-scroll="fade-down"
-                >
-                  <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold mb-4">
-                      Join the <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Waitlist</span>
-                    </h2>
-                    <p className="text-base text-gray-300 max-w-2xl mx-auto">
-                      Be part of the next generation of orchestrators. Secure your waitlist spot today.
-                    </p>
-                  </div>
 
-                  <div className="flex flex-col gap-3 justify-center items-center">
-                    <a
-                      href={WAITLIST_FORM_URL}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-2xl text-base font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full text-center"
-                    >
-                      Join Waitlist Now
-                    </a>
-                    <Link
-                      to="/pricing"
-                      className="border border-gray-600 text-gray-300 px-6 py-3 rounded-2xl text-base font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 w-full text-center"
-                    >
-                      Pricing
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div
               ref={videoDemoRef}
