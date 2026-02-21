@@ -344,7 +344,7 @@ const IntroductionPage = () => {
                 data-scroll="fade-up"
               >
                 <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8 px-3 sm:px-4">
-                  Why <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Problem Solving</span> Matters
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Problem Solving</span> Matters
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-8 max-w-4xl mx-auto px-3 sm:px-4">
                   <div
@@ -383,14 +383,14 @@ const IntroductionPage = () => {
                   Ready to <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Join Waitlist</span>?
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Join thousands of students who can be your collaboration and discussion team
+                  Join thousands of students and train your problem solving skills collaboratively
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center">
                   <button
                     className="border border-gray-600 text-gray-300 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 w-full sm:w-auto"
                     onClick={scrollToVideoDemo}
                   >
-                    View Waitlist Demo
+                    Watch The Introduction Video
                   </button>
                 </div>
               </div>
