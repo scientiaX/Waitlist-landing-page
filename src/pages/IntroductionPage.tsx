@@ -571,7 +571,7 @@ const IntroductionPage = () => {
               <ul className="space-y-3">
                 <li><Link to="/about-us" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
                 <li><Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</Link></li>
-                <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+                <li><a href="mailto:novaniansupp@gmail.com" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
 
