@@ -101,6 +101,20 @@ const IntroductionPage = () => {
             <div className="animate-fade-in [animation-delay:1s] opacity-0">
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-cosmic-glow to-transparent mx-auto" />
             </div>
+
+            <div className="animate-fade-in [animation-delay:1.2s]">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+                <a
+                  href={WAITLIST_FORM_URL}
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/20 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)]"
+                >
+                  Join Waitlist
+                </a>
+                <span className="inline-flex items-center justify-center rounded-md border border-yellow-200/30 bg-transparent px-5 py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-yellow-100/80 backdrop-blur-md pointer-events-none select-none">
+                  Beta Tester
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-cosmic-aurora/10 rounded-full blur-2xl animate-cosmic-glow [animation-delay:2s]" />
@@ -111,7 +125,10 @@ const IntroductionPage = () => {
       <div className="min-h-screen bg-black text-white flex items-center">
         <div className="w-full px-4 sm:px-6">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05]">
+            <h2
+              className="text-balance font-black tracking-tight leading-[1.05]"
+              style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)" }}
+            >
               fun like a game.{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 light like Duolingo. effective like work.
@@ -120,17 +137,12 @@ const IntroductionPage = () => {
 
             <div className="mt-10 sm:mt-12">
               <div className="relative w-full max-w-5xl mx-auto aspect-video overflow-hidden rounded-3xl">
-                <video
+                <img
+                  src="/assets/work.png"
+                  alt="NovaX experience preview"
                   className="w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  poster="/assets/cosmic-planet-background.jpg"
-                >
-                  <source src="/assets/feature-lightning.mp4" type="video/mp4" />
-                </video>
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -157,7 +169,7 @@ const IntroductionPage = () => {
                 </div>
               </div>
 
-              <div className="h-px bg-gray-100" />
+              <div className="h-px bg-gray-100 my-8 sm:my-10 md:my-12" />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
                 <div className="p-6 sm:p-10 text-left md:order-1">
@@ -181,7 +193,7 @@ const IntroductionPage = () => {
                 </div>
               </div>
 
-              <div className="h-px bg-gray-100" />
+              <div className="h-px bg-gray-100 my-8 sm:my-10 md:my-12" />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
                 <div className="p-6 sm:p-10">
@@ -237,7 +249,7 @@ const IntroductionPage = () => {
               </div>
 
               <div className="mb-6 sm:mb-8 md:mb-24 px-3 sm:px-4">
-                <div className="space-y-10 sm:space-y-12">
+                <div className="space-y-24 sm:space-y-28 lg:space-y-32">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                     <div
                       className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
@@ -408,16 +420,16 @@ const IntroductionPage = () => {
             >
               <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4 text-left">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
-                  Track real progress with new credentials that prove what you can solve
+                  A new way to prove your abilities
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl">
-                  Thinking patterns + Project portfolio + Decision trees + Capability artifacts
+                  We’re reinventing proof of ability — real evidence of what you can solve.
                 </p>
               </div>
 
               <div className="relative">
                 <div className="p-0 relative z-10">
-                  <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10 px-3 sm:px-4 md:px-0">
+                  <div className="flex flex-col gap-14 sm:gap-24 lg:gap-28 px-3 sm:px-4 md:px-0">
                     <div
                       className="w-full opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
                       data-scroll="fade-up"
