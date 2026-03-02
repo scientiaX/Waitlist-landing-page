@@ -10,21 +10,13 @@ const AboutUsPage = () => {
       role: "World Builder",
       name: "Alya (Mock)",
       tagline: "Turns late-night what-ifs into simulated worlds.",
+      photo: "/assets/work.png",
     },
     {
       role: "Systems Architect",
       name: "Rafi (Mock)",
       tagline: "Obsessed with how tiny decisions change entire outcomes.",
-    },
-    {
-      role: "Game Feel Designer",
-      name: "Nara (Mock)",
-      tagline: "Thinks in feedback loops, sound cues, and chill dopamine.",
-    },
-    {
-      role: "AI Mentor Wrangler",
-      name: "Fikri (Mock)",
-      tagline: "Teaches AI to think more like the seniors we wish we had.",
+      photo: "/assets/fun.png",
     },
   ];
 
@@ -218,23 +210,23 @@ const AboutUsPage = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5">
             {studentSquad.map((member) => (
               <article
                 key={member.name}
                 className="group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 sm:p-5 hover:border-emerald-400/70 hover:bg-white/10 transition-all duration-300"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-400 via-cyan-400 to-sky-500 flex items-center justify-center text-xs font-semibold text-black shadow-lg shadow-emerald-500/40">
-                      {member.name.substring(0, 2)}
-                    </div>
-                    <div className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 border border-black/80 shadow-[0_0_0_4px_rgba(0,0,0,0.75)]" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-emerald-300/90">{member.role}</p>
-                    <p className="text-sm font-semibold">{member.name}</p>
-                  </div>
+                <div className="w-full aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/30 mb-4">
+                  <img
+                    src={member.photo}
+                    alt={`${member.name} profile mock`}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-emerald-300/90">{member.role}</p>
+                  <p className="text-sm font-semibold">{member.name}</p>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-200/90 leading-relaxed">{member.tagline}</p>
                 <p className="mt-3 text-[11px] text-gray-400">
