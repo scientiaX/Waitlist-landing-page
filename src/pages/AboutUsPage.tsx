@@ -70,7 +70,7 @@ const AboutUsPage = () => {
     {
       title: "Narratives over Notifications",
       description:
-        "Instead of spamming you with reminders, we build arcs: seasons, quests, and storylines that make you want to come back because the world moved while you were gone.",
+        "Instead of spamming you with reminders, we build arcs: seasons, quests, streaks, and role-playing storylines that make you want to come back because the world moved while you were gone.",
       accent: "from-amber-400/80 to-rose-400/80",
     },
   ];
@@ -303,10 +303,6 @@ const AboutUsPage = () => {
                 <div className="relative">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3">{value.title}</h3>
                   <p className="text-sm sm:text-base text-gray-100/90 leading-relaxed mb-4">{value.description}</p>
-                  <p className="text-[11px] text-gray-300/80">
-                    This is placeholder copy. Rewrite these as your own non-negotiable rules for how your platform
-                    treats students.
-                  </p>
                 </div>
               </article>
             ))}
