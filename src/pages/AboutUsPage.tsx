@@ -35,7 +35,7 @@ const AboutUsPage = () => {
       label: "Quest 02",
       title: "Gathering Students as a Team",
       description:
-        "I found a persistent student (enosh) in a community, we chatted and we experienced the same concerns. We researched all day, conducted surveys, and experimented to investigate this problem.",
+        "I found a persistent student (Enosh) in a community, we chatted and we experienced the same concerns. We researched all day, conducted surveys, and experimented to investigate this problem.",
       year: "june 2025",
     },
     {
