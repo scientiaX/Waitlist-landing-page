@@ -131,7 +131,7 @@ const IntroductionPage = () => {
                   Join Waitlist
                 </a>
                 <span className="inline-flex items-center justify-center rounded-md border border-yellow-200/30 bg-transparent px-5 py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-yellow-100/80 backdrop-blur-md pointer-events-none select-none">
-                  Beta Tester
+                  Beta Testing
                 </span>
               </div>
             </div>
