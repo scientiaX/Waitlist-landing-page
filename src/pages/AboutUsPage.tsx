@@ -7,15 +7,15 @@ const AboutUsPage = () => {
 
   const studentSquad = [
     {
-      role: "World Builder",
-      name: "Alya (Mock)",
-      tagline: "Turns late-night what-ifs into simulated worlds.",
+      role: "Founder",
+      name: "Nafis",
+      tagline: "Are we able to discover a god-level learning method that combines unfalsified credentials?",
       photo: "/assets/work.png",
     },
     {
-      role: "Systems Architect",
-      name: "Rafi (Mock)",
-      tagline: "Obsessed with how tiny decisions change entire outcomes.",
+      role: "Co-Founder",
+      name: "Enosh",
+      tagline: "How can fun and seriousness coexist? Like a competitive game.",
       photo: "/assets/fun.png",
     },
   ];
@@ -23,24 +23,31 @@ const AboutUsPage = () => {
   const questTimeline = [
     {
       label: "Quest 01",
-      title: "From Homework to World-Building",
+      title: "From Anxiety to Questions",
       description:
-        "We were just students stuck in endless theory, craving something that felt like actually touching reality — so we started prototyping worlds instead of worksheets.",
-      year: "Year 1",
+        "It started when I (Nafis) studied machine learning and realized that knowledge would become cheaper and we would be replaced — then I asked myself \"Is learning worthless now?\".",
+      year: "may 2025",
     },
     {
       label: "Quest 02",
-      title: "Turning Confusion into a Game Loop",
+      title: "Gathering Students as a Team",
       description:
-        "Every time we got stuck, we wrote down the moment of confusion and turned it into a step in a simulation. Confusion stopped being a bug and became the core game mechanic.",
-      year: "Year 2",
+        "I found a persistent student (enosh) in a community, we chatted and we experienced the same concerns. We researched all day, conducted surveys, and experimented to investigate this problem.",
+      year: "june 2025",
     },
     {
       label: "Quest 03",
+      title: "The Idea Was Born",
+      description:
+        "We found a real concept, engineered it to make it fun and easy — yet effective. We tested and experimented the prototype on classmates and students.",
+      year: "october 2025",
+    },
+        {
+      label: "Quest 04",
       title: "Building an Arena for Everyone",
       description:
-        "Friends from completely different majors tried the early arenas. It worked. Problem solving felt less like exam panic — more like a boss fight you actually want to retry.",
-      year: "Year 3",
+        "It's the end of the month, and we've decided to do further research and develop the prototype to an advanced stage, and we plan to bring more students to experience what we're experiencing. The beta test will be open soon for the waitlist.",
+      year: "december 2025",
     },
   ];
 
@@ -134,9 +141,9 @@ const AboutUsPage = () => {
                 so we built it.
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-200/90 leading-relaxed max-w-xl">
-                NovaX started as a group chat full of screenshots, failed attempts, and late-night questions like
-                &quot;why doesn&apos;t learning feel like unlocking a new map?&quot;. We didn&apos;t want another course.
-                We wanted a world that reacts when you think differently.
+                NovaX began with a restlessness that AI would make knowledge and learning feel useless, and a question
+                that wouldn&apos;t leave us: &quot;why does AI make learning feel as effortless as breathing, while for us,
+                learning feels as hard as surviving? what is left for us?&quot;
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
@@ -148,20 +155,17 @@ const AboutUsPage = () => {
                 <div className="flex items-center text-xs sm:text-sm text-gray-300/80">
                   <div className="flex -space-x-2 mr-3">
                     <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-emerald-400 to-cyan-500 border border-black/60 flex items-center justify-center text-[10px] font-semibold">
-                      S1
+                      NF
                     </div>
                     <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-violet-500 to-fuchsia-500 border border-black/60 flex items-center justify-center text-[10px] font-semibold">
-                      S2
-                    </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-400 to-red-500 border border-black/60 flex items-center justify-center text-[10px] font-semibold">
-                      S3
+                      EN
                     </div>
                   </div>
                   <span className="max-w-[14rem]">
-                    Mock founding squad · real student problems. Replace with your own crew later.
+                    Nafis · Enosh.
                   </span>
                 </div>
-              </div>
+              </div>  
             </div>
 
             <div className="relative">
@@ -186,10 +190,6 @@ const AboutUsPage = () => {
                     So we asked: what if &quot;study&quot; felt more like queuing into a cooperative raid? Same effort,
                     but with storylines, worlds, and a mentor that sees how you think — not just what you memorized.
                   </p>
-                  <p className="text-gray-400/90">
-                    This page is a mock narrative scaffold. Swap the names, story beats, and visuals with your real
-                    journey when you&apos;re ready.
-                  </p>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@ const AboutUsPage = () => {
               The student squad behind the arena
             </h2>
             <span className="hidden sm:inline text-xs font-mono text-gray-400">
-              ROLE · NAME (MOCK) · TAGLINE
+              ROLE · NAME · TAGLINE
             </span>
           </div>
 
@@ -219,7 +219,7 @@ const AboutUsPage = () => {
                 <div className="w-full aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/30 mb-4">
                   <img
                     src={member.photo}
-                    alt={`${member.name} profile mock`}
+                    alt={`${member.name} profile`}
                     className="w-full h-full object-contain"
                     loading="lazy"
                   />
@@ -229,9 +229,6 @@ const AboutUsPage = () => {
                   <p className="text-sm font-semibold">{member.name}</p>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-200/90 leading-relaxed">{member.tagline}</p>
-                <p className="mt-3 text-[11px] text-gray-400">
-                  Replace with your real team members, portraits, and mini origin stories.
-                </p>
 
                 <div className="pointer-events-none absolute inset-0 rounded-2xl border border-emerald-400/0 group-hover:border-emerald-400/50 group-hover:shadow-[0_0_40px_rgba(16,185,129,0.35)] transition-all duration-300" />
               </article>
@@ -251,10 +248,6 @@ const AboutUsPage = () => {
                 How a study group turned into a learning arena
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-gray-300 max-w-sm">
-              Use this as a narrative spine. Each quest is a chapter of your journey — from frustration to prototype to
-              something other students can actually log into.
-            </p>
           </div>
 
           <div className="relative pl-4 sm:pl-6">
@@ -332,15 +325,12 @@ const AboutUsPage = () => {
               </div>
               <div className="w-full md:w-64">
                 <div className="flex items-center justify-between text-[11px] text-gray-300 mb-1.5">
-                  <span>Problem Solving XP (mock)</span>
-                  <span className="text-emerald-300 font-mono">72%</span>
+                  <span>Problem Solving XP</span>
+                  <span className="text-emerald-300 font-mono">22%</span>
                 </div>
                 <div className="h-2 rounded-full bg-emerald-900/40 overflow-hidden">
-                  <div className="h-full w-[72%] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400" />
+                  <div className="h-full w-[22%] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400" />
                 </div>
-                <p className="mt-1 text-[10px] text-gray-400">
-                  Replace this with your own metrics, proof-of-work, or student stats.
-                </p>
               </div>
             </div>
 
