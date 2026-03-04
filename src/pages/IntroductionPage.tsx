@@ -251,7 +251,7 @@ const IntroductionPage = () => {
               <div className="mb-6 sm:mb-8 md:mb-16 pt-6 sm:pt-8 md:pt-24 px-3 sm:px-4">
                 <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
                   Transform Your Mind<br />
-                  <span className="bg-gradient-to-r from-red-500 via-blue-500 to-[#877D2D] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#D4AF37] via-[#F6E27F] to-[#B8860B] bg-clip-text text-transparent">
                     In 10 Minutes
                   </span>
                 </h1>
@@ -412,7 +412,7 @@ const IntroductionPage = () => {
                 data-scroll="fade-up"
               >
                 <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
-                  Ready to <span className="bg-gradient-to-r from-red-500 via-blue-500 to-yellow-300 bg-clip-text text-transparent">Join Waitlist</span>?
+                  Ready to <span className="bg-gradient-to-r from-[#E6C65B] via-[#F7E7A9] to-[#C58A1F] bg-clip-text text-transparent">Join Waitlist</span>?
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
                   Join thousands of students and train your problem solving skills collaboratively
