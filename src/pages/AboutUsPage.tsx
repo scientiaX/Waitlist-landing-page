@@ -4,6 +4,9 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutUsPage = () => {
   useScrollAnimation();
+  const handleUnavailable = () => {
+    alert("Not available yet");
+  };
 
   const studentSquad = [
     {
@@ -343,7 +346,7 @@ const AboutUsPage = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center sm:justify-between">
               <p className="text-xs sm:text-sm text-gray-300 max-w-md">
                 If you&apos;re a student, educator, or just someone obsessed with better ways to think, this platform
-                is a co-op game — not a finished product. Bring your own story in.
+                is a collaborative learning game but on a serious level — not a finished product. Bring your own story in.
               </p>
               <Button
                 asChild
@@ -353,6 +356,34 @@ const AboutUsPage = () => {
                 <a href="mailto:novaniansupp@gmail.com">Write your chapter with us</a>
               </Button>
             </div>
+          </div>
+        </section>
+        <section
+          className="max-w-4xl mx-auto mt-10 sm:mt-12 px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+          data-scroll="fade-up"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <Button
+              variant="ghost"
+              onClick={handleUnavailable}
+              className="text-xs sm:text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-full px-4 py-2"
+            >
+              How it works
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={handleUnavailable}
+              className="text-xs sm:text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-full px-4 py-2"
+            >
+              Privacy Policy
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={handleUnavailable}
+              className="text-xs sm:text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-full px-4 py-2"
+            >
+              Terms of Service
+            </Button>
           </div>
         </section>
       </main>
