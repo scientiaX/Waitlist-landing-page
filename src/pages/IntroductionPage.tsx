@@ -13,6 +13,9 @@ const IntroductionPage = () => {
   const scrollToVideoDemo = () => {
     videoDemoRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  const handleUnavailable = () => {
+    alert("Not available yet");
+  };
 
   const navItems = [
     {
@@ -22,7 +25,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "How It Works",
-      to: "/how-it-works",
+      onClick: handleUnavailable,
     },
     {
       icon: (
@@ -33,7 +36,7 @@ const IntroductionPage = () => {
       text: "About Us",
       to: "/about-us",
     },
-  ] satisfies Array<{ icon: ReactElement; text: string; to: string }>;
+  ] satisfies Array<{ icon: ReactElement; text: string; to?: string; onClick?: () => void }>;
 
   return (
     <div>
@@ -51,21 +54,38 @@ const IntroductionPage = () => {
 
         <nav className="flex items-center space-x-1 sm:space-x-1.5">
           {navItems.map((item, idx) => (
-            <Button
-              key={idx}
-              variant="ghost"
-              asChild
-              className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                        text-white/90 hover:text-white hover:bg-white/10
-                        transition-colors"
-            >
-              <Link to={item.to}>
+            item.to ? (
+              <Button
+                key={idx}
+                variant="ghost"
+                asChild
+                className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
+                          text-white/90 hover:text-white hover:bg-white/10
+                          transition-colors"
+              >
+                <Link to={item.to}>
+                  <span className="w-4 h-4">{item.icon}</span>
+                  <span className="hidden sm:inline text-sm font-normal">
+                    {item.text}
+                  </span>
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                key={idx}
+                variant="ghost"
+                onClick={item.onClick}
+                className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
+                          text-white/90 hover:text-white hover:bg-white/10
+                          transition-colors"
+                type="button"
+              >
                 <span className="w-4 h-4">{item.icon}</span>
                 <span className="hidden sm:inline text-sm font-normal">
                   {item.text}
                 </span>
-              </Link>
-            </Button>
+              </Button>
+            )
           ))}
         </nav>
       </header>
@@ -582,7 +602,15 @@ const IntroductionPage = () => {
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-3">
                 <li><Link to="/about-us" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</Link></li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={handleUnavailable}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    How It Works
+                  </button>
+                </li>
                 <li><a href="mailto:novaniansupp@gmail.com" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -594,8 +622,24 @@ const IntroductionPage = () => {
             >
               <h4 className="text-lg font-semibold mb-4">Support</h4>
               <ul className="space-y-3">
-                <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={handleUnavailable}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={handleUnavailable}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Terms of Service
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -610,8 +654,20 @@ const IntroductionPage = () => {
                 © 2025 NovaX. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-                <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
+                <button
+                  type="button"
+                  onClick={handleUnavailable}
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
+                  Privacy Policy
+                </button>
+                <button
+                  type="button"
+                  onClick={handleUnavailable}
+                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                >
+                  Terms of Service
+                </button>
               </div>
             </div>
           </div>
