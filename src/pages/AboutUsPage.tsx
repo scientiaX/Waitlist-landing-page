@@ -13,13 +13,13 @@ const AboutUsPage = () => {
       role: "Founder",
       name: "Nafis",
       tagline: "Are we able to discover a god-level learning method that combines unfalsified credentials?",
-      photo: "/assets/work.png",
+      photo: "/assets/senku.jpg",
     },
     {
       role: "Co-Founder",
       name: "Enosh",
       tagline: "How can fun and seriousness coexist? Like a competitive game.",
-      photo: "/assets/fun.png",
+      photo: "/assets/enosh.png",
     },
   ];
 
