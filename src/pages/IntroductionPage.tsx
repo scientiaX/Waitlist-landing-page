@@ -122,17 +122,24 @@ const IntroductionPage = () => {
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-cosmic-glow to-transparent mx-auto" />
             </div>
 
-            <div className="animate-fade-in [animation-delay:1.2s]">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+            <div className="animate-fade-in [animation-delay:1.2s] opacity-0">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-4">
                 <a
                   href={WAITLIST_FORM_URL}
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/20 hover:shadow-[0_12px_30px_rgba(255,255,255,0.15)]"
+                  className="group inline-flex min-h-[44px] w-full max-w-xs sm:w-auto items-center justify-center rounded-full border border-white/25 bg-gradient-to-b from-white/[0.14] to-white/[0.06] px-8 py-2.5 text-sm font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:from-white/[0.2] hover:to-white/[0.08] hover:shadow-[0_1px_0_rgba(255,255,255,0.1)_inset,0_16px_48px_rgba(0,0,0,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
                 >
                   Join Waitlist
                 </a>
-                <span className="inline-flex items-center justify-center rounded-md border border-yellow-200/30 bg-transparent px-5 py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-yellow-100/80 backdrop-blur-md pointer-events-none select-none">
-                  Beta Testing
-                </span>
+                <div
+                  className="inline-flex min-h-[44px] w-full max-w-xs sm:w-auto items-center justify-center gap-2.5 rounded-full border border-amber-200/20 bg-black/30 px-6 py-2.5 text-sm text-amber-100/95 shadow-[0_1px_0_rgba(255,255,255,0.04)_inset] backdrop-blur-md ring-1 ring-white/5 pointer-events-none select-none"
+                  aria-label="Product status: private beta"
+                >
+                  <span className="relative flex h-2 w-2 shrink-0" aria-hidden>
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
+                  </span>
+                  <span className="font-medium tracking-wide">Private beta</span>
+                </div>
               </div>
             </div>
           </div>

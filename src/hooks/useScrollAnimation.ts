@@ -21,7 +21,7 @@ export const useScrollAnimation = () => {
         if (isVisible) {
           const scrollType = element.getAttribute('data-scroll');
 
-          if (scrollType === 'fade-up' && direction === 'down') {
+          if (scrollType === 'fade-up') {
             element.classList.add('opacity-100', 'translate-y-0');
             element.classList.remove('opacity-0', 'translate-y-8');
           } else if (scrollType === 'fade-down' && direction === 'up') {
