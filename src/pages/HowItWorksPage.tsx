@@ -12,7 +12,7 @@ const HowItWorksPage = () => {
       label: "Step 01",
       title: "Enter the arena",
       description:
-        "You choose a world simulation that matches your level — from everyday decisions to high‑stakes, multi‑step scenarios.",
+        "The system tailors a world simulation that matches your level and field — from everyday decisions to high‑stakes, multi‑step scenarios.",
       accent: "from-cyan-400/80 to-emerald-400/80",
     },
     {
@@ -26,7 +26,7 @@ const HowItWorksPage = () => {
       label: "Step 03",
       title: "Reflect with a superhuman mentor",
       description:
-        "An AI mentor analyzes how you think — your patterns, trade‑offs, and blind spots — then explains what actually happened under the hood.",
+        "An AI mentor analyzes how you think — your patterns, trade‑offs, and blind spots — then follow up in real time.",
       accent: "from-amber-400/80 to-rose-400/80",
     },
     {
@@ -146,7 +146,7 @@ const HowItWorksPage = () => {
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-200/90 leading-relaxed max-w-xl">
                 NovaX is a problem-based learning arena wrapped in game energy. You enter a world, make real decisions,
-                get superhuman feedback, and walk away with proof of how you think — not just a completed module.
+                get simulated consequences  , and walk away with proof of how you think — not just a completed module.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -174,7 +174,7 @@ const HowItWorksPage = () => {
 
               <div className="relative rounded-3xl border border-white/10 bg-black/50 backdrop-blur-xl p-5 sm:p-6 shadow-[0_24px_80px_rgba(0,0,0,0.75)]">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-gray-400">SESSION SNAPSHOT (MOCK)</span>
+                  <span className="text-xs font-mono text-gray-400">SESSION SNAPSHOT</span>
                   <span className="inline-flex items-center gap-1 text-[11px] text-cyan-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse" />
                     REAL‑TIME FEEDBACK
@@ -184,15 +184,11 @@ const HowItWorksPage = () => {
                 <div className="space-y-3 text-sm sm:text-[13px] leading-relaxed text-gray-100/90">
                   <p>
                     A student enters a &quot;Market Crash&quot; arena. Every choice — who to trust, what to sacrifice,
-                    when to wait — reshapes the world they&apos;re in.
+                    when to wait, how to manage — reshapes the world they&apos;re in.
                   </p>
                   <p>
                     Behind the scenes, NovaX is mapping their decisions, risk tolerance, and reasoning patterns instead
                     of just logging a final score.
-                  </p>
-                  <p className="text-gray-400/90">
-                    Replace this story with your own flagship arena later. For now, it shows how one short run can feel
-                    like a full case study.
                   </p>
                 </div>
               </div>
@@ -211,10 +207,6 @@ const HowItWorksPage = () => {
                 What actually happens when you press &quot;Start arena&quot;
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-gray-300 max-w-sm">
-              These steps are a narrative template. Swap the copy with your own loops, arenas, and mechanics when NovaX
-              is live.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
