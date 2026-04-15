@@ -315,22 +315,11 @@ const AboutUsPage = () => {
           data-scroll="fade-up"
         >
           <div className="rounded-3xl border border-emerald-400/40 bg-black/60 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_24px_80px_rgba(16,185,129,0.25)]">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5 mb-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-emerald-300/80 mb-2">PLAYER 1 · YOU</p>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
-                  This isn&apos;t our story alone — it&apos;s the arena you step into.
-                </h2>
-              </div>
-              <div className="w-full md:w-64">
-                <div className="flex items-center justify-between text-[11px] text-gray-300 mb-1.5">
-                  <span>Problem Solving XP</span>
-                  <span className="text-emerald-300 font-mono">22%</span>
-                </div>
-                <div className="h-2 rounded-full bg-emerald-900/40 overflow-hidden">
-                  <div className="h-full w-[22%] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-400" />
-                </div>
-              </div>
+            <div className="mb-4">
+              <p className="text-xs uppercase tracking-[0.3em] text-emerald-300/80 mb-2">PLAYER 1 · YOU</p>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
+                This isn&apos;t our story alone — it&apos;s the arena you step into.
+              </h2>
             </div>
 
             <p className="text-sm sm:text-base text-gray-100/90 leading-relaxed mb-5">

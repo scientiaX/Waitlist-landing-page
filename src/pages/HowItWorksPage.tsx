@@ -45,8 +45,8 @@ const HowItWorksPage = () => {
       description:
         "Instead of starting from a PDF or slide deck, you jump into a narrative: a quest with a clear goal, constraints, and context that actually feels alive.",
       items: [
-        "Choose your arena difficulty and theme",
-        "See what skills the quest will stress‑test",
+        "Our system adjusts the arena difficulty and theme for you",
+        "See what skills the arena will stress‑test",
         "Get a short briefing instead of a long syllabus",
       ],
     },
@@ -67,9 +67,9 @@ const HowItWorksPage = () => {
       description:
         "NovaX turns your run into a visual decision map and short reflection, so improvement feels like upgrading a skill tree — not just finishing homework.",
       items: [
-        "Decision trees and key moments highlighted",
-        "Reflection prompts tied to what you actually did",
-        "Signals you can reuse in portfolios and applications",
+        "Key moments highlighted",
+        "Which capabilities improved (e.g., decision-making, communication, prioritization)",
+        "How far each capability progressed, with clear before-to-after growth levels",
       ],
     },
   ];
@@ -237,7 +237,7 @@ const HowItWorksPage = () => {
           <div className="mb-8">
             <p className="text-xs uppercase tracking-[0.3em] text-blue-300/80 mb-2">SESSION JOURNEY</p>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold max-w-2xl">
-              Before, during, and after a NovaX run
+              Before, during, and after an arena run
             </h2>
           </div>
 
@@ -270,36 +270,16 @@ const HowItWorksPage = () => {
           data-scroll="fade-up"
         >
           <div className="rounded-3xl border border-cyan-400/40 bg-black/60 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_24px_80px_rgba(34,211,238,0.25)]">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5 mb-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-2">READY FOR NEXT RUN</p>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
-                  One arena a day is enough to slowly rewire how you see problems.
-                </h2>
-              </div>
-              <div className="w-full md:w-64">
-                <div className="flex items-center justify-between text-[11px] text-gray-300 mb-1.5">
-                  <span>Daily consistency (mock)</span>
-                  <span className="text-cyan-300 font-mono">5 / 7</span>
-                </div>
-                <div className="h-2 rounded-full bg-cyan-900/40 overflow-hidden">
-                  <div className="h-full w-[72%] rounded-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-sky-400" />
-                </div>
-                <p className="mt-1 text-[10px] text-gray-400">
-                  Replace with your real streak logic or progress indicators.
-                </p>
-              </div>
+            <div className="mb-4">
+              <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-2">READY FOR NEXT RUN</p>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
+                One arena a day is enough to slowly rewire how you see problems.
+              </h2>
             </div>
-
-            <p className="text-sm sm:text-base text-gray-100/90 leading-relaxed mb-5">
-              This page is a working storyboard of how NovaX feels in motion. As the product evolves, update the arenas,
-              loops, and examples here — so new students instantly understand what they are actually stepping into.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center sm:justify-between">
               <p className="text-xs sm:text-sm text-gray-300 max-w-md">
-                You can start shaping this journey today: sketch your first arena, define one core loop, and test it
-                with real students.
+              You can start shaping this journey today: be part of the novax journey, try your first arena, feels one core loop, and test it with real students.
               </p>
               <Button
                 asChild

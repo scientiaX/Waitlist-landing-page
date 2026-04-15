@@ -25,7 +25,7 @@ const IntroductionPage = () => {
         </svg>
       ),
       text: "How It Works",
-      onClick: handleUnavailable,
+      to: "/how-it-works",
     },
     {
       icon: (
@@ -610,13 +610,9 @@ const IntroductionPage = () => {
               <ul className="space-y-3">
                 <li><Link to="/about-us" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
                 <li>
-                  <button
-                    type="button"
-                    onClick={handleUnavailable}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
+                  <Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">
                     How It Works
-                  </button>
+                  </Link>
                 </li>
                 <li><a href="mailto:novaniansupp@gmail.com" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
               </ul>
