@@ -17,7 +17,7 @@ const IntroductionPage = () => {
     alert("Not available yet");
   };
 
-  const navItems = [
+  const navItems: Array<{ icon: ReactElement; text: string; to: string }> = [
     {
       icon: (
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -36,7 +36,7 @@ const IntroductionPage = () => {
       text: "About Us",
       to: "/about-us",
     },
-  ] satisfies Array<{ icon: ReactElement; text: string; to?: string; onClick?: () => void }>;
+  ];
 
   return (
     <div>
@@ -54,38 +54,21 @@ const IntroductionPage = () => {
 
         <nav className="flex items-center space-x-1 sm:space-x-1.5">
           {navItems.map((item, idx) => (
-            item.to ? (
-              <Button
-                key={idx}
-                variant="ghost"
-                asChild
-                className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                          text-white/90 hover:text-white hover:bg-white/10
-                          transition-colors"
-              >
-                <Link to={item.to}>
-                  <span className="w-4 h-4">{item.icon}</span>
-                  <span className="hidden sm:inline text-sm font-normal">
-                    {item.text}
-                  </span>
-                </Link>
-              </Button>
-            ) : (
-              <Button
-                key={idx}
-                variant="ghost"
-                onClick={item.onClick}
-                className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                          text-white/90 hover:text-white hover:bg-white/10
-                          transition-colors"
-                type="button"
-              >
+            <Button
+              key={idx}
+              variant="ghost"
+              asChild
+              className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
+                        text-white/90 hover:text-white hover:bg-white/10
+                        transition-colors"
+            >
+              <Link to={item.to}>
                 <span className="w-4 h-4">{item.icon}</span>
                 <span className="hidden sm:inline text-sm font-normal">
                   {item.text}
                 </span>
-              </Button>
-            )
+              </Link>
+            </Button>
           ))}
         </nav>
       </header>
