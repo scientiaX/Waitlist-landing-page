@@ -223,9 +223,6 @@ const AboutUsPage = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif tracking-tight text-stone-50">
               The student squad behind the arena
             </h2>
-            <span className="hidden sm:inline text-[10px] font-mono tracking-widest text-stone-500">
-              ROLE · NAME · TAGLINE
-            </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">

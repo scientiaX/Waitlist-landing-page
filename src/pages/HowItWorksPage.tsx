@@ -173,7 +173,7 @@ const HowItWorksPage = () => {
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-stone-300/95 leading-relaxed max-w-xl ml-4 sm:ml-5 pl-4 sm:pl-5 border-l border-stone-700/80">
                 NovaX is a problem-based learning arena wrapped in game energy. You enter a world, make real decisions,
-                get simulated consequences  , and walk away with proof of how you think — not just a completed module.
+                get simulated consequences, and walk away with proof of how you think — not just a completed module.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 pl-4 sm:pl-5">
