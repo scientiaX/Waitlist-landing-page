@@ -16,7 +16,7 @@ const AboutUsPage = () => {
       photo: "/assets/senku.jpg",
     },
     {
-      role: "Co-Founder",
+      role: "Secondary Founder",
       name: "Enosh",
       tagline: "How can fun and seriousness coexist? Like a competitive game.",
       photo: "/assets/enosh.png",
