@@ -455,18 +455,13 @@ const IntroductionPage = () => {
                           </p>
                         </div>
 
-                        <div className="relative w-full aspect-video overflow-hidden rounded-3xl">
-                          <video
-                            className="w-full h-full object-cover"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            poster="/assets/cosmic-planet-background.jpg"
-                          >
-                            <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
-                          </video>
+                        <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-black">
+                          <img
+                            src="/assets/AI%20transcendent.png"
+                            alt="AI transcendent: thinking, behavior, and decision patterns feeding an AI brain"
+                            className="w-full h-full object-contain"
+                            loading="lazy"
+                          />
                         </div>
                       </div>
                     </div>
