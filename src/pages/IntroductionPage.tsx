@@ -174,7 +174,7 @@ const IntroductionPage = () => {
                     when effectiveness meets fun
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    PBL has proven to be effective, but tedious. We make it short, fast, and addictive by cutting it down to many steps, but it's still effective by making you reflect on the experience — like a game.
+                    PBL has proven to be effective, but tedious. We make it short, fast, and addictive by cutting it down to many steps, but it's still effective by making you reflect on the experience, like a game.
                   </p>
                 </div>
               </div>
@@ -187,7 +187,7 @@ const IntroductionPage = () => {
                     when complexity becomes intuitive
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    Complex concepts are broken down into clear micro-steps. You're guided from confusion to understanding through examples, instant feedback, decision impacts, and exercises that feel natural — one screen, one simple step.
+                    Complex concepts are broken down into clear micro-steps. You're guided from confusion to understanding through examples, instant feedback, decision impacts, and exercises that feel natural: one screen, one simple step.
                   </p>
                 </div>
 
@@ -222,7 +222,7 @@ const IntroductionPage = () => {
                     when degrees lose to capability
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    NovaX measures your problem-solving abilities — regardless of your unique approach. We accurately record every experience you have. No empty claims.
+                    NovaX measures your problem-solving abilities, regardless of your unique approach. We accurately record every experience you have. No empty claims.
                   </p>
                 </div>
               </div>
@@ -433,7 +433,7 @@ const IntroductionPage = () => {
                   A new way to prove your abilities
                 </h1>
                 <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl">
-                  We’re reinventing proof of ability — real evidence of what you can solve.
+                  We’re reinventing proof of ability: real evidence of what you can solve.
                 </p>
               </div>
 
@@ -477,7 +477,7 @@ const IntroductionPage = () => {
                             GET REAL PROOF OF YOUR CAPABILITIES
                           </h2>
                           <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
-                            Credentials that show what problems you solve, how you solve them, and every decision you make — not paper exam degrees.
+                            Credentials that show what problems you solve, how you solve them, and every decision you make, not paper exam degrees.
                           </p>
                         </div>
 

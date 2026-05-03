@@ -12,7 +12,7 @@ const HowItWorksPage = () => {
       label: "Step 01",
       title: "Enter the arena",
       description:
-        "The system tailors a world simulation that matches your level and field — from everyday decisions to high‑stakes, multi‑step scenarios.",
+        "The system tailors a world simulation that matches your level and field, from everyday decisions to high‑stakes, multi‑step scenarios.",
       bar: "bg-gradient-to-b from-amber-400 via-amber-500 to-orange-600",
       chip: "border-amber-500/35 bg-amber-950/40 text-amber-100/90",
     },
@@ -28,7 +28,7 @@ const HowItWorksPage = () => {
       label: "Step 03",
       title: "Reflect with a superhuman mentor",
       description:
-        "An AI mentor analyzes how you think — your patterns, trade‑offs, and blind spots — then follow up in real time.",
+        "An AI mentor analyzes how you think: your patterns, trade‑offs, and blind spots. It follows up in real time.",
       bar: "bg-gradient-to-b from-violet-400 via-fuchsia-500 to-rose-600",
       chip: "border-fuchsia-500/35 bg-fuchsia-950/30 text-fuchsia-100/90",
     },
@@ -69,7 +69,7 @@ const HowItWorksPage = () => {
       phase: "After a session",
       title: "You see the map of your thinking",
       description:
-        "NovaX turns your run into a visual decision map and short reflection, so improvement feels like upgrading a skill tree — not just finishing homework.",
+        "NovaX turns your run into a visual decision map and short reflection, so improvement feels like upgrading a skill tree, not just finishing homework.",
       items: [
         "Key moments highlighted",
         "Which capabilities improved (e.g., decision-making, communication, prioritization)",
@@ -173,7 +173,7 @@ const HowItWorksPage = () => {
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-stone-300/95 leading-relaxed max-w-xl ml-4 sm:ml-5 pl-4 sm:pl-5 border-l border-stone-700/80">
                 NovaX is a problem-based learning arena wrapped in game energy. You enter a world, make real decisions,
-                get simulated consequences, and walk away with proof of how you think — not just a completed module.
+                get simulated consequences, and walk away with proof of how you think, not just a completed module.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 pl-4 sm:pl-5">
@@ -211,8 +211,8 @@ const HowItWorksPage = () => {
 
                 <div className="space-y-3 text-sm sm:text-[13px] leading-relaxed text-stone-200/95">
                   <p>
-                    A student enters a &quot;Market Crash&quot; arena. Every choice — who to trust, what to sacrifice,
-                    when to wait, how to manage — reshapes the world they&apos;re in.
+                    A student enters a &quot;Market Crash&quot; arena. Every choice (who to trust, what to sacrifice,
+                    when to wait, how to manage) reshapes the world they&apos;re in.
                   </p>
                   <p>
                     Behind the scenes, NovaX is mapping their decisions, risk tolerance, and reasoning patterns instead

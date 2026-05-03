@@ -142,8 +142,8 @@ const TermsOfServicePage = () => {
             <section>
               <h2 className="text-lg sm:text-xl font-semibold mb-2">7. Intellectual Property</h2>
               <p className="mb-2">
-                All content on NovaX — including arenas, simulations, storylines, UI, and AI mentor
-                behavior — is owned by NovaX (or its licensors) unless otherwise stated. You agree
+                All content on NovaX, including arenas, simulations, storylines, UI, and AI mentor
+                behavior, is owned by NovaX (or its licensors) unless otherwise stated. You agree
                 not to copy, redistribute, or commercially exploit these materials without
                 permission.
               </p>

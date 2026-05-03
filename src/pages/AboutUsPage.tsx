@@ -28,7 +28,7 @@ const AboutUsPage = () => {
       label: "Quest 01",
       title: "From Anxiety to Questions",
       description:
-        "It started when I (Nafis) studied machine learning and realized that knowledge would become cheaper and we would be replaced — then I asked myself \"Is learning worthless now?\".",
+        "It started when I (Nafis) studied machine learning and realized that knowledge would become cheaper and we would be replaced. Then I asked myself \"Is learning worthless now?\".",
       year: "may 2025",
     },
     {
@@ -42,7 +42,7 @@ const AboutUsPage = () => {
       label: "Quest 03",
       title: "The Idea Was Born",
       description:
-        "We found a real concept, engineered it to make it fun and easy — yet effective. We tested and experimented the prototype on classmates and students.",
+        "We found a real concept, engineered it to make it fun and easy, yet effective. We tested and experimented the prototype on classmates and students.",
       year: "october 2025",
     },
         {
@@ -65,7 +65,7 @@ const AboutUsPage = () => {
     {
       title: "Game Energy, Real Stakes",
       description:
-        "We borrow the best from games — feedback, pacing, progression — and wire it into real-world scenarios. No vanity XP, only signals of actual capability.",
+        "We borrow the best from games (feedback, pacing, progression) and wire it into real-world scenarios. No vanity XP, only signals of actual capability.",
       frame: "border-violet-400/25 shadow-[0_0_0_1px_rgba(167,139,250,0.08)]",
       wash: "from-violet-500/15 via-transparent to-transparent",
     },
@@ -201,12 +201,12 @@ const AboutUsPage = () => {
 
                 <div className="space-y-3 text-sm sm:text-[13px] leading-relaxed text-stone-200/95 relative">
                   <p>
-                    We kept losing motivation in traditional courses. Not because we hated learning — but because
+                    We kept losing motivation in traditional courses. Not because we hated learning, but because
                     nothing responded when we made a different choice.
                   </p>
                   <p>
                     So we asked: what if &quot;study&quot; felt more like queuing into a cooperative raid? Same effort,
-                    but with storylines, worlds, and a mentor that sees how you think — not just what you memorized.
+                    but with storylines, worlds, and a mentor that sees how you think, not just what you memorized.
                   </p>
                 </div>
               </div>
@@ -303,7 +303,7 @@ const AboutUsPage = () => {
           <div className="mb-10 max-w-2xl">
             <p className="text-[11px] uppercase tracking-[0.32em] text-stone-500 mb-2">DESIGN PRINCIPLES</p>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold max-w-2xl font-serif tracking-tight text-stone-50">
-              The rules we use to make learning feel like a game — without losing the seriousness of your future.
+              The rules we use to make learning feel like a game, without losing the seriousness of your future.
             </h2>
           </div>
 
@@ -333,12 +333,12 @@ const AboutUsPage = () => {
             <div className="relative">
               <div className="mb-4">
                 <h2 className="text-lg sm:text-xl md:text-2xl font-semibold font-serif tracking-tight text-stone-50">
-                  This isn&apos;t our story alone — it&apos;s the arena you step into.
+                  This isn&apos;t our story alone: it&apos;s the arena you step into.
                 </h2>
               </div>
 
               <p className="text-sm sm:text-base text-stone-300/95 leading-relaxed mb-5">
-                We&apos;re still students — still learning, still iterating, still wiping on new boss mechanics. NovaX is
+                We&apos;re still students: still learning, still iterating, still wiping on new boss mechanics. NovaX is
                 our attempt to make those attempts visible, trackable, and shareable so more people can level up
                 together, faster.
               </p>
@@ -346,7 +346,7 @@ const AboutUsPage = () => {
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center sm:justify-between">
                 <p className="text-xs sm:text-sm text-stone-400 max-w-md leading-relaxed">
                   If you&apos;re a student, educator, or just someone obsessed with better ways to think, this platform
-                  is a collaborative learning game but on a serious level — not a finished product. Bring your own story in.
+                  is a collaborative learning game but on a serious level, not a finished product. Bring your own story in.
                 </p>
                 <Button
                   asChild
