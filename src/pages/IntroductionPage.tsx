@@ -425,7 +425,7 @@ const IntroductionPage = () => {
         <div className="flex-1 p-4">
           <div className="max-w-7xl mx-auto">
             <div
-              className="max-w-6xl mx-auto pb-8 sm:pb-14 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+              className="max-w-7xl mx-auto pb-8 sm:pb-14 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
               data-scroll="fade-up"
             >
               <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4 text-left">
@@ -445,17 +445,17 @@ const IntroductionPage = () => {
                       data-scroll="fade-up"
                       style={{ animationDelay: "0.4s" }}
                     >
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-                        <div className="text-left">
+                      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] gap-6 lg:gap-x-2 lg:gap-y-6 items-center">
+                        <div className="text-left lg:min-w-0 lg:pr-1">
                           <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
                             AI TRANSCENDENT
                           </h2>
-                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
+                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-none lg:max-w-[28ch]">
                             AI that accesses and analyzes thinking patterns, behavior patterns, decision trees and capability levels.
                           </p>
                         </div>
 
-                        <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-black">
+                        <div className="relative w-full min-h-[200px] sm:min-h-[240px] lg:min-h-[min(52vw,_420px)] aspect-video lg:aspect-auto lg:h-[min(52vw,_420px)] overflow-hidden rounded-3xl bg-black">
                           <img
                             src="/assets/AI%20transcendent.png"
                             alt="AI transcendent: thinking, behavior, and decision patterns feeding an AI brain"
@@ -471,17 +471,17 @@ const IntroductionPage = () => {
                       data-scroll="fade-up"
                       style={{ animationDelay: "0.55s" }}
                     >
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-                        <div className="text-left">
+                      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] gap-6 lg:gap-x-2 lg:gap-y-6 items-center">
+                        <div className="text-left lg:min-w-0 lg:pr-1">
                           <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
                             GET REAL PROOF OF YOUR CAPABILITIES
                           </h2>
-                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-2xl">
+                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-none lg:max-w-[28ch]">
                             Credentials that show what problems you solve, how you solve them, and every decision you make, not paper exam degrees.
                           </p>
                         </div>
 
-                        <div className="relative w-full aspect-video overflow-hidden rounded-3xl">
+                        <div className="relative w-full min-h-[200px] sm:min-h-[240px] lg:min-h-[min(52vw,_420px)] aspect-video lg:aspect-auto lg:h-[min(52vw,_420px)] overflow-hidden rounded-3xl">
                           <video
                             className="w-full h-full object-cover"
                             autoPlay
