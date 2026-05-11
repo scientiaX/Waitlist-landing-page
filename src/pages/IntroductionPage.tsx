@@ -40,11 +40,17 @@ const IntroductionPage = () => {
 
   return (
     <div>
+      <style>{`
+        @keyframes novaXMinutesGradientFlow {
+          0% { background-position: 200% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
       <header
         className="fixed z-50 left-1/2 -translate-x-1/2
                   flex items-center justify-between
                   px-3 py-2 sm:px-4 sm:py-3 rounded-[18px]
-                  bg-black/60 backdrop-blur-lg border border-white/10 shadow-2xl
+                  bg-[#0F1117]/60 backdrop-blur-lg border border-white/10 shadow-2xl
                   max-w-4xl w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]"
         style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
       >
@@ -73,15 +79,15 @@ const IntroductionPage = () => {
         </nav>
       </header>
 
-      <div className="min-h-screen relative overflow-hidden bg-black">
+      <div className="min-h-screen relative overflow-hidden bg-[#0F1117]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url(/assets/cosmic-planet-background.jpg)" }}
         />
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/45" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/35" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55vh] bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_35%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,1)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[rgb(15_17_23/0.45)] via-transparent to-[rgb(15_17_23/0.45)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgb(15_17_23/0.35)] via-transparent to-[rgb(15_17_23/0.35)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55vh] bg-[linear-gradient(to_bottom,rgba(15,17,23,0)_0%,rgba(15,17,23,0)_35%,rgba(15,17,23,0.55)_70%,rgba(15,17,23,1)_100%)]" />
 
         <div className="relative z-10 min-h-screen flex items-center justify-center px-3 sm:px-4 md:px-6">
           <div className="text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto">
@@ -132,7 +138,7 @@ const IntroductionPage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-black text-white flex items-center">
+      <div className="min-h-screen bg-[#0F1117] text-white flex items-center">
         <div className="w-full px-4 sm:px-6">
           <div className="max-w-6xl mx-auto text-center">
             <h2
@@ -170,7 +176,7 @@ const IntroductionPage = () => {
                 </div>
 
                 <div className="p-6 sm:p-10 text-left">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#58CC02]">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-black">
                     when effectiveness meets fun
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
@@ -183,7 +189,7 @@ const IntroductionPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
                 <div className="p-6 sm:p-10 text-left md:order-1">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#58CC02]">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-black">
                     when complexity becomes intuitive
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
@@ -218,7 +224,7 @@ const IntroductionPage = () => {
                 </div>
 
                 <div className="p-6 sm:p-10 text-left">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#58CC02]">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-black">
                     when degrees lose to capability
                   </h3>
                   <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
@@ -231,7 +237,7 @@ const IntroductionPage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-black text-white flex flex-col">
+      <div className="min-h-screen bg-[#0F1117] text-white flex flex-col">
         <div className="flex-1 p-4">
           <div className="max-w-7xl mx-auto">
             <div
@@ -241,7 +247,17 @@ const IntroductionPage = () => {
               <div className="mb-6 sm:mb-8 md:mb-16 pt-6 sm:pt-8 md:pt-24 px-3 sm:px-4">
                 <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
                   Transform Your Mind<br />
-                  <span className="bg-gradient-to-r from-[#D4AF37] via-[#F6E27F] to-[#B8860B] bg-clip-text text-transparent">
+                  <span
+                    className="bg-clip-text text-transparent"
+                    style={{
+                      backgroundImage: "linear-gradient(to right, #D97757,rgb(227, 227, 20),rgb(231, 24, 24), #D97757)",
+                      backgroundSize: "200% auto",
+                      animation:
+                        "novaXMinutesGradientFlow 2.3s linear infinite",
+                      willChange: "background-position",
+                      display: "inline-block",
+                    }}
+                  >
                     In 10 Minutes
                   </span>
                 </h1>
@@ -421,7 +437,7 @@ const IntroductionPage = () => {
         </div>
       </div>
 
-      <div className="min-h-screen bg-gray-100 flex flex-col">
+      <div className="min-h-screen bg-[#E8E4D9] flex flex-col">
         <div className="flex-1 p-4">
           <div className="max-w-7xl mx-auto">
             <div
@@ -447,7 +463,7 @@ const IntroductionPage = () => {
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] gap-6 lg:gap-x-2 lg:gap-y-6 items-center">
                         <div className="text-left lg:min-w-0 lg:pr-1">
-                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
+                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                             AI TRANSCENDENT
                           </h2>
                           <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-none lg:max-w-[28ch]">
@@ -473,7 +489,7 @@ const IntroductionPage = () => {
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] gap-6 lg:gap-x-2 lg:gap-y-6 items-center">
                         <div className="text-left lg:min-w-0 lg:pr-1">
-                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-yellow-500 mb-2 sm:mb-3 md:mb-4">
+                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                             GET REAL PROOF OF YOUR CAPABILITIES
                           </h2>
                           <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-none lg:max-w-[28ch]">
@@ -659,3 +675,4 @@ const IntroductionPage = () => {
 };
 
 export default IntroductionPage;
+
