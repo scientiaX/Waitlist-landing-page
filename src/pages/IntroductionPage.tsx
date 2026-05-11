@@ -147,7 +147,7 @@ const IntroductionPage = () => {
             >
               fun like a game.{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                light like Duolingo. effective like work.
+                effective like work.
               </span>
             </h2>
 
