@@ -2,395 +2,323 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+const studentSquad = [
+  {
+    role: "Founder",
+    name: "Nafis",
+    tagline: "Are we able to discover a god-level learning method that also creates unfalsified credentials?",
+    focus: "Learning systems, brain research, capability proof, product direction",
+    photo: "/assets/senku.jpg",
+  },
+  {
+    role: "Secondary Founder",
+    name: "Enosh",
+    tagline: "How can fun and seriousness coexist? Like a competitive game.",
+    focus: "Game energy, community, student research, learning experience",
+    photo: "/assets/enosh.png",
+  },
+];
+
+const questTimeline = [
+  {
+    label: "Quest 01",
+    title: "From anxiety to questions",
+    description:
+      "Nafis studied machine learning and felt the pressure of knowledge becoming cheaper. The first question was simple: if AI makes learning effortless, what is left for students to prove?",
+    period: "May 2025",
+  },
+  {
+    label: "Quest 02",
+    title: "Gathering students as a team",
+    description:
+      "Nafis met Enosh in a community. They shared the same concern, researched it together, ran surveys, and looked for a learning loop that felt serious without becoming lifeless.",
+    period: "June 2025",
+  },
+  {
+    label: "Quest 03",
+    title: "The concept became testable",
+    description:
+      "The idea moved from frustration into a prototype: problem-based learning, world simulation, mentor reflection, and capability evidence in one short run.",
+    period: "October 2025",
+  },
+  {
+    label: "Quest 04",
+    title: "Building an arena for everyone",
+    description:
+      "The next step is a deeper prototype and a broader beta. NovaX is being shaped with students who want learning to feel responsive, visible, and worth returning to.",
+    period: "December 2025",
+  },
+];
+
+const values = [
+  {
+    title: "Built by students, for students",
+    description:
+      "We design for the exact moment when static courses, dashboards, and certificates stop feeling convincing.",
+  },
+  {
+    title: "Game energy, real stakes",
+    description:
+      "Progression, feedback, and story matter, but only when they reveal real problem-solving capability.",
+  },
+  {
+    title: "Proof over performance theater",
+    description:
+      "NovaX should show how a person thinks under constraint, not just decorate a profile with empty activity.",
+  },
+];
+
 const AboutUsPage = () => {
   useScrollAnimation();
-  const handleUnavailable = () => {
-    alert("Not available yet");
-  };
-
-  const studentSquad = [
-    {
-      role: "Founder",
-      name: "Nafis",
-      tagline: "Are we able to discover a god-level learning method that combines unfalsified credentials?",
-      photo: "/assets/senku.jpg",
-    },
-    {
-      role: "Secondary Founder",
-      name: "Enosh",
-      tagline: "How can fun and seriousness coexist? Like a competitive game.",
-      photo: "/assets/enosh.png",
-    },
-  ];
-
-  const questTimeline = [
-    {
-      label: "Quest 01",
-      title: "From Anxiety to Questions",
-      description:
-        "It started when I (Nafis) studied machine learning and realized that knowledge would become cheaper and we would be replaced. Then I asked myself \"Is learning worthless now?\".",
-      year: "may 2025",
-    },
-    {
-      label: "Quest 02",
-      title: "Gathering Students as a Team",
-      description:
-        "I found a persistent student (Enosh) in a community, we chatted and we experienced the same concerns. We researched all day, conducted surveys, and experimented to investigate this problem.",
-      year: "june 2025",
-    },
-    {
-      label: "Quest 03",
-      title: "The Idea Was Born",
-      description:
-        "We found a real concept, engineered it to make it fun and easy, yet effective. We tested and experimented the prototype on classmates and students.",
-      year: "october 2025",
-    },
-        {
-      label: "Quest 04",
-      title: "Building an Arena for Everyone",
-      description:
-        "It's the end of the month, and we've decided to do further research and develop the prototype to an advanced stage, and we plan to bring more students to experience what we're experiencing. The beta test will be open soon for the waitlist.",
-      year: "december 2025",
-    },
-  ];
-
-  const values = [
-    {
-      title: "Built by Students, for Students",
-      description:
-        "We ship features we wish existed when we were staring at static textbooks and empty LMS dashboards. Every screen is tested on real late-night brain fog.",
-      frame: "border-rose-400/25 shadow-[0_0_0_1px_rgba(251,113,133,0.08)]",
-      wash: "from-rose-500/15 via-transparent to-transparent",
-    },
-    {
-      title: "Game Energy, Real Stakes",
-      description:
-        "We borrow the best from games (feedback, pacing, progression) and wire it into real-world scenarios. No vanity XP, only signals of actual capability.",
-      frame: "border-violet-400/25 shadow-[0_0_0_1px_rgba(167,139,250,0.08)]",
-      wash: "from-violet-500/15 via-transparent to-transparent",
-    },
-    {
-      title: "Narratives over Notifications",
-      description:
-        "Instead of spamming you with reminders, we build arcs: seasons, quests, streaks, and role-playing storylines that make you want to come back because the world moved while you were gone.",
-      frame: "border-amber-400/30 shadow-[0_0_0_1px_rgba(251,191,36,0.1)]",
-      wash: "from-amber-500/18 via-transparent to-transparent",
-    },
-  ];
 
   return (
-    <div className="min-h-screen bg-[#0f0c0a] text-stone-100 relative overflow-hidden">
-      <div className="absolute inset-0 bg-cosmic-gradient opacity-[0.55]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-[#1c1410]/90 to-stone-950" />
-      <div className="pointer-events-none absolute inset-0 bg-planet-glow opacity-30 mix-blend-screen" />
-      <div className="pointer-events-none absolute inset-0 bg-cosmic-glow opacity-25 mix-blend-soft-light" />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-50"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 20% 0%, rgba(251, 113, 133, 0.12), transparent 55%), radial-gradient(ellipse 60% 45% at 90% 20%, rgba(245, 158, 11, 0.1), transparent 50%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.4] mix-blend-overlay"
-        style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E\")",
-        }}
-      />
-
-      <div className="pointer-events-none absolute -right-24 top-40 w-72 h-72 bg-cosmic-aurora/25 blur-3xl rounded-full animate-cosmic-glow" />
-      <div className="pointer-events-none absolute -left-20 bottom-32 w-96 h-96 bg-cosmic-sunrise/20 blur-3xl rounded-full animate-float" />
-
+    <div className="min-h-screen overflow-hidden bg-[#E8E4D9] text-[#0F1117]">
       <header
-        className="fixed z-50 left-1/2 -translate-x-1/2
-                  flex items-center justify-between
-                  px-3 py-2 sm:px-4 sm:py-3 rounded-2xl
-                  bg-[#1a1410]/85 backdrop-blur-2xl border border-rose-200/10 shadow-[0_24px_70px_rgba(0,0,0,0.45)]
-                  max-w-4xl w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]"
+        className="fixed left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-4xl -translate-x-1/2 items-center justify-between rounded-[18px] border border-white/10 bg-[rgb(15_17_23/0.76)] px-3 py-2 shadow-[0_24px_80px_rgba(15,17,23,0.24)] backdrop-blur-xl sm:w-[calc(100%-2rem)] sm:px-4 sm:py-3 md:w-[calc(100%-3rem)]"
         style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
       >
-        <Link to="/" className="font-bold text-stone-50 text-lg sm:text-xl tracking-tight select-none font-serif">
+        <Link to="/" className="nova-display text-lg font-semibold text-white sm:text-xl">
           NovaX
         </Link>
 
-        <nav className="flex items-center space-x-1 sm:space-x-1.5">
+        <nav className="flex items-center gap-1">
           <Button
-            variant="ghost"
             asChild
-            className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                      text-stone-400 hover:text-stone-100 hover:bg-white/5 transition-colors"
+            variant="ghost"
+            className="h-9 rounded-lg px-3 text-sm font-medium text-[#E8E4D9]/75 hover:bg-white/10 hover:text-[#E8E4D9]"
           >
-            <Link to="/">
-              <span className="hidden sm:inline text-sm font-normal">Home</span>
-            </Link>
+            <Link to="/">Home</Link>
           </Button>
           <Button
-            variant="ghost"
             asChild
-            className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                      text-stone-900 bg-gradient-to-r from-rose-100 to-amber-50 hover:from-rose-50 hover:to-amber-100 border border-rose-300/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] transition-colors"
+            variant="ghost"
+            className="h-9 rounded-lg border border-white/15 bg-white/[0.08] px-3 text-sm font-medium text-[#E8E4D9] hover:bg-white/[0.12]"
           >
-            <Link to="/about-us">
-              <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mr-1.5 ring-2 ring-rose-300/60" />
-              <span className="text-sm font-semibold tracking-tight">About Us</span>
-            </Link>
+            <Link to="/about-us">About</Link>
+          </Button>
+          <Button
+            asChild
+            variant="ghost"
+            className="hidden h-9 rounded-lg px-3 text-sm font-medium text-[#E8E4D9]/75 hover:bg-white/10 hover:text-[#E8E4D9] sm:inline-flex"
+          >
+            <Link to="/how-it-works">How it works</Link>
           </Button>
         </nav>
       </header>
 
-      {/* Main content */}
-      <main className="relative z-10 pt-28 sm:pt-32 pb-20 sm:pb-28">
-        {/* Hero */}
-        <section
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-          data-scroll="fade-up"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="text-[11px] sm:text-xs uppercase tracking-[0.32em] text-rose-200/60 mb-4">
-                BUILT BY STUDENTS · FUTURE-FACING
-              </p>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-5 font-serif tracking-tight text-stone-50">
-                The arena{" "}
-                <span className="bg-gradient-to-r from-rose-200 via-amber-100 to-orange-200 bg-clip-text text-transparent">
-                  we couldn&apos;t find
-                </span>{" "}
-                so we built it.
+      <main className="relative">
+        <section className="px-4 pt-32 pb-16 sm:px-6 sm:pb-20 lg:px-8">
+          <div
+            className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]"
+            data-scroll="fade-up"
+          >
+            <div className="max-w-3xl">
+              <p className="mb-4 text-xs font-medium uppercase text-[#555D6D]">About NovaX</p>
+              <h1 className="nova-display text-4xl font-semibold leading-[1.05] text-[#0F1117] sm:text-5xl md:text-6xl">
+                Built by students who needed a{" "}
+                <span className="nova-gradient-text nova-gradient-technical">better arena</span>.
               </h1>
-              <p className="text-sm sm:text-base md:text-lg text-stone-300/95 leading-relaxed max-w-xl border-l-2 border-rose-400/35 pl-5">
-                NovaX began with a restlessness that AI would make knowledge and learning feel useless, and a question
-                that wouldn&apos;t leave us: &quot;why does AI make learning feel as effortless as breathing, while for us,
-                learning feels as hard as surviving? what is left for us?&quot;
+              <p className="mt-6 max-w-2xl text-base leading-[1.6] text-[#343945] sm:text-lg">
+                NovaX began from a student fear: AI makes knowledge feel cheap, while learning still feels heavy. We
+                are building the arena we wanted, where effort becomes visible capability.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button
                   asChild
-                  className="rounded-xl font-semibold px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-stone-100 to-rose-50 text-stone-900 hover:from-white hover:to-rose-100 border border-rose-200/50 shadow-[0_14px_40px_rgba(244,63,94,0.15)]"
+                  className="h-12 rounded-lg bg-[#0F1117] px-6 text-[15px] font-medium text-[#E8E4D9] hover:bg-[#1C2030]"
                 >
-                  <Link to="/">Back to arena intro</Link>
+                  <Link to="/how-it-works">See how it works</Link>
                 </Button>
-                <div className="flex items-center text-xs sm:text-sm text-stone-400">
-                  <div className="flex -space-x-2 mr-3">
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-rose-400 to-orange-400 border border-stone-900/80 flex items-center justify-center text-[10px] font-semibold text-stone-950">
-                      NF
-                    </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-violet-500 to-indigo-600 border border-stone-900/80 flex items-center justify-center text-[10px] font-semibold text-stone-50">
-                      EN
-                    </div>
-                  </div>
-                  <span className="max-w-[14rem]">
-                    Nafis · Enosh.
-                  </span>
-                </div>
-              </div>  
-            </div>
-
-            <div className="relative">
-              <div className="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-rose-500/25 blur-3xl" />
-              <div className="absolute -bottom-10 -right-4 w-36 h-36 rounded-full bg-amber-500/20 blur-3xl" />
-
-              <div className="relative rounded-sm border border-stone-600/60 bg-[#14100d]/90 backdrop-blur-xl p-5 sm:p-6 shadow-[0_28px_90px_rgba(0,0,0,0.55)] rotate-[0.25deg]">
-                <div className="absolute -inset-px rounded-sm bg-gradient-to-br from-rose-500/20 via-transparent to-amber-500/10 opacity-60 pointer-events-none" />
-                <div className="flex items-center justify-between mb-4 relative">
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-stone-500">STUDENT ORIGIN STORY</span>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-rose-200/90">
-                    <span className="w-1.5 h-1.5 rounded-sm bg-rose-400 shadow-[0_0_10px_rgba(251,113,133,0.7)]" />
-                    LIVE BUILD
-                  </span>
-                </div>
-
-                <div className="space-y-3 text-sm sm:text-[13px] leading-relaxed text-stone-200/95 relative">
-                  <p>
-                    We kept losing motivation in traditional courses. Not because we hated learning, but because
-                    nothing responded when we made a different choice.
-                  </p>
-                  <p>
-                    So we asked: what if &quot;study&quot; felt more like queuing into a cooperative raid? Same effort,
-                    but with storylines, worlds, and a mentor that sees how you think, not just what you memorized.
-                  </p>
-                </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-12 rounded-lg border border-[#1C2030] bg-[#E8E4D9] px-6 text-[15px] font-medium text-[#0F1117] hover:bg-[#dcd7cb] hover:text-[#0F1117]"
+                >
+                  <a href="mailto:novaniansupp@gmail.com">Contact the team</a>
+                </Button>
               </div>
             </div>
+
+            <aside className="overflow-hidden rounded-[12px] border border-[#0F1117]/15 bg-[#0F1117] text-[#E8E4D9]">
+              <div className="relative min-h-[240px]">
+                <img
+                  src="/assets/cosmic-planet-background.jpg"
+                  alt="Dark spatial NovaX arena atmosphere"
+                  className="absolute inset-0 h-full w-full object-cover opacity-85"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,17,23,0.96),rgba(15,17,23,0.18))]" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                  <p className="nova-mono text-xs text-[#9DA3B4]">ORIGIN SIGNAL</p>
+                  <h2 className="nova-display mt-2 text-2xl font-medium text-white">
+                    Serious learning with the feedback loop of a game.
+                  </h2>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 border-t border-[#333849]">
+                {["student-led", "scenario-first", "proof-ready"].map((item) => (
+                  <div key={item} className="border-r border-[#333849] p-4 last:border-r-0">
+                    <p className="text-sm text-[#E8E4D9]">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </aside>
           </div>
         </section>
 
-        {/* Student squad */}
-        <section
-          className="max-w-6xl mx-auto mt-16 sm:mt-20 px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-          data-scroll="fade-up"
-        >
-          <div className="flex items-center justify-between mb-6 sm:mb-8 gap-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif tracking-tight text-stone-50">
-              The student squad behind the arena
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" data-scroll="fade-up">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="nova-display mb-5 text-lg font-medium uppercase text-[#0F1117] sm:text-xl">
+              One Mission
+            </p>
+            <h2 className="nova-display text-3xl font-medium leading-[1.15] text-[#0F1117] sm:text-4xl md:text-5xl">
+              Train the human abilities AI has not replaced.
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
-            {studentSquad.map((member, i) => (
-              <article
-                key={member.name}
-                className={`group relative rounded-sm border border-stone-600/50 bg-[#120f0c]/80 backdrop-blur-md p-4 sm:p-5 pb-6 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-400/35 ${
-                  i === 0 ? "sm:rotate-[-0.4deg]" : "sm:rotate-[0.4deg]"
-                }`}
-              >
-                <div className="w-full aspect-square rounded-sm overflow-hidden border border-stone-700/80 bg-stone-900/50 mb-4 shadow-inner ring-1 ring-inset ring-white/5">
-                  <img
-                    src={member.photo}
-                    alt={`${member.name} profile`}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-rose-300/80">{member.role}</p>
-                  <p className="text-sm font-semibold text-stone-50">{member.name}</p>
-                </div>
-                <p className="text-xs sm:text-sm text-stone-300/95 leading-relaxed mt-2">{member.tagline}</p>
-
-                <div className="pointer-events-none absolute inset-0 rounded-sm ring-1 ring-inset ring-rose-200/0 group-hover:ring-rose-300/20 transition-all duration-300" />
-              </article>
-            ))}
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.6] text-[#343945] sm:text-lg">
+              Our mission is to help humans stay valuable longer in a world where AI keeps making knowledge cheaper.
+            </p>
+            <Button
+              asChild
+              className="mt-8 h-12 rounded-lg bg-[#0F1117] px-6 text-[15px] font-medium text-[#E8E4D9] hover:bg-[#1C2030]"
+            >
+              <a href="https://research.novaxarena.tech" target="_blank" rel="noreferrer">
+                Read our research
+              </a>
+            </Button>
           </div>
         </section>
 
-        {/* Quest timeline */}
-        <section
-          className="max-w-6xl mx-auto mt-16 sm:mt-20 px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-          data-scroll="fade-up"
-        >
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-            <div className="max-w-2xl">
-              <p className="text-[11px] uppercase tracking-[0.32em] text-stone-500 mb-2">SEASON 0 · ORIGIN QUESTS</p>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif tracking-tight text-stone-50">
-                How a study group turned into a learning arena
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" data-scroll="fade-up">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-8 max-w-2xl">
+              <p className="mb-2 text-xs font-medium uppercase text-[#555D6D]">Student squad</p>
+              <h2 className="nova-display text-3xl font-medium leading-[1.15] sm:text-4xl">
+                The people shaping the first arena.
               </h2>
             </div>
-          </div>
 
-          <div className="relative pl-5 sm:pl-8">
-            <div className="absolute left-2 sm:left-3 top-2 bottom-4 w-[3px] rounded-full bg-gradient-to-b from-rose-500/70 via-amber-600/50 to-stone-800/40 shadow-[0_0_24px_rgba(251,113,133,0.25)]" />
-            <div className="space-y-10 sm:space-y-12">
-              {questTimeline.map((quest, idx) => (
-                <div key={quest.title} className="relative flex gap-4 sm:gap-6">
-                  <div className="flex flex-col items-center pt-1">
-                    <div className="w-3.5 h-3.5 rotate-45 bg-gradient-to-br from-rose-300 to-amber-500 border border-stone-900 shadow-[0_0_12px_rgba(251,191,36,0.45)]" />
-                    {idx !== questTimeline.length - 1 && (
-                      <div className="flex-1 w-px bg-gradient-to-b from-amber-500/40 to-transparent mt-2 min-h-[2.5rem]" />
-                    )}
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {studentSquad.map((member) => (
+                <article
+                  key={member.name}
+                  className="flex h-full flex-col rounded-[12px] border border-[#333849] bg-[#1C2030] p-5 text-[#E8E4D9]"
+                >
+                  <div className="aspect-square overflow-hidden rounded-[10px] border border-[#333849] bg-[#E8E4D9]">
+                    <img
+                      src={member.photo}
+                      alt={`${member.name} profile`}
+                      className="h-full w-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
-                  <div className="flex-1 pb-2">
-                    <div className="inline-flex items-center gap-2 rounded-md border border-stone-600/70 bg-stone-900/60 px-2.5 py-1 mb-3">
-                      <span className="text-[10px] font-mono text-rose-200/90">{quest.label}</span>
-                      <span className="w-px h-3 bg-stone-600" />
-                      <span className="text-[10px] text-stone-400">{quest.year}</span>
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-stone-50">{quest.title}</h3>
-                    <p className="text-sm sm:text-base text-stone-300/95 max-w-2xl leading-relaxed">
-                      {quest.description}
+                  <div className="mt-5 flex flex-1 flex-col">
+                    <p className="nova-gradient-text nova-gradient-process text-xs font-semibold">{member.role}</p>
+                    <h3 className="mt-2 text-2xl font-medium text-white">{member.name}</h3>
+                    <p className="mt-3 text-sm leading-[1.6] text-[#E8E4D9]/74">{member.tagline}</p>
+                    <p className="nova-mono mt-auto border-t border-[#333849] pt-4 text-xs text-[#9DA3B4]">
+                      {member.focus}
                     </p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Values / design principles */}
-        <section
-          className="max-w-6xl mx-auto mt-16 sm:mt-20 px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-          data-scroll="fade-up"
-        >
-          <div className="mb-10 max-w-2xl">
-            <p className="text-[11px] uppercase tracking-[0.32em] text-stone-500 mb-2">DESIGN PRINCIPLES</p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold max-w-2xl font-serif tracking-tight text-stone-50">
-              The rules we use to make learning feel like a game, without losing the seriousness of your future.
-            </h2>
-          </div>
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" data-scroll="fade-up">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-10 max-w-2xl">
+              <p className="mb-2 text-xs font-medium uppercase text-[#555D6D]">Season 0</p>
+              <h2 className="nova-display text-3xl font-medium leading-[1.15] sm:text-4xl">
+                How a study problem became a product mission.
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
-            {values.map((value) => (
-              <article
-                key={value.title}
-                className={`relative rounded-lg border bg-[#15100c]/90 p-5 sm:p-6 overflow-hidden backdrop-blur-sm ${value.frame}`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${value.wash}`} />
-                <div className="relative">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-stone-50">{value.title}</h3>
-                  <p className="text-sm sm:text-base text-stone-300/95 leading-relaxed">{value.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* XP meter / closing */}
-        <section
-          className="max-w-4xl mx-auto mt-16 sm:mt-20 px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-          data-scroll="fade-up"
-        >
-          <div className="relative overflow-hidden rounded-xl border border-rose-400/20 bg-gradient-to-br from-[#1a1410] via-stone-950 to-[#0c0a08] p-5 sm:p-8 shadow-[0_28px_80px_rgba(0,0,0,0.5)]">
-            <div className="pointer-events-none absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,rgba(251,113,133,0.2),transparent_55%)]" />
             <div className="relative">
-              <div className="mb-4">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold font-serif tracking-tight text-stone-50">
-                  This isn&apos;t our story alone: it&apos;s the arena you step into.
-                </h2>
-              </div>
-
-              <p className="text-sm sm:text-base text-stone-300/95 leading-relaxed mb-5">
-                We&apos;re still students: still learning, still iterating, still wiping on new boss mechanics. NovaX is
-                our attempt to make those attempts visible, trackable, and shareable so more people can level up
-                together, faster.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center sm:justify-between">
-                <p className="text-xs sm:text-sm text-stone-400 max-w-md leading-relaxed">
-                  If you&apos;re a student, educator, or just someone obsessed with better ways to think, this platform
-                  is a collaborative learning game but on a serious level, not a finished product. Bring your own story in.
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="shrink-0 border-rose-400/45 text-rose-100 hover:bg-rose-500/10 hover:text-rose-50 rounded-lg px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-medium bg-stone-950/40"
-                >
-                  <a href="mailto:novaniansupp@gmail.com">Write your chapter with us</a>
-                </Button>
+              <div className="absolute left-0 top-0 hidden h-full w-px bg-[#0F1117]/20 md:block" />
+              <div className="space-y-5 md:pl-10">
+                {questTimeline.map((quest) => (
+                  <article
+                    key={quest.title}
+                    className="grid grid-cols-1 gap-4 border-t border-[#0F1117]/18 py-6 md:grid-cols-[180px_1fr]"
+                  >
+                    <div>
+                      <p className="nova-mono text-xs text-[#555D6D]">{quest.label}</p>
+                      <p className="nova-mono mt-2 text-sm text-[#0F1117]">{quest.period}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium text-[#0F1117]">{quest.title}</h3>
+                      <p className="mt-3 max-w-3xl text-sm leading-[1.6] text-[#343945] sm:text-base">
+                        {quest.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
         </section>
-        <section
-          className="max-w-4xl mx-auto mt-10 sm:mt-12 px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-          data-scroll="fade-up"
-        >
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            <Button
-              variant="ghost"
-              onClick={handleUnavailable}
-              className="text-xs sm:text-sm text-stone-500 hover:text-stone-100 hover:bg-white/5 rounded-full px-4 py-2 border border-transparent hover:border-stone-700"
-            >
-              How it works
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={handleUnavailable}
-              className="text-xs sm:text-sm text-stone-500 hover:text-stone-100 hover:bg-white/5 rounded-full px-4 py-2 border border-transparent hover:border-stone-700"
-            >
-              Privacy Policy
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={handleUnavailable}
-              className="text-xs sm:text-sm text-stone-500 hover:text-stone-100 hover:bg-white/5 rounded-full px-4 py-2 border border-transparent hover:border-stone-700"
-            >
-              Terms of Service
-            </Button>
+
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" data-scroll="fade-up">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-8 max-w-2xl">
+              <p className="mb-2 text-xs font-medium uppercase text-[#555D6D]">Operating principles</p>
+              <h2 className="nova-display text-3xl font-medium leading-[1.15] sm:text-4xl">
+                The rules behind the experience.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              {values.map((value) => (
+                <article key={value.title} className="rounded-[12px] border border-[#333849] bg-[#1C2030] p-5 text-[#E8E4D9]">
+                  <h3 className="text-xl font-medium text-white">{value.title}</h3>
+                  <p className="mt-3 text-sm leading-[1.6] text-[#E8E4D9]/74">{value.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
+
+        <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8" data-scroll="fade-up">
+          <div className="mx-auto max-w-5xl rounded-[12px] border border-[#333849] bg-[#0F1117] p-6 text-[#E8E4D9] sm:p-8 lg:p-10">
+            <p className="mb-3 text-xs font-medium uppercase text-[#9DA3B4]">Still building</p>
+            <h2 className="nova-display max-w-3xl text-3xl font-medium leading-[1.15] text-white sm:text-4xl">
+              NovaX is not a finished monument. It is an arena being tested with real students.
+            </h2>
+            <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-2xl text-sm leading-[1.6] text-[#E8E4D9]/74 sm:text-base">
+                If you care about capability, simulation, or better learning loops, this is the moment to help shape the
+                early product.
+              </p>
+              <Button
+                asChild
+                className="h-12 shrink-0 rounded-lg bg-[#0F1117] px-6 text-[15px] font-medium text-[#E8E4D9] ring-1 ring-[#1C2030] hover:bg-[#1C2030]"
+              >
+                <a href="mailto:novaniansupp@gmail.com">Write to us</a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <footer className="px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-6xl flex-col gap-4 border-t border-[#0F1117]/18 pt-6 text-sm text-[#343945] sm:flex-row sm:items-center sm:justify-between">
+            <p>Copyright 2025 NovaX. All rights reserved.</p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/how-it-works" className="hover:text-[#0F1117]">
+                How it works
+              </Link>
+              <Link to="/privacy-policy" className="hover:text-[#0F1117]">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-of-service" className="hover:text-[#0F1117]">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
 };
 
 export default AboutUsPage;
-
