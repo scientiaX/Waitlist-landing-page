@@ -99,7 +99,8 @@ const proofFeatures = [
     title: "GET REAL PROOF OF YOUR CAPABILITIES",
     copy:
       "Credentials that show what problems you solve, how you solve them, and every decision you make, not paper exam degrees.",
-    video: "/assets/feature-progress-tracking.mp4",
+    image: "/assets/real-proof-capability-abstract.svg",
+    alt: "Abstract capability proof map with connected evidence blocks",
     delay: "0.55s",
   },
 ];
@@ -567,26 +568,12 @@ const IntroductionPage = () => {
                   </div>
 
                   <div className="nova-media min-h-[200px] bg-[var(--nova-void)] sm:min-h-[240px] lg:h-[min(52vw,_420px)]">
-                    {feature.image ? (
-                      <img
-                        src={feature.image}
-                        alt={feature.alt}
-                        className="h-full w-full object-contain"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <video
-                        className="h-full w-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                        poster="/assets/cosmic-planet-background.jpg"
-                      >
-                        <source src={feature.video} type="video/mp4" />
-                      </video>
-                    )}
+                    <img
+                      src={feature.image}
+                      alt={feature.alt}
+                      className="h-full w-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               ))}

@@ -1,0 +1,96 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract capability proof</title>
+  <desc id="desc">A flat abstract proof map with connected evidence blocks and a central capability mark.</desc>
+  <defs>
+    <pattern id="paperGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" stroke="#333849" stroke-width="1" opacity=".28"/>
+    </pattern>
+    <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0V12" stroke="#E8E4D9" stroke-width="2" opacity=".13"/>
+    </pattern>
+    <filter id="softGrain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="17" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .12"/>
+      </feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0F1117"/>
+  <rect width="1600" height="900" fill="url(#paperGrid)" opacity=".72"/>
+  <path d="M92 698C242 578 347 611 505 524C664 436 764 259 962 260C1111 261 1212 362 1504 218" stroke="#D97757" stroke-width="8" stroke-linecap="round"/>
+  <path d="M90 704C244 584 347 617 508 529C664 443 765 267 963 267C1110 268 1212 371 1508 226" stroke="#E8E4D9" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+
+  <g opacity=".95">
+    <rect x="151" y="477" width="214" height="128" rx="8" fill="#E8E4D9"/>
+    <rect x="174" y="505" width="83" height="12" rx="2" fill="#0F1117"/>
+    <rect x="174" y="533" width="154" height="10" rx="2" fill="#0F1117" opacity=".58"/>
+    <rect x="174" y="558" width="116" height="10" rx="2" fill="#0F1117" opacity=".4"/>
+    <path d="M309 513L327 531L348 494" stroke="#D97757" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(412 302)">
+    <rect width="264" height="174" rx="10" fill="#1C2030" stroke="#E8E4D9" stroke-width="2"/>
+    <path d="M33 126L83 83L130 109L188 47L229 72" stroke="#D97757" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="83" cy="83" r="13" fill="#E8E4D9"/>
+    <circle cx="130" cy="109" r="13" fill="#E8E4D9"/>
+    <circle cx="188" cy="47" r="13" fill="#E8E4D9"/>
+    <rect x="31" y="29" width="90" height="10" rx="2" fill="#E8E4D9" opacity=".75"/>
+    <rect x="31" y="51" width="55" height="8" rx="2" fill="#E8E4D9" opacity=".35"/>
+  </g>
+
+  <g transform="translate(713 180)">
+    <path d="M191 0L354 94V282L191 376L28 282V94L191 0Z" fill="#E8E4D9"/>
+    <path d="M191 31L327 110V267L191 345L55 267V110L191 31Z" fill="#0F1117"/>
+    <path d="M191 72L290 129V244L191 301L92 244V129L191 72Z" fill="#1C2030" stroke="#D97757" stroke-width="5"/>
+    <path d="M191 116L254 153V226L191 262L128 226V153L191 116Z" fill="#D97757"/>
+    <path d="M191 116V262M128 153L254 226M254 153L128 226" stroke="#E8E4D9" stroke-width="3" opacity=".82"/>
+    <path d="M84 309H299" stroke="#E8E4D9" stroke-width="10" stroke-linecap="round"/>
+    <path d="M121 333H262" stroke="#E8E4D9" stroke-width="6" stroke-linecap="round" opacity=".62"/>
+  </g>
+
+  <g transform="translate(1069 463)">
+    <rect width="226" height="145" rx="10" fill="#1C2030" stroke="#E8E4D9" stroke-width="2"/>
+    <rect width="226" height="145" rx="10" fill="url(#hatch)"/>
+    <path d="M38 103C64 62 92 122 120 75C147 29 170 65 195 40" stroke="#D97757" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="41" cy="102" r="11" fill="#E8E4D9"/>
+    <circle cx="120" cy="75" r="11" fill="#E8E4D9"/>
+    <circle cx="195" cy="40" r="11" fill="#E8E4D9"/>
+  </g>
+
+  <g transform="translate(1233 242)">
+    <rect width="220" height="130" rx="8" fill="#E8E4D9"/>
+    <path d="M45 86L78 55L113 81L159 37" stroke="#0F1117" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="45" cy="86" r="10" fill="#D97757"/>
+    <circle cx="78" cy="55" r="10" fill="#D97757"/>
+    <circle cx="113" cy="81" r="10" fill="#D97757"/>
+    <circle cx="159" cy="37" r="10" fill="#D97757"/>
+  </g>
+
+  <g stroke="#E8E4D9" stroke-width="3" stroke-linecap="round" opacity=".56">
+    <path d="M365 541H412"/>
+    <path d="M676 389H742"/>
+    <path d="M1055 368H1228"/>
+    <path d="M992 561H1069"/>
+  </g>
+
+  <g fill="#D97757">
+    <circle cx="365" cy="541" r="10"/>
+    <circle cx="412" cy="389" r="10"/>
+    <circle cx="676" cy="389" r="10"/>
+    <circle cx="1069" cy="535" r="10"/>
+    <circle cx="1228" cy="307" r="10"/>
+  </g>
+
+  <g opacity=".78">
+    <path d="M225 191H399V234H225V191Z" fill="#1C2030"/>
+    <path d="M1208 664H1380V707H1208V664Z" fill="#1C2030"/>
+    <path d="M126 253H280V283H126V253Z" fill="#D97757"/>
+    <path d="M1310 151H1464V181H1310V151Z" fill="#D97757"/>
+  </g>
+
+  <rect x="52" y="52" width="1496" height="796" rx="20" stroke="#333849" stroke-width="2"/>
+  <rect width="1600" height="900" filter="url(#softGrain)" opacity=".7"/>
+</svg>
