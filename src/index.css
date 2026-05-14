@@ -103,8 +103,11 @@
   0% {
     background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
   100% {
-    background-position: 200% 50%;
+    background-position: 0% 50%;
   }
 }
 
@@ -119,23 +122,38 @@
   }
 
   .nova-gradient-text {
-    background-size: 200% auto;
+    --nova-gradient-from: var(--nova-brand);
+    --nova-gradient-to: var(--nova-bone);
+    background-image: linear-gradient(
+      45deg,
+      var(--nova-gradient-from) 0%,
+      var(--nova-gradient-to) 24%,
+      var(--nova-gradient-from) 50%,
+      var(--nova-gradient-to) 76%,
+      var(--nova-gradient-from) 100%
+    );
+    background-size: 240% 100%;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: nova-gradient-shift 4s linear infinite;
+    animation: nova-gradient-shift 10s ease-in-out infinite;
+    will-change: background-position;
   }
 
   .nova-gradient-technical {
-    background-image: linear-gradient(90deg, var(--nova-brand), var(--nova-muted));
+    --nova-gradient-from: var(--nova-brand);
+    --nova-gradient-to: var(--nova-muted);
   }
 
   .nova-gradient-process {
-    background-image: linear-gradient(90deg, var(--nova-brand), var(--nova-bone));
+    --nova-gradient-from: var(--nova-brand);
+    --nova-gradient-to: var(--nova-bone);
   }
 
   .nova-gradient-urgent {
-    background-image: linear-gradient(90deg, var(--nova-brand), var(--nova-red));
+    --nova-gradient-from: var(--nova-brand);
+    --nova-gradient-to: var(--nova-red);
   }
 }
 

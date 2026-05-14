@@ -1,539 +1,610 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { type ReactElement, useRef } from "react";
+import { useRef } from "react";
+
+const WAITLIST_FORM_URL = "https://tally.so/r/zxDAyZ";
+const YOUTUBE_DEMO_VIDEO_ID = "sga8QDniKls";
+
+const navItems = [
+  {
+    iconPath:
+      "M8 5.14v13.72L18.78 12 8 5.14Zm2 3.63L15.02 12 10 15.23V8.77Z",
+    text: "How It Works",
+    to: "/how-it-works",
+  },
+  {
+    iconPath:
+      "M11 10h2v7h-2v-7Zm0-3h2v2h-2V7Zm1-5a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z",
+    text: "About Us",
+    to: "/about-us",
+  },
+  {
+    iconPath:
+      "M5 4h14v2H5V4Zm0 4h14v2H5V8Zm0 4h9v2H5v-2Zm0 4h9v2H5v-2Zm12.4-3.2a3.2 3.2 0 1 0-2.26 5.46l-1.57 1.57L15 21.24l1.57-1.57a3.2 3.2 0 0 0 .83-6.87Zm0 1.8a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z",
+    text: "Research",
+    href: "https://research.novaxarena.tech",
+  },
+];
+
+const valueCards = [
+  {
+    image: "/assets/fun.png",
+    alt: "When effectiveness meets fun",
+    title: "when effectiveness meets fun",
+    copy:
+      "PBL has proven to be effective, but tedious. We make it short, fast, and addictive by cutting it down to many steps, but it's still effective by making you reflect on the experience, like a game.",
+  },
+  {
+    image: "/assets/complex.png",
+    alt: "When complexity becomes intuitive",
+    title: "when complexity becomes intuitive",
+    copy:
+      "Complex concepts are broken down into clear micro-steps. You're guided from confusion to understanding through examples, instant feedback, decision impacts, and exercises that feel natural: one screen, one simple step.",
+    reverse: true,
+  },
+  {
+    image: "/assets/degrees.png",
+    alt: "When degrees lose to capability",
+    title: "when degrees lose to capability",
+    copy:
+      "NovaX measures your problem-solving abilities, regardless of your unique approach. We accurately record every experience you have. No empty claims.",
+  },
+];
+
+const simulationFeatures = [
+  {
+    title: "Adaptive Dynamic Simulation",
+    copy: "Dynamic simulation flow personalized for you-realtime.",
+    video: "/assets/scene/dynamic%20arena.mp4",
+    delay: "0.2s",
+  },
+  {
+    title: "Personalized Arena",
+    copy: "Arena environments and challenges personalized to your capabilities.",
+    video: "/assets/scene/arena%20gen.mp4",
+    delay: "0.3s",
+  },
+  {
+    title: "Smartest Superhuman",
+    copy:
+      "AI that analyzes and adapts to your responses, how you act, and who you are in real time.",
+    video: "/assets/scene/ai%20analyze%20behavior.mp4",
+    delay: "0.4s",
+  },
+];
+
+const problemSignals = [
+  {
+    title: "WORLD ECONOMIC FORUM",
+    copy:
+      "Problem-solving is the #1 skill needed in the era of automation and AI orchestrations.",
+  },
+  {
+    title: "TOP LINKEDIN SKILL",
+    copy: "Most sought-after skill by employers across all industries.",
+  },
+];
+
+const proofFeatures = [
+  {
+    title: "AI TRANSCENDENT",
+    copy:
+      "AI that accesses and analyzes thinking patterns, behavior patterns, decision trees, and capability levels.",
+    image: "/assets/AI%20transcendent.png",
+    alt: "AI transcendent: thinking, behavior, and decision patterns feeding an AI brain",
+    delay: "0.4s",
+  },
+  {
+    title: "GET REAL PROOF OF YOUR CAPABILITIES",
+    copy:
+      "Credentials that show what problems you solve, how you solve them, and every decision you make, not paper exam degrees.",
+    video: "/assets/feature-progress-tracking.mp4",
+    delay: "0.55s",
+  },
+];
+
+const socialLinks = [
+  {
+    href: "https://tiktok.com/@novax_arena",
+    label: "TikTok",
+    path:
+      "M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z",
+  },
+  {
+    href: "https://www.youtube.com/@novax-arena",
+    label: "YouTube",
+    path:
+      "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
+  },
+  {
+    href: "https://x.com/novax_arena",
+    label: "X",
+    path:
+      "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+  },
+  {
+    href: "https://linkedin.com/company/scientiax-novax",
+    label: "LinkedIn",
+    path:
+      "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.852-3.047-1.853 0-2.136 1.445-2.136 2.939v5.677H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+  },
+  {
+    href: "https://instagram.com/novaxarena",
+    label: "Instagram",
+    path:
+      "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
+  },
+];
 
 const IntroductionPage = () => {
   useScrollAnimation();
 
   const videoDemoRef = useRef<HTMLDivElement>(null);
-  const WAITLIST_FORM_URL = "https://tally.so/r/zxDAyZ";
-  const YOUTUBE_DEMO_VIDEO_ID = "sga8QDniKls";
 
   const scrollToVideoDemo = () => {
     videoDemoRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
   const handleUnavailable = () => {
     alert("Not available yet");
   };
 
-  const navItems: Array<{ icon: ReactElement; text: string; to: string }> = [
-    {
-      icon: (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
-        </svg>
-      ),
-      text: "How It Works",
-      to: "/how-it-works",
-    },
-    {
-      icon: (
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
-        </svg>
-      ),
-      text: "About Us",
-      to: "/about-us",
-    },
-  ];
-
   return (
-    <div>
+    <div className="bg-[var(--nova-void)] text-[var(--nova-bone)]">
       <style>{`
-        @keyframes novaXMinutesGradientFlow {
-          0% { background-position: 200% 50%; }
-          100% { background-position: 0% 50%; }
+        @keyframes novaXGradientMorph {
+          0%, 100% {
+            color: var(--nova-brand);
+            -webkit-text-fill-color: var(--nova-brand);
+          }
+          50% {
+            color: var(--nova-bone);
+            -webkit-text-fill-color: var(--nova-bone);
+          }
+        }
+
+        .nova-landing-gradient {
+          --nova-gradient-from: var(--nova-brand);
+          --nova-gradient-to: var(--nova-bone);
+          background-image: linear-gradient(
+            45deg,
+            var(--nova-gradient-from) 0%,
+            var(--nova-gradient-to) 24%,
+            var(--nova-gradient-from) 50%,
+            var(--nova-gradient-to) 76%,
+            var(--nova-gradient-from) 100%
+          );
+          background-size: 240% 100%;
+          background-repeat: no-repeat;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: nova-gradient-shift 10s ease-in-out infinite;
+          will-change: background-position;
+        }
+
+        .nova-brand-button {
+          background: var(--nova-brand);
+          color: var(--nova-bone);
+          border: none;
+          border-radius: 8px;
+          padding: 12px 24px;
+          font-family: Inter, system-ui, sans-serif;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 1.3;
+        }
+
+        .nova-void-button {
+          background: var(--nova-void);
+          color: var(--nova-bone);
+          border: 0.5px solid var(--nova-surface);
+          border-radius: 8px;
+          padding: 12px 24px;
+          font-family: Inter, system-ui, sans-serif;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 1.3;
+        }
+
+        .nova-card {
+          background: var(--nova-surface);
+          border: 0.5px solid var(--nova-divider);
+          border-radius: 12px;
+        }
+
+        .nova-gradient-brand-void {
+          --nova-gradient-from: var(--nova-brand);
+          --nova-gradient-to: var(--nova-void);
+        }
+
+        .nova-gradient-x {
+          display: inline-block;
+          color: var(--nova-brand);
+          -webkit-text-fill-color: var(--nova-brand);
+          animation: novaXGradientMorph 4.8s ease-in-out infinite;
+          will-change: color;
+        }
+
+        .nova-media {
+          border: 0.5px solid var(--nova-divider);
+          border-radius: 12px;
+          overflow: hidden;
         }
       `}</style>
+
       <header
-        className="fixed z-50 left-1/2 -translate-x-1/2
-                  flex items-center justify-between
-                  px-3 py-2 sm:px-4 sm:py-3 rounded-[18px]
-                  bg-[#0F1117]/60 backdrop-blur-lg border border-white/10 shadow-2xl
-                  max-w-4xl w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]"
+        className="fixed left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-4xl -translate-x-1/2 items-center justify-between rounded-xl border-b border-white/[0.08] bg-[rgba(15,17,23,0.6)] px-3 py-2 backdrop-blur-xl sm:w-[calc(100%-2rem)] sm:px-4 sm:py-3 md:w-[calc(100%-3rem)]"
         style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
       >
-        <div className="font-bold text-white text-lg sm:text-xl tracking-wide select-none">
+        <Link
+          to="/"
+          className="nova-display text-lg font-semibold tracking-normal text-[var(--nova-bone)] sm:text-xl"
+        >
           NovaX
-        </div>
+        </Link>
 
-        <nav className="flex items-center space-x-1 sm:space-x-1.5">
-          {navItems.map((item, idx) => (
+        <nav className="flex items-center gap-1 sm:gap-1.5">
+          {navItems.map((item) => (
             <Button
-              key={idx}
+              key={item.text}
               variant="ghost"
               asChild
-              className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                        text-white/90 hover:text-white hover:bg-white/10
-                        transition-colors"
+              className="h-9 rounded-lg px-2 text-[var(--nova-bone)]/90 transition-colors hover:bg-white/[0.08] hover:text-[var(--nova-bone)] sm:px-3"
             >
-              <Link to={item.to}>
-                <span className="w-4 h-4">{item.icon}</span>
-                <span className="hidden sm:inline text-sm font-normal">
-                  {item.text}
-                </span>
-              </Link>
+              {"href" in item ? (
+                <a href={item.href}>
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d={item.iconPath} />
+                  </svg>
+                  <span className="hidden text-sm font-medium sm:inline">
+                    {item.text}
+                  </span>
+                </a>
+              ) : (
+                <Link to={item.to}>
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d={item.iconPath} />
+                  </svg>
+                  <span className="hidden text-sm font-medium sm:inline">
+                    {item.text}
+                  </span>
+                </Link>
+              )}
             </Button>
           ))}
         </nav>
       </header>
 
-      <div className="min-h-screen relative overflow-hidden bg-[#0F1117]">
+      <section className="relative min-h-screen overflow-hidden bg-[var(--nova-void)]">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/assets/cosmic-planet-background.jpg)" }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 [filter:saturate(0.74)_sepia(0.06)_hue-rotate(5deg)_brightness(1.02)_contrast(1.18)]"
+          style={{
+            backgroundImage: "url(/assets/cosmic-planet-background.jpg)",
+          }}
         />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(15,17,23,0.44),rgba(15,17,23,0.12),rgba(15,17,23,0.44))]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(104,67,45,0.08),rgba(15,17,23,0.14)_44%,rgba(15,17,23,0.42)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(15,17,23,0.62)_0%,rgba(15,17,23,0.14)_44%,rgba(15,17,23,0.46)_100%)]" />
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[rgb(15_17_23/0.45)] via-transparent to-[rgb(15_17_23/0.45)]" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgb(15_17_23/0.35)] via-transparent to-[rgb(15_17_23/0.35)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55vh] bg-[linear-gradient(to_bottom,rgba(15,17,23,0)_0%,rgba(15,17,23,0)_35%,rgba(15,17,23,0.55)_70%,rgba(15,17,23,1)_100%)]" />
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-28 sm:px-6">
+          <div className="mx-auto max-w-4xl text-center [text-shadow:0_2px_18px_rgba(0,0,0,0.72)]">
+            <p className="nova-display mb-4 text-sm font-medium tracking-normal text-[var(--nova-muted)]">
+              Problem-based learning, rebuilt as simulation
+            </p>
+            <h1
+              className="nova-display font-semibold leading-[1.05] tracking-normal"
+              style={{ fontSize: "clamp(2.5rem, 8vw, 3.5rem)" }}
+            >
+              <span className="text-[var(--nova-bone)]">Nova</span>
+              <span className="nova-gradient-x">
+                X
+              </span>
+            </h1>
 
-        <div className="relative z-10 min-h-screen flex items-center justify-center px-3 sm:px-4 md:px-6">
-          <div className="text-center space-y-6 sm:space-y-8 max-w-4xl mx-auto">
-            <div className="space-y-3 sm:space-y-4 animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider">
-                <span className="bg-gradient-to-r from-cosmic-glow via-cosmic-aurora to-cosmic-sunrise bg-clip-text text-transparent animate-float">
-                  NovaX
+            <p className="mx-auto mt-6 max-w-3xl text-base font-normal leading-[1.6] text-[var(--nova-bone)]/90 sm:text-lg">
+              First problem-based learning environment with world simulations and
+              a superhuman mentor.
+            </p>
+
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href={WAITLIST_FORM_URL}
+                className="nova-brand-button inline-flex min-h-[44px] w-full max-w-xs items-center justify-center transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--nova-bone)]/70 sm:w-auto"
+              >
+                Join Waitlist
+              </a>
+
+              <div
+                className="inline-flex min-h-[44px] w-full max-w-xs items-center justify-center gap-2.5 rounded-lg border border-white/[0.15] bg-white/[0.08] px-5 py-2.5 text-sm font-medium text-[var(--nova-bone)]/90 backdrop-blur-md sm:w-auto"
+                aria-label="Product status: private beta"
+              >
+                <span className="relative flex h-2 w-2 shrink-0" aria-hidden>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--nova-green)]/45" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--nova-green)]" />
                 </span>
-              </h1>
+                Private beta
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--nova-void)] px-4 py-20 text-[var(--nova-bone)] sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-6xl text-center">
+          <h2
+            className="nova-display mx-auto max-w-4xl font-medium leading-[1.15] tracking-normal"
+            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
+          >
+            fun like a game.{" "}
+            <span className="nova-landing-gradient nova-gradient-brand-void font-semibold">
+              like work.
+            </span>
+          </h2>
+
+          <div className="nova-media mx-auto mt-10 aspect-video w-full max-w-5xl bg-[var(--nova-surface)] sm:mt-12">
+            <img
+              src="/assets/work.png"
+              alt="NovaX experience preview"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="mt-10 overflow-hidden rounded-xl border border-black/10 bg-[var(--nova-white)] text-[var(--nova-void)] sm:mt-12">
+            {valueCards.map((card, index) => (
+              <div key={card.title}>
+                <div className="grid grid-cols-1 items-center md:grid-cols-2">
+                  <div
+                    className={`p-6 sm:p-10 ${
+                      card.reverse ? "md:order-2" : ""
+                    }`}
+                  >
+                    <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-[var(--nova-white)]">
+                      <img
+                        src={card.image}
+                        alt={card.alt}
+                        className="h-full w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    className={`p-6 text-left sm:p-10 ${
+                      card.reverse ? "md:order-1" : ""
+                    }`}
+                  >
+                    <h3 className="nova-display text-2xl font-medium leading-[1.15] tracking-normal sm:text-3xl md:text-4xl">
+                      {card.title}
+                    </h3>
+                    <p className="mt-4 max-w-xl text-sm font-normal leading-[1.6] text-[#464B58] sm:text-base">
+                      {card.copy}
+                    </p>
+                  </div>
+                </div>
+                {index < valueCards.length - 1 && (
+                  <div className="mx-6 h-px bg-black/10 sm:mx-10" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--nova-void)] px-4 py-20 text-[var(--nova-bone)] sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div
+            className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+            data-scroll="fade-up"
+          >
+            <div className="mb-16 max-w-3xl">
+              <h2
+                className="nova-display font-medium leading-[1.1] tracking-normal"
+                style={{ fontSize: "clamp(2rem, 7vw, 3.5rem)" }}
+              >
+                Transform Your Mind{" "}
+                In 10{" "}
+                <span className="nova-landing-gradient nova-gradient-urgent font-semibold">
+                  Minutes
+                </span>
+              </h2>
+              <p className="mt-5 max-w-2xl text-base font-normal leading-[1.6] text-[var(--nova-muted)] sm:text-lg">
+                Experience learning from a dynamic world simulation with adaptive
+                AI.
+              </p>
+              <a
+                href={WAITLIST_FORM_URL}
+                className="nova-void-button mt-8 inline-flex min-h-[44px] w-full max-w-xs items-center justify-center transition-colors hover:bg-[#252A3A] sm:w-auto"
+              >
+                Join Waitlist
+              </a>
             </div>
 
-            <div className="animate-fade-in [animation-delay:0.5s] opacity-0">
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/90 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-2 sm:px-4">
-                first problem-based learning environment
-                <br className="block sm:hidden" />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-300 bg-clip-text text-transparent"> with world simulations and superhuman mentor</span>
+            <div className="space-y-16 sm:space-y-20">
+              {simulationFeatures.map((feature, index) => (
+                <div
+                  key={feature.title}
+                  className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-12"
+                >
+                  <div
+                    className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                    data-scroll="fade-up"
+                    style={{ animationDelay: feature.delay }}
+                  >
+                    <p className="nova-mono mb-3 text-sm font-medium text-[var(--nova-muted)]">
+                      0{index + 1}
+                    </p>
+                    <h3 className="nova-display text-xl font-medium leading-[1.3] tracking-normal text-[var(--nova-bone)] sm:text-2xl">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-3 max-w-xl text-sm font-normal leading-[1.6] text-[var(--nova-muted)] sm:text-base">
+                      {feature.copy}
+                    </p>
+                  </div>
+
+                  <div
+                    className="nova-media aspect-video w-full bg-[var(--nova-surface)] opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                    data-scroll="fade-up"
+                    style={{ animationDelay: feature.delay }}
+                  >
+                    <video
+                      className="h-full w-full object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      poster="/assets/cosmic-planet-background.jpg"
+                    >
+                      <source src={feature.video} type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div
+              className="mt-24 text-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+              data-scroll="fade-up"
+            >
+              <h2 className="nova-display text-2xl font-medium leading-[1.2] tracking-normal text-[var(--nova-bone)] sm:text-3xl md:text-4xl">
+                Problem Solving{" "}
+                <span className="nova-landing-gradient nova-gradient-technical font-semibold">
+                  Matters
+                </span>
+              </h2>
+
+              <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-2">
+                {problemSignals.map((signal) => (
+                  <div
+                    key={signal.title}
+                    className="nova-card p-6 text-left opacity-0 transform translate-y-8 transition-all duration-1000 ease-out md:p-8"
+                    data-scroll="fade-up"
+                  >
+                    <h3 className="text-lg font-semibold leading-[1.3] tracking-normal text-[var(--nova-brand)] sm:text-xl">
+                      {signal.title}
+                    </h3>
+                    <p className="mt-4 text-sm font-normal leading-[1.6] text-[var(--nova-muted)] sm:text-base">
+                      {signal.copy}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div
+              className="mt-24 text-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+              data-scroll="fade-up"
+            >
+              <h2 className="nova-display text-2xl font-medium leading-[1.2] tracking-normal text-[var(--nova-bone)] sm:text-3xl md:text-4xl">
+                Ready to{" "}
+                <span className="nova-landing-gradient nova-gradient-process font-semibold">
+                  Join Waitlist
+                </span>
+                ?
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-base font-normal leading-[1.6] text-[var(--nova-muted)]">
+                Join thousands of students and train your problem solving skills
+                collaboratively.
+              </p>
+              <button
+                className="nova-void-button mt-8 inline-flex min-h-[44px] w-full max-w-xs items-center justify-center transition-colors hover:bg-[#252A3A] sm:w-auto"
+                onClick={scrollToVideoDemo}
+              >
+                Watch The Introduction Video
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--nova-bone)] px-4 py-20 text-[var(--nova-void)] sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div
+            className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+            data-scroll="fade-up"
+          >
+            <div className="mb-16 max-w-3xl">
+              <h2
+                className="nova-display font-medium leading-[1.1] tracking-normal"
+                style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
+              >
+                A new way to prove your abilities
+              </h2>
+              <p className="mt-5 max-w-2xl text-base font-normal leading-[1.6] text-[#464B58] sm:text-lg">
+                We're reinventing proof of ability: real evidence of what you can
+                solve.
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1s] opacity-0">
-              <div className="w-24 h-px bg-gradient-to-r from-transparent via-cosmic-glow to-transparent mx-auto" />
-            </div>
-
-            <div className="animate-fade-in [animation-delay:1.2s] opacity-0">
-              <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-4">
-                <a
-                  href={WAITLIST_FORM_URL}
-                  className="group inline-flex min-h-[44px] w-full max-w-xs sm:w-auto items-center justify-center rounded-full border border-white/25 bg-gradient-to-b from-white/[0.14] to-white/[0.06] px-8 py-2.5 text-sm font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:from-white/[0.2] hover:to-white/[0.08] hover:shadow-[0_1px_0_rgba(255,255,255,0.1)_inset,0_16px_48px_rgba(0,0,0,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
-                >
-                  Join Waitlist
-                </a>
+            <div className="space-y-16 sm:space-y-24">
+              {proofFeatures.map((feature) => (
                 <div
-                  className="inline-flex min-h-[44px] w-full max-w-xs sm:w-auto items-center justify-center gap-2.5 rounded-full border border-amber-200/20 bg-black/30 px-6 py-2.5 text-sm text-amber-100/95 shadow-[0_1px_0_rgba(255,255,255,0.04)_inset] backdrop-blur-md ring-1 ring-white/5 pointer-events-none select-none"
-                  aria-label="Product status: private beta"
+                  key={feature.title}
+                  className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] lg:gap-8"
+                  data-scroll="fade-up"
+                  style={{ animationDelay: feature.delay }}
                 >
-                  <span className="relative flex h-2 w-2 shrink-0" aria-hidden>
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
-                  </span>
-                  <span className="font-medium tracking-wide">Private beta</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-10 right-10 w-32 h-32 bg-cosmic-aurora/10 rounded-full blur-2xl animate-cosmic-glow [animation-delay:2s]" />
-          <div className="absolute top-20 right-1/4 w-16 h-16 bg-cosmic-sunrise/15 rounded-full blur-xl animate-float [animation-delay:3s]" />
-        </div>
-      </div>
-
-      <div className="min-h-screen bg-[#0F1117] text-white flex items-center">
-        <div className="w-full px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2
-              className="text-balance font-black tracking-tight leading-[1.05]"
-              style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)" }}
-            >
-              fun like a game.{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                effective like work.
-              </span>
-            </h2>
-
-            <div className="mt-10 sm:mt-12">
-              <div className="relative w-full max-w-5xl mx-auto aspect-video overflow-hidden rounded-3xl">
-                <img
-                  src="/assets/work.png"
-                  alt="NovaX experience preview"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            <div className="mt-10 sm:mt-12 bg-white rounded-3xl overflow-hidden border border-black/10 shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-                <div className="p-6 sm:p-10">
-                  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
-                    <img
-                      src="/assets/fun.png"
-                      alt="When effectiveness meets fun"
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-10 text-left">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-black">
-                    when effectiveness meets fun
-                  </h3>
-                  <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    PBL has proven to be effective, but tedious. We make it short, fast, and addictive by cutting it down to many steps, but it's still effective by making you reflect on the experience, like a game.
-                  </p>
-                </div>
-              </div>
-
-              <div className="h-px bg-gray-100 my-8 sm:my-10 md:my-12" />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-                <div className="p-6 sm:p-10 text-left md:order-1">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-black">
-                    when complexity becomes intuitive
-                  </h3>
-                  <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    Complex concepts are broken down into clear micro-steps. You're guided from confusion to understanding through examples, instant feedback, decision impacts, and exercises that feel natural: one screen, one simple step.
-                  </p>
-                </div>
-
-                <div className="p-6 sm:p-10 order-first md:order-2">
-                  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
-                    <img
-                      src="/assets/complex.png"
-                      alt="When complexity becomes intuitive"
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="h-px bg-gray-100 my-8 sm:my-10 md:my-12" />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-                <div className="p-6 sm:p-10">
-                  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white">
-                    <img
-                      src="/assets/degrees.png"
-                      alt="When degrees lose to capability"
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-10 text-left">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-black">
-                    when degrees lose to capability
-                  </h3>
-                  <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-                    NovaX measures your problem-solving abilities, regardless of your unique approach. We accurately record every experience you have. No empty claims.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="min-h-screen bg-[#0F1117] text-white flex flex-col">
-        <div className="flex-1 p-4">
-          <div className="max-w-7xl mx-auto">
-            <div
-              className="max-w-6xl mx-auto pb-8 sm:pb-14 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-              data-scroll="fade-up"
-            >
-              <div className="mb-6 sm:mb-8 md:mb-16 pt-6 sm:pt-8 md:pt-24 px-3 sm:px-4">
-                <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
-                  Transform Your Mind<br />
-                  <span
-                    className="bg-clip-text text-transparent"
-                    style={{
-                      backgroundImage: "linear-gradient(to right, #D97757,rgb(227, 227, 20),rgb(231, 24, 24), #D97757)",
-                      backgroundSize: "200% auto",
-                      animation:
-                        "novaXMinutesGradientFlow 2.3s linear infinite",
-                      willChange: "background-position",
-                      display: "inline-block",
-                    }}
-                  >
-                    In 10 Minutes
-                  </span>
-                </h1>
-                <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl text-left">
-                  Experience learning from a dynamic world simulation with adaptive AI.
-                </p>
-                <a
-                  href={WAITLIST_FORM_URL}
-                  className="bg-white/10 backdrop-blur-xl border border-white/20 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-2xl text-sm sm:text-base md:text-lg font-semibold hover:bg-white/15 hover:border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-black/20 w-full sm:w-auto inline-block text-center"
-                >
-                  <span className="bg-gradient-to-r from-[#877D2D] to-[#EFDADA] bg-clip-text text-transparent">
-                    Join Waitlist
-                  </span>
-                </a>
-              </div>
-
-              <div className="mb-6 sm:mb-8 md:mb-24 px-3 sm:px-4">
-                <div className="space-y-24 sm:space-y-28 lg:space-y-32">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-                    <div
-                      className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.2s" }}
-                    >
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
-                        Adaptive Dynamic Simulation
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed mt-2 max-w-xl">
-                        Dynamic simulation flow personalized for you-realtime.
-                      </p>
-                    </div>
-
-                    <div
-                      className="relative w-full aspect-video overflow-hidden rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.3s" }}
-                    >
-                      <video
-                        className="w-full h-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                        poster="/assets/cosmic-planet-background.jpg"
-                      >
-                        <source src="/assets/scene/dynamic%20arena.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-                    <div
-                      className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.2s" }}
-                    >
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
-                        Personalized Arena
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed mt-2 max-w-xl">
-                        Arena environments and challenges personalized to your capabilities.
-                      </p>
-                    </div>
-
-                    <div
-                      className="relative w-full aspect-video overflow-hidden rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.3s" }}
-                    >
-                      <video
-                        className="w-full h-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                        poster="/assets/cosmic-planet-background.jpg"
-                      >
-                        <source src="/assets/scene/arena%20gen.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-                    <div
-                      className="opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.2s" }}
-                    >
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">
-                        Smartest Superhuman
-                      </h3>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed mt-2 max-w-xl">
-                        AI that analyzes and adapts to your responses, how you act and who you are in real time.
-                      </p>
-                    </div>
-
-                    <div
-                      className="relative w-full aspect-video overflow-hidden rounded-3xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.3s" }}
-                    >
-                      <video
-                        className="w-full h-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                        poster="/assets/cosmic-planet-background.jpg"
-                      >
-                        <source src="/assets/scene/ai%20analyze%20behavior.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="text-center mb-6 sm:mb-8 md:mb-24 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                data-scroll="fade-up"
-              >
-                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8 px-3 sm:px-4">
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Problem Solving</span> Matters
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-8 max-w-4xl mx-auto px-3 sm:px-4">
-                  <div
-                    className="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-sm opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                    data-scroll="fade-up"
-                    style={{ animationDelay: "0.2s" }}
-                  >
-                    <h3 className="text-lg sm:text-xl md:text-3xl font-bold text-yellow-400 mb-2 sm:mb-3 md:mb-4">
-                      WORLD ECONOMIC FORUM
+                  <div className="text-left">
+                    <h3 className="nova-display text-2xl font-medium leading-[1.15] tracking-normal sm:text-3xl md:text-4xl">
+                      {feature.title}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
-                      Problem-solving is the #1 skill needed in the era of automation and AI orchestrations
+                    <p className="mt-4 max-w-[34ch] text-sm font-normal leading-[1.6] text-[#464B58] sm:text-base">
+                      {feature.copy}
                     </p>
                   </div>
 
-                  <div
-                    className="bg-gradient-to-r from-blue-400/10 to-purple-500/10 border border-blue-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-sm opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                    data-scroll="fade-up"
-                    style={{ animationDelay: "0.4s" }}
-                  >
-                    <h3 className="text-lg sm:text-xl md:text-3xl font-bold text-blue-400 mb-2 sm:mb-3 md:mb-4">
-                      TOP LINKEDIN SKILL
-                    </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
-                      Most sought-after skill by employers across all industries
-                    </p>
+                  <div className="nova-media min-h-[200px] bg-[var(--nova-void)] sm:min-h-[240px] lg:h-[min(52vw,_420px)]">
+                    {feature.image ? (
+                      <img
+                        src={feature.image}
+                        alt={feature.alt}
+                        className="h-full w-full object-contain"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <video
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        poster="/assets/cosmic-planet-background.jpg"
+                      >
+                        <source src={feature.video} type="video/mp4" />
+                      </video>
+                    )}
                   </div>
                 </div>
-              </div>
-
-              <div
-                className="text-center opacity-0 transform translate-y-8 transition-all duration-1000 ease-out px-3 sm:px-4"
-                data-scroll="fade-up"
-              >
-                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6">
-                  Ready to <span className="bg-gradient-to-r from-[#E6C65B] via-[#F7E7A9] to-[#C58A1F] bg-clip-text text-transparent">Join Waitlist</span>?
-                </h2>
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Join thousands of students and train your problem solving skills collaboratively
-                </p>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center">
-                  <button
-                    className="border border-gray-600 text-gray-300 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 w-full sm:w-auto"
-                    onClick={scrollToVideoDemo}
-                  >
-                    Watch The Introduction Video
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="min-h-screen bg-[#E8E4D9] flex flex-col">
-        <div className="flex-1 p-4">
-          <div className="max-w-7xl mx-auto">
-            <div
-              className="max-w-7xl mx-auto pb-8 sm:pb-14 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-              data-scroll="fade-up"
-            >
-              <div className="mb-6 sm:mb-8 md:mb-16 px-3 sm:px-4 text-left">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
-                  A new way to prove your abilities
-                </h1>
-                <p className="text-sm sm:text-base md:text-xl text-gray-600 mb-4 sm:mb-6 md:mb-8 max-w-2xl">
-                  We’re reinventing proof of ability: real evidence of what you can solve.
-                </p>
-              </div>
-
-              <div className="relative">
-                <div className="p-0 relative z-10">
-                  <div className="flex flex-col gap-14 sm:gap-24 lg:gap-28 px-3 sm:px-4 md:px-0">
-                    <div
-                      className="w-full opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.4s" }}
-                    >
-                      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] gap-6 lg:gap-x-2 lg:gap-y-6 items-center">
-                        <div className="text-left lg:min-w-0 lg:pr-1">
-                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
-                            AI TRANSCENDENT
-                          </h2>
-                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-none lg:max-w-[28ch]">
-                            AI that accesses and analyzes thinking patterns, behavior patterns, decision trees and capability levels.
-                          </p>
-                        </div>
-
-                        <div className="relative w-full min-h-[200px] sm:min-h-[240px] lg:min-h-[min(52vw,_420px)] aspect-video lg:aspect-auto lg:h-[min(52vw,_420px)] overflow-hidden rounded-3xl bg-black">
-                          <img
-                            src="/assets/AI%20transcendent.png"
-                            alt="AI transcendent: thinking, behavior, and decision patterns feeding an AI brain"
-                            className="w-full h-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className="w-full opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
-                      data-scroll="fade-up"
-                      style={{ animationDelay: "0.55s" }}
-                    >
-                      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_0.62fr)_minmax(0,_1.38fr)] gap-6 lg:gap-x-2 lg:gap-y-6 items-center">
-                        <div className="text-left lg:min-w-0 lg:pr-1">
-                          <h2 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
-                            GET REAL PROOF OF YOUR CAPABILITIES
-                          </h2>
-                          <p className="text-xs sm:text-sm md:text-lg text-gray-700 leading-relaxed max-w-none lg:max-w-[28ch]">
-                            Credentials that show what problems you solve, how you solve them, and every decision you make, not paper exam degrees.
-                          </p>
-                        </div>
-
-                        <div className="relative w-full min-h-[200px] sm:min-h-[240px] lg:min-h-[min(52vw,_420px)] aspect-video lg:aspect-auto lg:h-[min(52vw,_420px)] overflow-hidden rounded-3xl">
-                          <video
-                            className="w-full h-full object-cover"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            poster="/assets/cosmic-planet-background.jpg"
-                          >
-                            <source src="/assets/feature-progress-tracking.mp4" type="video/mp4" />
-                          </video>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-
 
             <div
               ref={videoDemoRef}
-              className="py-16 sm:py-24 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+              className="py-20 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out sm:py-28"
               data-scroll="fade-up"
             >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6">
+              <div className="mx-auto max-w-6xl">
                 <div
-                  className="relative w-full max-w-5xl mx-auto aspect-video overflow-hidden rounded-3xl shadow-2xl bg-black opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+                  className="nova-media mx-auto aspect-video w-full max-w-5xl bg-[var(--nova-void)] opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
                   data-scroll="fade-up"
                   style={{ animationDelay: "0.2s" }}
                 >
                   <iframe
-                    className="w-full h-full"
+                    className="h-full w-full"
                     src={`https://www.youtube.com/embed/${YOUTUBE_DEMO_VIDEO_ID}?rel=0&modestbranding=1`}
                     title="NovaX Demo Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -545,53 +616,49 @@ const IntroductionPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <footer
         id="about-us"
-        className="bg-gray-900 text-white py-16 sm:py-20 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+        className="bg-[var(--nova-void)] px-4 py-16 text-[var(--nova-bone)] opacity-0 transform translate-y-8 transition-all duration-1000 ease-out sm:px-6 sm:py-20"
         data-scroll="fade-up"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             <div
               className="lg:col-span-2 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
               data-scroll="fade-up"
               style={{ animationDelay: "0.2s" }}
             >
               <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-4">NovaX</h3>
-                <p className="text-gray-300 mb-6 max-w-md">
-                  Empowering the next generation of problem solvers and truth seekers with AI-powered learning experiences that adapt to your unique thought.
+                <h3 className="nova-display mb-4 text-2xl font-medium tracking-normal">
+                  NovaX
+                </h3>
+                <p className="max-w-md text-sm font-normal leading-[1.6] text-[var(--nova-muted)] sm:text-base">
+                  Empowering the next generation of problem solvers and truth
+                  seekers with AI-powered learning experiences that adapt to your
+                  unique thought.
                 </p>
               </div>
 
-              <div className="flex space-x-4">
-                <a href="https://tiktok.com/@novax_arena" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-black transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
-                  </svg>
-                </a>
-                <a href="https://www.youtube.com/@novax-arena" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                  </svg>
-                </a>
-                <a href="https://x.com/novax_arena" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-black transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-                <a href="https://linkedin.com/company/scientiax-novax" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.852-3.047-1.853 0-2.136 1.445-2.136 2.939v5.677H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-                <a href="https://instagram.com/novaxarena" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </a>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    aria-label={link.label}
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--nova-surface)] text-[var(--nova-bone)] transition-colors hover:bg-[#252A3A]"
+                  >
+                    <svg
+                      className="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d={link.path} />
+                    </svg>
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -600,15 +667,34 @@ const IntroductionPage = () => {
               data-scroll="fade-up"
               style={{ animationDelay: "0.4s" }}
             >
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><Link to="/about-us" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+              <h4 className="nova-display mb-4 text-lg font-medium tracking-normal">
+                Quick Links
+              </h4>
+              <ul className="space-y-3 text-sm text-[var(--nova-muted)]">
                 <li>
-                  <Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">
+                  <Link
+                    to="/about-us"
+                    className="transition-colors hover:text-[var(--nova-bone)]"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/how-it-works"
+                    className="transition-colors hover:text-[var(--nova-bone)]"
+                  >
                     How It Works
                   </Link>
                 </li>
-                <li><a href="mailto:novaniansupp@gmail.com" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                <li>
+                  <a
+                    href="mailto:novaniansupp@gmail.com"
+                    className="transition-colors hover:text-[var(--nova-bone)]"
+                  >
+                    Contact
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -617,13 +703,15 @@ const IntroductionPage = () => {
               data-scroll="fade-up"
               style={{ animationDelay: "0.6s" }}
             >
-              <h4 className="text-lg font-semibold mb-4">Support</h4>
-              <ul className="space-y-3">
+              <h4 className="nova-display mb-4 text-lg font-medium tracking-normal">
+                Support
+              </h4>
+              <ul className="space-y-3 text-sm text-[var(--nova-muted)]">
                 <li>
                   <button
                     type="button"
                     onClick={handleUnavailable}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="transition-colors hover:text-[var(--nova-bone)]"
                   >
                     Privacy Policy
                   </button>
@@ -632,7 +720,7 @@ const IntroductionPage = () => {
                   <button
                     type="button"
                     onClick={handleUnavailable}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="transition-colors hover:text-[var(--nova-bone)]"
                   >
                     Terms of Service
                   </button>
@@ -642,26 +730,26 @@ const IntroductionPage = () => {
           </div>
 
           <div
-            className="border-t border-gray-800 mt-12 pt-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+            className="mt-12 border-t border-[var(--nova-divider)] pt-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
             data-scroll="fade-up"
             style={{ animationDelay: "0.8s" }}
           >
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                © 2025 NovaX. All rights reserved.
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <p className="text-sm text-[var(--nova-muted)]">
+                (c) 2025 NovaX. All rights reserved.
               </p>
-              <div className="flex space-x-6">
+              <div className="flex gap-6">
                 <button
                   type="button"
                   onClick={handleUnavailable}
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-sm text-[var(--nova-muted)] transition-colors hover:text-[var(--nova-bone)]"
                 >
                   Privacy Policy
                 </button>
                 <button
                   type="button"
                   onClick={handleUnavailable}
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-sm text-[var(--nova-muted)] transition-colors hover:text-[var(--nova-bone)]"
                 >
                   Terms of Service
                 </button>
@@ -675,4 +763,3 @@ const IntroductionPage = () => {
 };
 
 export default IntroductionPage;
-
