@@ -347,7 +347,7 @@ const IntroductionPage = () => {
             className="nova-display mx-auto max-w-4xl font-medium leading-[1.15] tracking-normal"
             style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
-            fun like a game.{" "}
+            fun like a game.{" "} effective {" "}
             <span className="nova-landing-gradient nova-gradient-brand-void font-semibold">
               like work.
             </span>
