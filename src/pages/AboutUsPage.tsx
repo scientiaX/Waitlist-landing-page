@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ResponsiveHeader from "@/components/ResponsiveHeader";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const studentSquad = [
@@ -73,38 +74,7 @@ const AboutUsPage = () => {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#E8E4D9] text-[#0F1117]">
-      <header
-        className="fixed left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-4xl -translate-x-1/2 items-center justify-between rounded-[18px] border border-white/10 bg-[rgb(15_17_23/0.76)] px-3 py-2 shadow-[0_24px_80px_rgba(15,17,23,0.24)] backdrop-blur-xl sm:w-[calc(100%-2rem)] sm:px-4 sm:py-3 md:w-[calc(100%-3rem)]"
-        style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
-      >
-        <Link to="/" className="nova-display text-lg font-semibold text-white sm:text-xl">
-          NovaX
-        </Link>
-
-        <nav className="flex items-center gap-1">
-          <Button
-            asChild
-            variant="ghost"
-            className="h-9 rounded-lg px-3 text-sm font-medium text-[#E8E4D9]/75 hover:bg-white/10 hover:text-[#E8E4D9]"
-          >
-            <Link to="/">Home</Link>
-          </Button>
-          <Button
-            asChild
-            variant="ghost"
-            className="h-9 rounded-lg border border-white/15 bg-white/[0.08] px-3 text-sm font-medium text-[#E8E4D9] hover:bg-white/[0.12]"
-          >
-            <Link to="/about-us">About</Link>
-          </Button>
-          <Button
-            asChild
-            variant="ghost"
-            className="hidden h-9 rounded-lg px-3 text-sm font-medium text-[#E8E4D9]/75 hover:bg-white/10 hover:text-[#E8E4D9] sm:inline-flex"
-          >
-            <Link to="/how-it-works">How it works</Link>
-          </Button>
-        </nav>
-      </header>
+      <ResponsiveHeader className="rounded-[18px] border-white/10 bg-[rgb(15_17_23/0.76)] shadow-[0_24px_80px_rgba(15,17,23,0.24)]" />
 
       <main className="relative">
         <section className="px-4 pt-32 pb-16 sm:px-6 sm:pb-20 lg:px-8">

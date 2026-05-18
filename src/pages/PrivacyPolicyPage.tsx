@@ -1,198 +1,221 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import ResponsiveHeader from "@/components/ResponsiveHeader";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const PrivacyPolicyPage = () => {
   useScrollAnimation();
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-cosmic-gradient" />
-      <div className="pointer-events-none absolute inset-0 bg-planet-glow opacity-60 mix-blend-screen" />
-      <div className="pointer-events-none absolute inset-0 bg-cosmic-glow opacity-60 mix-blend-screen" />
+    <div className="min-h-screen bg-[var(--nova-bone)] text-[var(--nova-void)]">
+      <ResponsiveHeader />
 
-      <header
-        className="fixed z-50 left-1/2 -translate-x-1/2
-                  flex items-center justify-between
-                  px-3 py-2 sm:px-4 sm:py-3 rounded-[18px]
-                  bg-black/65 backdrop-blur-xl border border-white/10 shadow-2xl
-                  max-w-4xl w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]"
-        style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
-      >
-        <Link to="/" className="font-bold text-white text-lg sm:text-xl tracking-wide select-none">
-          NovaX
-        </Link>
-
-        <nav className="flex items-center space-x-1 sm:space-x-1.5">
-          <Button
-            variant="ghost"
-            asChild
-            className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                      text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            <Link to="/">
-              <span className="hidden sm:inline text-sm font-normal">Home</span>
-            </Link>
-          </Button>
-        </nav>
-      </header>
-
-      <main className="relative z-10 pt-28 sm:pt-32 pb-20 sm:pb-28">
+      <main className="px-4 pb-16 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
         <section
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+          className="mx-auto max-w-5xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
           data-scroll="fade-up"
         >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-emerald-300/80 mb-4">
-            LEGAL · PRIVACY POLICY
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4">
-            Privacy Policy
-          </h1>
-          <p className="text-sm sm:text-base text-gray-300 mb-2">
-            This Privacy Policy explains how NovaX collects, uses, and protects information when you
-            join the waitlist, explore demos, or interact with our problem-based learning arenas and AI mentor.
-          </p>
-          <p className="text-xs sm:text-sm text-gray-400 mb-8">
-            This page is a draft scaffold generated from the introduction page. Please review, edit,
-            and adapt together with your legal advisor before using it publicly.
-          </p>
+          <div className="border-b border-[var(--nova-void)]/15 pb-8 sm:pb-10">
+            <p className="nova-mono text-xs font-medium uppercase tracking-[0.24em] text-[var(--nova-brand)]">
+              Legal / Privacy Policy
+            </p>
+            <div className="mt-5 grid gap-6 lg:grid-cols-[0.9fr_0.55fr] lg:items-end">
+              <div>
+                <h1
+                  className="nova-display font-medium leading-[1.05] tracking-normal"
+                  style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
+                >
+                  Privacy Policy
+                </h1>
+                <p className="mt-5 max-w-3xl text-base leading-[1.7] text-[#464B58] sm:text-lg">
+                  This Privacy Policy explains how NovaX collects, uses, and protects information
+                  when you join the waitlist, request early access, explore demos, or use available
+                  learning simulations and AI mentor experiences.
+                </p>
+              </div>
 
-          <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-gray-200 leading-relaxed">
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">1. Information We Collect</h2>
-              <p className="mb-2">
-                The information we collect depends on how you interact with NovaX. It may include:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>
-                  <span className="font-semibold">Contact information</span> such as your email address
-                  when you join the waitlist or contact us.
-                </li>
-                <li>
-                  <span className="font-semibold">Usage data</span> such as pages visited, buttons clicked,
-                  and basic analytics to understand how people explore the arena.
-                </li>
-                <li>
-                  <span className="font-semibold">Learning and interaction data</span> such as choices you
-                  make in simulations, reflections you write, or progress indicators (for example, XP-style
-                  progress bars).
-                </li>
-              </ul>
-            </section>
+              <div className="rounded-xl border border-[var(--nova-void)]/10 bg-white/45 p-5 text-sm leading-[1.6] text-[#464B58]">
+                <p className="font-semibold text-[var(--nova-void)]">Current product status</p>
+                <p className="mt-2">
+                  NovaX is in a waitlist and private beta stage. Data practices may become more
+                  detailed as more features, simulations, and account systems become available.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">2. How We Use Your Information</h2>
-              <p className="mb-2">
-                We use the information we collect to build and improve NovaX and to communicate with you, including:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>Operating the waitlist and early access experience.</li>
-                <li>Designing better arenas, scenarios, and mentor feedback based on aggregated usage patterns.</li>
-                <li>Sending updates about new features, access invites, or changes to our policies.</li>
-                <li>Monitoring for abuse, misuse, or technical issues so we can keep the platform stable and safe.</li>
-              </ul>
-            </section>
+          <div className="mt-10 grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)]">
+            <aside className="hidden lg:block">
+              <div className="sticky top-28 space-y-3 rounded-xl border border-[var(--nova-void)]/10 bg-white/40 p-4 text-sm text-[#464B58]">
+                <p className="nova-mono text-xs uppercase tracking-[0.18em] text-[var(--nova-brand)]">
+                  Summary
+                </p>
+                <p>We do not sell personal information.</p>
+                <p>We use data to run and improve NovaX.</p>
+                <p>You can contact us about your data.</p>
+              </div>
+            </aside>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">3. Cookies and Similar Technologies</h2>
-              <p>
-                NovaX may use cookies or similar technologies to remember preferences, keep sessions active,
-                and understand how people navigate the site. In a production deployment, you should provide
-                more detail here about what technologies you use and how users can manage their choices.
-              </p>
-            </section>
+            <div className="space-y-5 text-sm leading-[1.7] text-[#464B58] sm:text-base">
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  1. Information We Collect
+                </h2>
+                <p className="mt-3">
+                  The information we collect depends on how you interact with NovaX. It may include:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5">
+                  <li>
+                    <span className="font-semibold text-[var(--nova-void)]">Contact information</span>{" "}
+                    such as your email address when you join the waitlist, request access, or
+                    contact us.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-[var(--nova-void)]">Site usage data</span>{" "}
+                    such as pages visited, buttons clicked, device/browser information, and basic
+                    analytics that help us understand how people explore NovaX.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-[var(--nova-void)]">
+                      Learning and interaction data
+                    </span>{" "}
+                    when available, such as simulation choices, written reflections, decision
+                    paths, mentor interactions, and progress indicators.
+                  </li>
+                </ul>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">4. Data Retention</h2>
-              <p>
-                We keep your information only for as long as it is needed for the purposes described above,
-                or as required by law. In your final version, you should define concrete retention periods
-                (for example, how long waitlist emails or simulation logs are stored) based on your policies.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  2. How We Use Information
+                </h2>
+                <p className="mt-3">
+                  We use information to operate, test, and improve NovaX. This includes:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5">
+                  <li>Managing the waitlist, private beta, and early access invitations.</li>
+                  <li>Sending product updates, access notices, and policy changes.</li>
+                  <li>Improving simulations, scenario design, mentor feedback, and product reliability.</li>
+                  <li>Detecting abuse, misuse, security issues, bugs, and technical problems.</li>
+                </ul>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">5. How We Share Information</h2>
-              <p className="mb-2">
-                We do not sell your personal information. We may share information in limited ways, such as:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>With service providers that help us run infrastructure, analytics, or email.</li>
-                <li>If required by law, regulation, or legal process.</li>
-                <li>
-                  In connection with a merger, acquisition, or other change in control, in which case we will
-                  take steps to continue protecting your data.
-                </li>
-              </ul>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  3. Cookies and Similar Technologies
+                </h2>
+                <p className="mt-3">
+                  NovaX may use cookies or similar technologies for basic site functionality,
+                  analytics, remembering preferences, and understanding how people navigate the
+                  product. Browser settings may allow you to limit or block some of these
+                  technologies, although parts of the experience may not work as intended.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">6. Student &amp; Young User Considerations</h2>
-              <p>
-                Because NovaX is designed for students and learners, you should clearly define in your final policy
-                how you handle underage users, school accounts, and compliance with applicable regulations (for example,
-                COPPA, FERPA, GDPR, or local equivalents). This scaffold does not constitute legal advice.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  4. Data Retention
+                </h2>
+                <p className="mt-3">
+                  We keep information only as long as needed for the purposes described in this
+                  policy, including waitlist management, product testing, support, security,
+                  analytics, legal compliance, and service improvement. Retention periods may vary
+                  depending on the type of data and the stage of the product.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">7. Your Choices &amp; Rights</h2>
-              <p className="mb-2">
-                Depending on your region, you may have rights over your personal data, such as the ability to:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>Access or request a copy of certain personal data we hold about you.</li>
-                <li>Request correction or deletion of your information.</li>
-                <li>Opt out of certain types of communication.</li>
-              </ul>
-              <p className="mt-2">
-                In your final implementation, you should explain the exact process for users to exercise these rights,
-                including any forms or email addresses they should use.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  5. How We Share Information
+                </h2>
+                <p className="mt-3">
+                  We do not sell your personal information. We may share information in limited
+                  situations, including:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5">
+                  <li>With service providers that help us operate hosting, analytics, forms, or email.</li>
+                  <li>When required by law, regulation, legal process, or security obligations.</li>
+                  <li>
+                    In connection with a merger, acquisition, financing, or similar business change,
+                    with appropriate steps to continue protecting personal information.
+                  </li>
+                </ul>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">8. Data Security</h2>
-              <p>
-                We take reasonable technical and organizational measures to protect your information from unauthorized
-                access, loss, or misuse. No system is perfect, so in your production policy you should describe your
-                security approach in more detail and outline what happens in the event of a breach.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  6. Students and Young Users
+                </h2>
+                <p className="mt-3">
+                  NovaX is designed for students and learners. If you are under the age required to
+                  consent to online services in your region, use NovaX only with appropriate parent,
+                  guardian, school, or institutional permission. As NovaX expands, additional
+                  controls may be added for school, campus, or organization-based use.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">9. Third-Party Links &amp; Integrations</h2>
-              <p>
-                NovaX may link to or integrate with third-party tools (for example, identity providers, classroom
-                platforms, or analytics). Their use of your data is governed by their own policies. You should review
-                those policies before using those services through NovaX.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  7. Your Choices and Rights
+                </h2>
+                <p className="mt-3">
+                  Depending on your location, you may have rights to access, correct, delete, or
+                  request a copy of certain personal information. You may also opt out of some
+                  product communications. To make a privacy request, contact us using the email
+                  below.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">10. Changes to This Privacy Policy</h2>
-              <p>
-                As NovaX evolves, we may update this Privacy Policy. If we make material changes, we will update the
-                &quot;Last updated&quot; date below and, where appropriate, provide additional notice. Your continued
-                use of NovaX after changes become effective means you accept the updated policy.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  8. Data Security
+                </h2>
+                <p className="mt-3">
+                  We use reasonable technical and organizational measures to protect information
+                  from unauthorized access, loss, misuse, or alteration. No online system is
+                  perfectly secure, so we cannot guarantee absolute security.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">11. Contact</h2>
-              <p className="mb-2">
-                If you have questions about this Privacy Policy or how NovaX handles data, you can contact us at:
-              </p>
-              <p className="text-gray-200">
-                <a href="mailto:novaniansupp@gmail.com" className="underline hover:text-emerald-300">
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  9. Third-Party Services
+                </h2>
+                <p className="mt-3">
+                  NovaX may use third-party services such as waitlist forms, hosting providers,
+                  analytics tools, video embeds, or email systems. These providers process
+                  information according to their own terms and privacy policies.
+                </p>
+              </section>
+
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  10. Changes to This Privacy Policy
+                </h2>
+                <p className="mt-3">
+                  As NovaX evolves, we may update this Privacy Policy. If we make material changes,
+                  we will update the last updated date and, where appropriate, provide additional
+                  notice. Continued use of NovaX after changes take effect means you accept the
+                  updated policy.
+                </p>
+              </section>
+
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-[var(--nova-void)] p-5 text-[var(--nova-bone)] sm:p-7">
+                <h2 className="nova-display text-xl font-medium">11. Contact</h2>
+                <p className="mt-3 text-[rgba(232,228,217,0.75)]">
+                  If you have questions about this Privacy Policy or how NovaX handles data,
+                  contact us at:
+                </p>
+                <a
+                  href="mailto:novaniansupp@gmail.com"
+                  className="mt-3 inline-flex text-[var(--nova-bone)] underline decoration-[var(--nova-brand)] decoration-2 underline-offset-4 transition-colors hover:text-[var(--nova-brand)]"
+                >
                   novaniansupp@gmail.com
                 </a>
-              </p>
-            </section>
+              </section>
 
-            <p className="text-xs sm:text-sm text-gray-400 pt-2">
-              Last updated: {new Date().getFullYear()}
-            </p>
+              <p className="nova-mono pt-2 text-xs uppercase tracking-[0.16em] text-[#646A78]">
+                Last updated: {new Date().getFullYear()}
+              </p>
+            </div>
           </div>
         </section>
       </main>
@@ -201,4 +224,3 @@ const PrivacyPolicyPage = () => {
 };
 
 export default PrivacyPolicyPage;
-

@@ -1,31 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ResponsiveHeader, { novaGlobalNavItems } from "@/components/ResponsiveHeader";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useRef } from "react";
 
 const WAITLIST_FORM_URL = "https://tally.so/r/zxDAyZ";
 const YOUTUBE_DEMO_VIDEO_ID = "sga8QDniKls";
 
-const navItems = [
-  {
-    iconPath:
-      "M8 5.14v13.72L18.78 12 8 5.14Zm2 3.63L15.02 12 10 15.23V8.77Z",
-    text: "How It Works",
-    to: "/how-it-works",
-  },
-  {
-    iconPath:
-      "M11 10h2v7h-2v-7Zm0-3h2v2h-2V7Zm1-5a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z",
-    text: "About Us",
-    to: "/about-us",
-  },
-  {
-    iconPath:
-      "M5 4h14v2H5V4Zm0 4h14v2H5V8Zm0 4h9v2H5v-2Zm0 4h9v2H5v-2Zm12.4-3.2a3.2 3.2 0 1 0-2.26 5.46l-1.57 1.57L15 21.24l1.57-1.57a3.2 3.2 0 0 0 .83-6.87Zm0 1.8a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z",
-    text: "Research",
-    href: "https://research.novaxarena.tech",
-  },
-];
+const introDesktopNavItems = novaGlobalNavItems.filter((item) => item.label !== "Home");
 
 const valueCards = [
   {
@@ -235,58 +217,11 @@ const IntroductionPage = () => {
         }
       `}</style>
 
-      <header
-        className="fixed left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-4xl -translate-x-1/2 items-center justify-between rounded-xl border-b border-white/[0.08] bg-[rgba(15,17,23,0.6)] px-3 py-2 backdrop-blur-xl sm:w-[calc(100%-2rem)] sm:px-4 sm:py-3 md:w-[calc(100%-3rem)]"
-        style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
-      >
-        <Link
-          to="/"
-          className="nova-display text-lg font-semibold tracking-normal text-[var(--nova-bone)] sm:text-xl"
-        >
-          NovaX
-        </Link>
-
-        <nav className="flex items-center gap-1 sm:gap-1.5">
-          {navItems.map((item) => (
-            <Button
-              key={item.text}
-              variant="ghost"
-              asChild
-              className="h-9 rounded-lg px-2 text-[var(--nova-bone)]/90 transition-colors hover:bg-white/[0.08] hover:text-[var(--nova-bone)] sm:px-3"
-            >
-              {"href" in item ? (
-                <a href={item.href}>
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d={item.iconPath} />
-                  </svg>
-                  <span className="hidden text-sm font-medium sm:inline">
-                    {item.text}
-                  </span>
-                </a>
-              ) : (
-                <Link to={item.to}>
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d={item.iconPath} />
-                  </svg>
-                  <span className="hidden text-sm font-medium sm:inline">
-                    {item.text}
-                  </span>
-                </Link>
-              )}
-            </Button>
-          ))}
-        </nav>
-      </header>
+      <ResponsiveHeader
+        className="border-b border-white/[0.08] bg-[rgba(15,17,23,0.6)] shadow-none"
+        desktopItems={introDesktopNavItems}
+        mobileItems={novaGlobalNavItems}
+      />
 
       <section className="relative min-h-screen overflow-hidden bg-[var(--nova-void)]">
         <div

@@ -1,205 +1,217 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import ResponsiveHeader from "@/components/ResponsiveHeader";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const TermsOfServicePage = () => {
   useScrollAnimation();
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-cosmic-gradient" />
-      <div className="pointer-events-none absolute inset-0 bg-planet-glow opacity-60 mix-blend-screen" />
-      <div className="pointer-events-none absolute inset-0 bg-cosmic-glow opacity-60 mix-blend-screen" />
+    <div className="min-h-screen bg-[var(--nova-bone)] text-[var(--nova-void)]">
+      <ResponsiveHeader />
 
-      <header
-        className="fixed z-50 left-1/2 -translate-x-1/2
-                  flex items-center justify-between
-                  px-3 py-2 sm:px-4 sm:py-3 rounded-[18px]
-                  bg-black/65 backdrop-blur-xl border border-white/10 shadow-2xl
-                  max-w-4xl w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]"
-        style={{ top: "env(safe-area-inset-top, 0.5rem)" }}
-      >
-        <Link to="/" className="font-bold text-white text-lg sm:text-xl tracking-wide select-none">
-          NovaX
-        </Link>
-
-        <nav className="flex items-center space-x-1 sm:space-x-1.5">
-          <Button
-            variant="ghost"
-            asChild
-            className="flex items-center space-x-1 sm:space-x-1.5 h-8 sm:h-9 px-2 sm:px-3 rounded-lg
-                      text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            <Link to="/">
-              <span className="hidden sm:inline text-sm font-normal">Home</span>
-            </Link>
-          </Button>
-        </nav>
-      </header>
-
-      <main className="relative z-10 pt-28 sm:pt-32 pb-20 sm:pb-28">
+      <main className="px-4 pb-16 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
         <section
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
+          className="mx-auto max-w-5xl opacity-0 transform translate-y-8 transition-all duration-1000 ease-out"
           data-scroll="fade-up"
         >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-emerald-300/80 mb-4">
-            LEGAL · TERMS OF SERVICE
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4">
-            Terms of Service
-          </h1>
-          <p className="text-sm sm:text-base text-gray-300 mb-2">
-            These Terms of Service (&quot;Terms&quot;) govern your access to and use of NovaX, our
-            problem-based learning arena with world simulations and AI mentor.
-          </p>
-          <p className="text-xs sm:text-sm text-gray-400 mb-8">
-            This page is a draft scaffold generated from the introduction page. Please review, edit,
-            and adapt to your legal needs before using it publicly.
-          </p>
+          <div className="border-b border-[var(--nova-void)]/15 pb-8 sm:pb-10">
+            <p className="nova-mono text-xs font-medium uppercase tracking-[0.24em] text-[var(--nova-brand)]">
+              Legal / Terms of Service
+            </p>
+            <div className="mt-5 grid gap-6 lg:grid-cols-[0.9fr_0.55fr] lg:items-end">
+              <div>
+                <h1
+                  className="nova-display font-medium leading-[1.05] tracking-normal"
+                  style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
+                >
+                  Terms of Service
+                </h1>
+                <p className="mt-5 max-w-3xl text-base leading-[1.7] text-[#464B58] sm:text-lg">
+                  These Terms govern your access to NovaX, a private beta learning environment
+                  that turns problem-based learning into adaptive world simulations with an AI
+                  mentor.
+                </p>
+              </div>
 
-          <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-gray-200 leading-relaxed">
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">1. Acceptance of Terms</h2>
-              <p>
-                By accessing or using NovaX (including joining the waitlist, exploring demos, or
-                interacting with any arenas, simulations, or AI mentor experiences), you agree to be
-                bound by these Terms. If you do not agree, you should not use NovaX.
-              </p>
-            </section>
+              <div className="rounded-xl border border-[var(--nova-void)]/10 bg-white/45 p-5 text-sm leading-[1.6] text-[#464B58]">
+                <p className="font-semibold text-[var(--nova-void)]">Current product status</p>
+                <p className="mt-2">
+                  NovaX is currently offered through a waitlist and early access experience.
+                  Features, simulations, and mentor behavior may change while the product is being
+                  tested.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">2. Who NovaX Is For</h2>
-              <p>
-                NovaX is designed as a learning environment for students, lifelong learners, and
-                individuals who want to train problem solving skills. You are responsible for
-                ensuring that your use of NovaX complies with local laws, school or campus policies,
-                and any age requirements that may apply in your region.
-              </p>
-            </section>
+          <div className="mt-10 grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)]">
+            <aside className="hidden lg:block">
+              <div className="sticky top-28 space-y-3 rounded-xl border border-[var(--nova-void)]/10 bg-white/40 p-4 text-sm text-[#464B58]">
+                <p className="nova-mono text-xs uppercase tracking-[0.18em] text-[var(--nova-brand)]">
+                  Summary
+                </p>
+                <p>Use NovaX responsibly.</p>
+                <p>Early access can change.</p>
+                <p>AI feedback needs judgment.</p>
+              </div>
+            </aside>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">3. Early Access &amp; Waitlist</h2>
-              <p className="mb-2">
-                At this stage, NovaX may be available only as a waitlist, limited access demo, or
-                experimental environment. By joining the waitlist or requesting access, you:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>Agree that features, arenas, and experiences may change frequently.</li>
-                <li>Understand that outages, bugs, or resets may occur without prior notice.</li>
-                <li>
-                  Allow us to contact you using the email you provided for updates related to NovaX.
-                </li>
-              </ul>
-            </section>
+            <div className="space-y-5 text-sm leading-[1.7] text-[#464B58] sm:text-base">
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  1. Acceptance of Terms
+                </h2>
+                <p className="mt-3">
+                  By accessing NovaX, joining the waitlist, requesting early access, exploring
+                  demos, or using any available simulation or AI mentor experience, you agree to
+                  these Terms. If you do not agree, you should not use NovaX.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">4. Use of the Platform</h2>
-              <p className="mb-2">
-                You agree to use NovaX in a way that aligns with its purpose: a problem-based
-                learning arena that simulates worlds and decisions, not a tool for harmful behavior.
-                You agree not to:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>Bypass security, exploit bugs, or interfere with system stability.</li>
-                <li>Use NovaX to generate, practice, or simulate harmful, abusive, or illegal acts.</li>
-                <li>
-                  Misrepresent yourself, impersonate others, or attempt to reverse engineer core
-                  systems.
-                </li>
-              </ul>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  2. Who NovaX Is For
+                </h2>
+                <p className="mt-3">
+                  NovaX is built for students, learners, and problem solvers who want to train
+                  decision making and problem-solving ability through short, adaptive learning
+                  simulations. You are responsible for making sure your use of NovaX follows
+                  applicable laws, school or campus rules, and age requirements in your region.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">5. Learning Data &amp; Experience Logs</h2>
-              <p className="mb-2">
-                NovaX is built around tracking how you think, decide, and solve problems inside
-                simulated worlds. Depending on implementation, this may include:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-200/90">
-                <li>Your actions, choices, and paths taken in simulations.</li>
-                <li>Reflections, written responses, and in-arena decisions.</li>
-                <li>
-                  Progress metrics, capability indicators, or &quot;XP&quot; style representations of your
-                  growth.
-                </li>
-              </ul>
-              <p className="mt-2">
-                Details about how data is stored, used, and protected should be described in your
-                dedicated Privacy Policy page, which is linked from the footer.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  3. Waitlist and Early Access
+                </h2>
+                <p className="mt-3">
+                  NovaX may be available only as a waitlist, private beta, limited access demo, or
+                  experimental environment. By joining the waitlist or requesting access, you:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5">
+                  <li>Understand that features, arenas, scenarios, and feedback may change.</li>
+                  <li>Accept that bugs, downtime, data resets, or limited availability may occur.</li>
+                  <li>
+                    Allow us to contact you using the email you provide for NovaX updates, access
+                    invites, and product-related notices.
+                  </li>
+                </ul>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">6. No Guarantees of Outcomes</h2>
-              <p>
-                NovaX aims to make learning feel more like a meaningful, game-like experience, but
-                we do not guarantee any specific academic, career, or life outcomes. You are
-                responsible for how you apply what you learn and for any decisions you make in the
-                real world based on simulations or guidance.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  4. Responsible Use
+                </h2>
+                <p className="mt-3">
+                  You agree to use NovaX for learning, reflection, and capability development. You
+                  agree not to:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5">
+                  <li>Bypass security, exploit bugs, overload systems, or interfere with stability.</li>
+                  <li>Use NovaX to create, rehearse, or encourage harmful, abusive, or illegal acts.</li>
+                  <li>
+                    Misrepresent yourself, impersonate another person, or attempt to reverse
+                    engineer non-public systems.
+                  </li>
+                </ul>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">7. Intellectual Property</h2>
-              <p className="mb-2">
-                All content on NovaX, including arenas, simulations, storylines, UI, and AI mentor
-                behavior, is owned by NovaX (or its licensors) unless otherwise stated. You agree
-                not to copy, redistribute, or commercially exploit these materials without
-                permission.
-              </p>
-              <p>
-                Where students or users contribute content (for example, reflections or projects),
-                you should define clearly in your final version of these Terms how ownership and
-                licensing of that content works.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  5. Learning Data and Experience Logs
+                </h2>
+                <p className="mt-3">
+                  NovaX is designed to record meaningful parts of a learning run, including choices,
+                  reasoning, reflections, decision paths, and progress indicators. This helps NovaX
+                  adapt the experience and build a clearer picture of problem-solving capability.
+                </p>
+                <p className="mt-3">
+                  Details about how information is collected, used, shared, and protected are
+                  described in the Privacy Policy.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">8. Experimental AI Mentor</h2>
-              <p>
-                The &quot;superhuman mentor&quot; and AI systems powering NovaX are experimental. They may
-                sometimes be inaccurate, incomplete, or produce suggestions that are not suitable
-                for your specific context. Always use your own judgment and, where appropriate,
-                consult teachers, mentors, or professionals before acting on any advice or feedback
-                generated in NovaX.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  6. No Guaranteed Outcomes
+                </h2>
+                <p className="mt-3">
+                  NovaX is intended to support learning and problem-solving practice. We do not
+                  guarantee specific academic, career, admission, hiring, or life outcomes. You
+                  remain responsible for how you use feedback, simulation results, and any decisions
+                  you make outside NovaX.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">9. Limitation of Liability</h2>
-              <p>
-                To the maximum extent permitted by law, NovaX and its team will not be liable for
-                any indirect, incidental, special, consequential, or punitive damages, or any loss
-                of data, opportunities, or profits arising from your use of or inability to use
-                NovaX. You use the platform at your own risk.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  7. Intellectual Property
+                </h2>
+                <p className="mt-3">
+                  NovaX, including its interface, simulations, scenarios, visual assets, feedback
+                  systems, and product experience, is owned by NovaX or its licensors unless stated
+                  otherwise. You may not copy, redistribute, sell, or commercially exploit these
+                  materials without permission.
+                </p>
+                <p className="mt-3">
+                  You keep ownership of original content you submit, such as reflections or written
+                  responses, but you grant NovaX permission to process that content to operate,
+                  improve, and personalize the service.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">10. Changes to These Terms</h2>
-              <p>
-                Because NovaX is actively evolving, we may update these Terms from time to time. If
-                we make material changes, we will update the &quot;Last updated&quot; date below and, where
-                appropriate, provide additional notice. Your continued use of NovaX after changes
-                become effective means you accept the updated Terms.
-              </p>
-            </section>
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  8. Experimental AI Mentor
+                </h2>
+                <p className="mt-3">
+                  The AI mentor and adaptive systems in NovaX are experimental. They may provide
+                  incomplete, inaccurate, or unsuitable feedback. Use your own judgment, and consult
+                  teachers, mentors, or qualified professionals before relying on NovaX feedback for
+                  important decisions.
+                </p>
+              </section>
 
-            <section>
-              <h2 className="text-lg sm:text-xl font-semibold mb-2">11. Contact</h2>
-              <p className="mb-2">
-                If you have questions about these Terms or how NovaX works, you can contact us at:
-              </p>
-              <p className="text-gray-200">
-                <a href="mailto:novaniansupp@gmail.com" className="underline hover:text-emerald-300">
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  9. Limitation of Liability
+                </h2>
+                <p className="mt-3">
+                  To the maximum extent permitted by law, NovaX and its team will not be liable for
+                  indirect, incidental, special, consequential, or punitive damages, or for loss of
+                  data, opportunities, profits, or reputation arising from your use of NovaX. You
+                  use the service at your own risk.
+                </p>
+              </section>
+
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-white/55 p-5 sm:p-7">
+                <h2 className="nova-display text-xl font-medium text-[var(--nova-void)]">
+                  10. Changes to These Terms
+                </h2>
+                <p className="mt-3">
+                  Because NovaX is actively evolving, we may update these Terms from time to time.
+                  If we make material changes, we will update the last updated date and, where
+                  appropriate, provide additional notice. Continued use of NovaX after changes take
+                  effect means you accept the updated Terms.
+                </p>
+              </section>
+
+              <section className="rounded-xl border border-[var(--nova-void)]/10 bg-[var(--nova-void)] p-5 text-[var(--nova-bone)] sm:p-7">
+                <h2 className="nova-display text-xl font-medium">11. Contact</h2>
+                <p className="mt-3 text-[rgba(232,228,217,0.75)]">
+                  If you have questions about these Terms or how NovaX works, contact us at:
+                </p>
+                <a
+                  href="mailto:novaniansupp@gmail.com"
+                  className="mt-3 inline-flex text-[var(--nova-bone)] underline decoration-[var(--nova-brand)] decoration-2 underline-offset-4 transition-colors hover:text-[var(--nova-brand)]"
+                >
                   novaniansupp@gmail.com
                 </a>
-              </p>
-            </section>
+              </section>
 
-            <p className="text-xs sm:text-sm text-gray-400 pt-2">
-              Last updated: {new Date().getFullYear()}
-            </p>
+              <p className="nova-mono pt-2 text-xs uppercase tracking-[0.16em] text-[#646A78]">
+                Last updated: {new Date().getFullYear()}
+              </p>
+            </div>
           </div>
         </section>
       </main>
@@ -208,4 +220,3 @@ const TermsOfServicePage = () => {
 };
 
 export default TermsOfServicePage;
-
